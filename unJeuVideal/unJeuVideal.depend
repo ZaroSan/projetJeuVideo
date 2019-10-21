@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1514144174 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\main.cpp
+	<iostream>
+
+1570612756 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\personnage.cpp
+	"Personnage.h"
+
+1570612665 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\personnage.h
+
+1570617351 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_item\item.cpp
+	"Item.h"
+
+1570617631 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\item.h
+
+1570617923 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_item\armure.cpp
+	"Armure.h"
+
+1570618018 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\armure.h
+	"Item.h"
+
