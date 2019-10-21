@@ -5,7 +5,7 @@
 1570612756 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\personnage.cpp
 	"Personnage.h"
 
-1570612665 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\personnage.h
+1571655998 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\personnage.h
 
 1570617351 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_item\item.cpp
 	"Item.h"
@@ -17,4 +17,22 @@
 
 1570618018 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\armure.h
 	"Item.h"
+
+1571655767 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_factory\factorycharacter.cpp
+	"FactoryCharacter.h"
+
+1571655750 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\factorycharacter.h
+	"Personnage.h"
+
+1571656909 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\wizard.cpp
+	"Wizard.h"
+
+1571657203 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\wizard.h
+	"Personnage.h"
+
+1571657324 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\brawler.cpp
+	"Brawler.h"
+
+1571657407 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\brawler.h
+	<Personnage.h>
 

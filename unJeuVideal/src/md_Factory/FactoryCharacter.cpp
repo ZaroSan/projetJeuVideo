@@ -14,3 +14,4 @@ FactoryCharacter::FactoryCharacter(const FactoryCharacter& other)
 {
     //copy ctor
 }
+

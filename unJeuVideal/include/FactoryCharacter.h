@@ -9,10 +9,10 @@ class FactoryCharacter
         FactoryCharacter();
         virtual ~FactoryCharacter();
         FactoryCharacter(const FactoryCharacter& other);
-        Personnage createWizard();
+        /*Personnage createWizard();
         Personnage createBrawler();
         Personnage createRanger();
-        Personnage createHealer();
+        Personnage createHealer();*/
 
     protected:
 
