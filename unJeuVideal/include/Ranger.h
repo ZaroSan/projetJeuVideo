@@ -26,6 +26,11 @@ class Ranger : public Personnage
     protected:
 
     private:
+        int lifePoint;
+        int power;
+        int strength;
+        int magicalArmor;
+        int physicalArmor;
 };
 
 #endif // RANGER_H

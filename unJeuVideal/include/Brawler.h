@@ -25,6 +25,11 @@ class Brawler : public Personnage
     protected:
 
     private:
+        int lifePoint;
+        int power;
+        int strength;
+        int magicalArmor;
+        int physicalArmor;
 };
 
 #endif // BRAWLER_H

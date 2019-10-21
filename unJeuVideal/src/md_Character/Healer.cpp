@@ -1,6 +1,6 @@
-#include "Hearler.h"
+#include "Healer.h"
 
-Hearler::Hearler()
+Healer::Healer()
 {
     //ctor
     this->lifePoint=200;
@@ -10,9 +10,14 @@ Hearler::Hearler()
     this->physicalArmor=0;
 }
 
-Hearler::~Hearler()
+Healer::~Healer()
 {
     //dtor
+
+}
+Healer::Healer(const Healer& other)
+{
+    //copy ctor
     this->lifePoint=other.lifePoint;
     this->strength=other.strength;
     this->magicalArmor=other.magicalArmor;

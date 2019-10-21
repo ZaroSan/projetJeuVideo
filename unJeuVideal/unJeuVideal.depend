@@ -30,9 +30,15 @@
 1571657203 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\wizard.h
 	"Personnage.h"
 
-1571657324 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\brawler.cpp
+1571658684 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\brawler.cpp
 	"Brawler.h"
 
-1571657407 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\brawler.h
+1571658956 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\brawler.h
+	<Personnage.h>
+
+1571658673 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\ranger.cpp
+	"Ranger.h"
+
+1571658952 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\ranger.h
 	<Personnage.h>
 

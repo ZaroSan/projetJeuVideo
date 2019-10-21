@@ -4,11 +4,11 @@
 #include <Personnage.h>
 
 
-class Hearler : public Personnage
+class Healer : public Personnage
 {
     public:
-        Hearler();
-        virtual ~Hearler();
+        Healer();
+        virtual ~Healer();
         Healer (const Healer& other);
         int getStrength() const{return this->strength;}
         int getPower() const{return this->power;}
@@ -21,11 +21,16 @@ class Hearler : public Personnage
         void setPhysicalArmor(int){this->physicalArmor=0;}
         void setLifePoint(int i){this->lifePoint=i;}
 
-        static Personnage* __stdcall Create() {return new Hearler();}
+        static Personnage* __stdcall Create() {return new Healer();}
 
     protected:
 
     private:
+        int lifePoint;
+        int power;
+        int strength;
+        int magicalArmor;
+        int physicalArmor;
 };
 
 #endif // HEARLER_H
