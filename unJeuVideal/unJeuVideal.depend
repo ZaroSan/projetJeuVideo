@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1571823615 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\main.cpp
+1571824070 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\main.cpp
 	<iostream>
 	"FactoryCharacter.h"
 
@@ -41,18 +41,24 @@
 1571658684 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\brawler.cpp
 	"Brawler.h"
 
-1571658956 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\brawler.h
+1571836132 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\brawler.h
 	<Personnage.h>
+	"string"
+	"sstream"
 
 1571658673 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\ranger.cpp
 	"Ranger.h"
 
-1571658952 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\ranger.h
+1571836125 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\ranger.h
 	<Personnage.h>
+	"string"
+	"sstream"
 
 1571659200 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\healer.cpp
 	"Healer.h"
 
-1571659152 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\healer.h
+1571836128 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\healer.h
 	<Personnage.h>
+	"string"
+	"sstream"
 

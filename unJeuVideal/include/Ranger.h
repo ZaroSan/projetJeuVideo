@@ -2,7 +2,10 @@
 #define RANGER_H
 
 #include <Personnage.h>
-
+#include "string"
+#include "sstream"
+using std::string;
+using std::stringstream;
 
 class Ranger : public Personnage
 {
@@ -20,6 +23,11 @@ class Ranger : public Personnage
         void setMagicalArmor(int i){this->magicalArmor=0;}
         void setPhysicalArmor(int i){this->physicalArmor=i;}
         void setLifePoint(int i){this->lifePoint=i;}
+        string str(){
+            stringstream stri;
+            stri <<"Life Points :"<<this->lifePoint<<"\nStrength :"<<this->strength<<"\nPower :"<<this->power<<"\nMagical Armor :"<<this->magicalArmor<<"\nPhysical Armor :"<<this->physicalArmor;
+            return stri.str();
+        };
 
         static Personnage* __stdcall Create() {return new Ranger();}
 
