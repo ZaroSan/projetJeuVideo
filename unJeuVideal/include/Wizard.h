@@ -1,7 +1,10 @@
 #ifndef WIZARD_H
 #define WIZARD_H
 #include "Personnage.h"
-
+#include "string"
+#include "sstream"
+using std::string;
+using std::stringstream;
 class Wizard:public Personnage
 {
     public:
@@ -19,7 +22,11 @@ class Wizard:public Personnage
         void setPhysicalArmor(int){this->physicalArmor=0;}
         void setLifePoint(int i){this->lifePoint=i;}
 
-        static Personnage* __stdcall Create() {return new Wizard();}
+        string str(){
+            stringstream stri;
+            stri <<"Life Points :"<<this->lifePoint<<"\nStrength :"<<this->strength<<"\nPower :"<<this->power<<"\nMagical Armor :"<<this->magicalArmor<<"\nPhysical Armor :"<<this->physicalArmor;
+            return stri.str();
+        };
     protected:
 
     private:

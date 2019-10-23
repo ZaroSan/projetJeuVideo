@@ -1,9 +1,12 @@
 #include <iostream>
-
+#include "FactoryCharacter.h"
 using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
+
+    Wizard *w=FactoryCharacter::Get()->createWizard();
+    w=new Wizard();
+    cout <<w->str();
     return 0;
 }

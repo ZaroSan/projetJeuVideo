@@ -37,10 +37,19 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Armure.h" />
+		<Unit filename="include/Brawler.h" />
+		<Unit filename="include/FactoryCharacter.h" />
+		<Unit filename="include/Healer.h" />
 		<Unit filename="include/Item.h" />
 		<Unit filename="include/Personnage.h" />
+		<Unit filename="include/Ranger.h" />
+		<Unit filename="include/Wizard.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/md_Character/Personnage.cpp" />
+		<Unit filename="src/md_Character/Brawler.cpp" />
+		<Unit filename="src/md_Character/Healer.cpp" />
+		<Unit filename="src/md_Character/Ranger.cpp" />
+		<Unit filename="src/md_Character/Wizard.cpp" />
+		<Unit filename="src/md_Factory/FactoryCharacter.cpp" />
 		<Unit filename="src/md_Item/Armure.cpp" />
 		<Unit filename="src/md_Item/Item.cpp" />
 		<Extensions>

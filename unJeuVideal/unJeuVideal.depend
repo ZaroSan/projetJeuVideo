@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1514144174 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\main.cpp
+1571823615 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\main.cpp
 	<iostream>
+	"FactoryCharacter.h"
 
 1570612756 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\personnage.cpp
 	"Personnage.h"
@@ -18,17 +19,24 @@
 1570618018 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\armure.h
 	"Item.h"
 
-1571655767 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_factory\factorycharacter.cpp
+1571821308 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_factory\factorycharacter.cpp
 	"FactoryCharacter.h"
 
-1571655750 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\factorycharacter.h
+1571822121 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\factorycharacter.h
+	"vector"
 	"Personnage.h"
+	"Wizard.h"
+	"Brawler.h"
+	"Ranger.h"
+	"Healer.h"
 
-1571656909 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\wizard.cpp
+1571823445 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\wizard.cpp
 	"Wizard.h"
 
-1571657203 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\wizard.h
+1571824026 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\wizard.h
 	"Personnage.h"
+	"string"
+	"sstream"
 
 1571658684 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\brawler.cpp
 	"Brawler.h"
@@ -40,5 +48,11 @@
 	"Ranger.h"
 
 1571658952 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\ranger.h
+	<Personnage.h>
+
+1571659200 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\healer.cpp
+	"Healer.h"
+
+1571659152 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\healer.h
 	<Personnage.h>
 

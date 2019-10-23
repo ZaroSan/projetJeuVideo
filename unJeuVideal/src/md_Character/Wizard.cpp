@@ -1,5 +1,6 @@
 #include "Wizard.h"
 
+
 Wizard::Wizard()
 {
     //ctor
@@ -21,5 +22,4 @@ Wizard::Wizard(const Wizard& other){
     this->physicalArmor=other.physicalArmor;
     this->power=other.power;
 }
-
 
