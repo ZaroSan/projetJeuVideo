@@ -62,3 +62,63 @@
 	"string"
 	"sstream"
 
+1571901504 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\src\md_character\brawler.cpp
+	"Brawler.h"
+
+1571901504 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\include\brawler.h
+	<Personnage.h>
+	"string"
+	"sstream"
+
+1571901504 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\include\personnage.h
+
+1571901504 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\src\md_character\healer.cpp
+	"Healer.h"
+
+1571901504 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\include\healer.h
+	<Personnage.h>
+	"string"
+	"sstream"
+
+1571901504 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\src\md_character\ranger.cpp
+	"Ranger.h"
+
+1571901504 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\include\ranger.h
+	<Personnage.h>
+	"string"
+	"sstream"
+
+1571901504 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\src\md_character\wizard.cpp
+	"Wizard.h"
+
+1571901504 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\include\wizard.h
+	"Personnage.h"
+	"string"
+	"sstream"
+
+1571901504 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\src\md_factory\factorycharacter.cpp
+	"FactoryCharacter.h"
+
+1571902449 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\include\factorycharacter.h
+	"vector"
+	"Personnage.h"
+	"Wizard.h"
+	"Brawler.h"
+	"Ranger.h"
+	"Healer.h"
+
+1571901504 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\src\md_item\armure.cpp
+	"Armure.h"
+
+1571901504 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\include\armure.h
+	"Item.h"
+
+1571901504 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\include\item.h
+
+1571901504 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\src\md_item\item.cpp
+	"Item.h"
+
+1571901830 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\main.cpp
+	<iostream>
+	"FactoryCharacter.h"
+

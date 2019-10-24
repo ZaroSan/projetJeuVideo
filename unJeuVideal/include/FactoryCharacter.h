@@ -37,6 +37,7 @@ class FactoryCharacter
             m_FactoryHistory.push_back(&b);
             return &b;
         }
+
         virtual ~FactoryCharacter();
         FactoryCharacter(const FactoryCharacter& other);
         FactoryCharacter& operator=(const FactoryCharacter& other);
