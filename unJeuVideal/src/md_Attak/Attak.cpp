@@ -54,7 +54,7 @@ void Attack::toString()
 {
     cout<<"Nom: "<<this->name;
     cout<<"Puissance: "<<this->power;
-    cout<<"test ";
+    cout<<"test   ";
     cout<<"Mana: "<<this->mana<<endl;
 
 }
