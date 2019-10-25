@@ -1,5 +1,8 @@
 #include "Brawler.h"
 
+#include<iostream>
+#include<string>
+
 Brawler::Brawler()
 {
     //ctor
@@ -24,3 +27,27 @@ Brawler::Brawler(const Brawler& other)
     this->physicalArmor=other.physicalArmor;
     this->power=other.power;
 }
+
+
+
+
+void Brawler::affiche()
+{
+    cout << "---------------------------------------"<<endl;
+    cout << "nom: "<<this->name<<endl;
+    cout<< "PV: "<<this->getLifePoint()<<"/"<<this->getLifePointMax()<<endl;
+    cout<< "Attaque: "<<this->getStrength()<<endl;
+    cout<< "Defense: "<<this->getPhysicalArmor()<<endl;
+    cout<< "Vitesse: "<<this->getSpeed()<<endl;
+    cout<< "Attaque 1: "<<endl;
+    this->attaque[0].toString();
+    cout<< "Attaque 2: "<<endl;
+    this->attaque[1].toString();
+    cout<< "Attaque 3: "<<endl;
+    this->attaque[2].toString();
+    cout<< "Attaque 4: "<<endl;
+    this->attaque[3].toString();
+
+}
+
+

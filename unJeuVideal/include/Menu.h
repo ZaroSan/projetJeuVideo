@@ -1,4 +1,3 @@
-/*
 #ifndef MENU_H
 #define MENU_H
 
@@ -8,18 +7,23 @@
 
 #include "Team.h"
 
+using namespace sf;
+using namespace std;
+
 class Menu:RenderWindow
 {
     public:
         Menu();
         int choix();
+        /*
         bool findCharacter(Team, FactoryCharacter);
-        vector<FactoryCharacter> initialize();
-
+        vector<FactoryCharacter> initialisation();
+ */
     protected:
 
     private:
+
 };
 
 #endif // MENU_H
-*/
+

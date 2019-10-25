@@ -56,7 +56,7 @@
 			<Add directory="C:/Program Files (x86)/CodeBlocks/SFML-2.5.1/lib" />
 		</Linker>
 		<Unit filename="include/Armure.h" />
-		<Unit filename="include/Attak.h" />
+		<Unit filename="include/Attack.h" />
 		<Unit filename="include/Brawler.h" />
 		<Unit filename="include/FactoryCharacter.h" />
 		<Unit filename="include/Game.h" />

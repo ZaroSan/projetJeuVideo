@@ -53,9 +53,8 @@ int Attack::getPrecision()
 void Attack::toString()
 {
     cout<<"Nom: "<<this->name;
-    cout<<"Puissance: "<<this->power;
-    cout<<"test ";
-    cout<<"Mana: "<<this->mana<<endl;
+    cout<<" Puissance: "<<this->power;
+    cout<<" Mana: "<<this->mana<<endl;
 
 }
 

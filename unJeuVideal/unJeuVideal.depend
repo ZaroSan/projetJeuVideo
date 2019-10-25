@@ -62,10 +62,12 @@
 	"string"
 	"sstream"
 
-1571901504 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\src\md_character\brawler.cpp
+1572012952 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\src\md_character\brawler.cpp
 	"Brawler.h"
+	<iostream>
+	<string>
 
-1572006136 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\include\brawler.h
+1572013072 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\include\brawler.h
 	<Personnage.h>
 	<Attack.h>
 	"string"
@@ -119,10 +121,11 @@
 1571901504 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\src\md_item\item.cpp
 	"Item.h"
 
-1571998691 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\main.cpp
+1572014504 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\main.cpp
 	<iostream>
 	"FactoryCharacter.h"
 	"Menu.h"
+	"Attack.h"
 	<SFML/Graphics.hpp>
 
 1525815618 c:\program files (x86)\codeblocks\sfml-2.5.1\include\sfml\graphics.hpp
@@ -649,7 +652,7 @@
 	<SFML/Audio/Export.hpp>
 	<string>
 
-1571999678 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\include\menu.h
+1572014360 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\include\menu.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -667,16 +670,16 @@
 	<string>
 	<vector>
 
-1571999758 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\src\menu.cpp
+1572014965 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\src\menu.cpp
 	"Menu.h"
 	"Game.h"
 	<iostream>
 	<string>
 
-1572006283 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\include\attack.h
+1572011031 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\include\attack.h
 	<string>
 
-1572006299 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\src\md_attak\attak.cpp
+1572011274 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\unjeuvideal\src\md_attak\attak.cpp
 	"Attack.h"
 	<iostream>
 	<string>

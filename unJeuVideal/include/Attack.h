@@ -1,5 +1,5 @@
-#ifndef ATTAck_H
-#define ATTAck_H
+#ifndef ATTACK_H
+#define ATTACK_H
 
 #include<string>
 
