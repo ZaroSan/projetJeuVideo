@@ -1,6 +1,8 @@
 #include <iostream>
 #include "FactoryCharacter.h"
 
+#include "Menu.h"
+
 
 
 #include <SFML/Graphics.hpp>
@@ -12,6 +14,11 @@ int main()
     Wizard *w=FactoryCharacter::Get()->createWizard();
     w=new Wizard();
     cout <<"Wizard \n"<<w->str();
+/*
+    Menu menu;
+    menu.choix();
+
+*/
 
 
     //TEST SFML

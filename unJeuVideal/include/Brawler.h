@@ -2,6 +2,7 @@
 #define BRAWLER_H
 
 #include <Personnage.h>
+#include <Attack.h>
 
 #include "string"
 #include "sstream"
@@ -38,6 +39,16 @@ class Brawler : public Personnage
         int strength;
         int magicalArmor;
         int physicalArmor;
+        int speed;
+
+        string pathFront;
+        string pathBack;
+
+        string name;
+        Attack attaque[4];
+
+
+
 };
 
 #endif // BRAWLER_H

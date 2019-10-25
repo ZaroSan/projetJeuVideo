@@ -1,0 +1,36 @@
+unJeuVideal: 
+	linker settings:
+		sfml-graphics
+		sfml-window
+		sfml-system
+
+	search directories:
+		compiler:	
+			C:\Program Files (x86)\CodeBlocks\SFML-2.5.1\include
+		linker:
+			C:\Program Files (x86)\CodeBlocks\SFML-2.5.1\lib
+
+Debug:	
+	linker settings:
+		sfml-graphics-d
+		sfml-window-d
+		sfml-system-d
+
+	search directories:
+		compiler:	
+			C:\Program Files (x86)\CodeBlocks\SFML-2.5.1\include
+		linker:
+			C:\Program Files (x86)\CodeBlocks\SFML-2.5.1\lib
+
+Release:
+	inker settings:
+		sfml-graphics
+		sfml-window
+		sfml-system
+
+	search directories:
+		compiler:	
+			C:\Program Files (x86)\CodeBlocks\SFML-2.5.1\include
+		linker:
+			C:\Program Files (x86)\CodeBlocks\SFML-2.5.1\lib
+
