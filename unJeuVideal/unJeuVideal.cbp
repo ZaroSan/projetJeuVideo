@@ -31,6 +31,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-std=c++14" />
 					<Add directory="include" />
 					<Add directory="src/md_Item" />
 					<Add directory="C:/Program Files (x86)/CodeBlocks/SFML-2.5.1/include" />
@@ -58,22 +59,26 @@
 		<Unit filename="include/Armure.h" />
 		<Unit filename="include/Attack.h" />
 		<Unit filename="include/Brawler.h" />
+		<Unit filename="include/Event.h" />
 		<Unit filename="include/FactoryCharacter.h" />
 		<Unit filename="include/Game.h" />
 		<Unit filename="include/Healer.h" />
 		<Unit filename="include/Item.h" />
 		<Unit filename="include/Menu.h" />
+		<Unit filename="include/Mob.h" />
 		<Unit filename="include/Personnage.h" />
 		<Unit filename="include/Ranger.h" />
 		<Unit filename="include/Team.h" />
 		<Unit filename="include/Wizard.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Event.cpp" />
 		<Unit filename="src/Game.cpp" />
 		<Unit filename="src/Menu.cpp" />
 		<Unit filename="src/Team.cpp" />
 		<Unit filename="src/md_Attak/Attak.cpp" />
 		<Unit filename="src/md_Character/Brawler.cpp" />
 		<Unit filename="src/md_Character/Healer.cpp" />
+		<Unit filename="src/md_Character/Mob.cpp" />
 		<Unit filename="src/md_Character/Ranger.cpp" />
 		<Unit filename="src/md_Character/Wizard.cpp" />
 		<Unit filename="src/md_Factory/FactoryCharacter.cpp" />
