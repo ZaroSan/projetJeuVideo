@@ -1,6 +1,6 @@
 #include "Healer.h"
 
-Healer::Healer()
+Healer::Healer():Personnage()
 {
     //ctor
     this->lifePoint=200;
