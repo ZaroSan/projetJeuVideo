@@ -62,3 +62,8 @@ int Attack::getPower()
 {
     return this->power;
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> cba3473a4b2395af2e79e0dfbc87e9b3918a977f
