@@ -5,16 +5,19 @@
 class Personnage
 {
     public:
-       virtual int getStrength() const=0;
-       virtual int getPower() const=0;
-       virtual int getMagicalArmor() const=0;
-       virtual int getPhysicalArmor() const=0;
-       virtual int getLifePoint() const=0;
-       virtual void setStrength(int)=0;
-       virtual void setPower(int)=0;
-       virtual void setMagicalArmor(int)=0;
-       virtual void setPhysicalArmor(int)=0;
-       virtual void setLifePoint(int)=0;
+        Personnage();
+        virtual ~Personnage();
+        Personnage (const Personnage& other);
+        virtual int getStrength() const;
+       virtual int getPower() const;
+       virtual int getMagicalArmor() const;
+       virtual int getPhysicalArmor() const;
+       virtual int getLifePoint() const;
+       virtual void setStrength(int);
+       virtual void setPower(int);
+       virtual void setMagicalArmor(int);
+       virtual void setPhysicalArmor(int);
+       virtual void setLifePoint(int);
 
 };
 

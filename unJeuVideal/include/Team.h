@@ -10,19 +10,17 @@ using namespace std;
 class Team
 {
     private:
-        vector<FactoryCharacter> team;
+        vector<Personnage> team;
         //liste de personnages
 
 
     public:
         Team();
-        Team(FactoryCharacter, FactoryCharacter);
 
-        vector<FactoryCharacter> getListCharacter();
+        vector<Personnage> getListCharacter();
         void affiche();
         void removeCharachter(int);
-        void AddCharachter(FactoryCharacter);
-        void insertCharacter(FactoryCharacter, int);
+        void AddCharachter(Personnage);
         bool isEmpty();
 
 

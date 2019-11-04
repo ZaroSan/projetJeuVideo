@@ -1,7 +1,7 @@
 #include "Wizard.h"
 
 
-Wizard::Wizard()
+Wizard::Wizard():Personnage()
 {
     //ctor
     this->lifePoint=100;

@@ -13,9 +13,6 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
-					<Add directory="include" />
-					<Add directory="src/md_Item" />
-					<Add directory="C:/Program Files (x86)/CodeBlocks/SFML-2.5.1/include" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-graphics-d" />
@@ -75,10 +72,11 @@
 		<Unit filename="src/Game.cpp" />
 		<Unit filename="src/Menu.cpp" />
 		<Unit filename="src/Team.cpp" />
-		<Unit filename="src/md_Attak/Attak.cpp" />
+		<Unit filename="src/md_Attak/Attack.cpp" />
 		<Unit filename="src/md_Character/Brawler.cpp" />
 		<Unit filename="src/md_Character/Healer.cpp" />
 		<Unit filename="src/md_Character/Mob.cpp" />
+		<Unit filename="src/md_Character/Personnage.cpp" />
 		<Unit filename="src/md_Character/Ranger.cpp" />
 		<Unit filename="src/md_Character/Wizard.cpp" />
 		<Unit filename="src/md_Factory/FactoryCharacter.cpp" />

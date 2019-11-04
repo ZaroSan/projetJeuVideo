@@ -3,7 +3,7 @@
 #include<iostream>
 #include<string>
 
-Brawler::Brawler()
+Brawler::Brawler():Personnage()
 {
     //ctor
     this->lifePoint=200;

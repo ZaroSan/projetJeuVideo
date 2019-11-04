@@ -14,13 +14,11 @@
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="include" />
-					<Add directory="src/md_Item" />
-					<Add directory="C:/Program Files (x86)/CodeBlocks/SFML-2.5.1/include" />
 				</Compiler>
 				<Linker>
-					<Add library="sfml-graphics-d" />
-					<Add library="sfml-window-d" />
-					<Add library="sfml-system-d" />
+					<Add library="libsfml-graphics" />
+					<Add library="libsfml-system" />
+					<Add library="libsfml-window" />
 					<Add directory="C:/Program Files (x86)/CodeBlocks/SFML-2.5.1/lib" />
 				</Linker>
 			</Target>
@@ -75,7 +73,7 @@
 		<Unit filename="src/Game.cpp" />
 		<Unit filename="src/Menu.cpp" />
 		<Unit filename="src/Team.cpp" />
-		<Unit filename="src/md_Attak/Attak.cpp" />
+		<Unit filename="src/md_Attak/Attack.cpp" />
 		<Unit filename="src/md_Character/Brawler.cpp" />
 		<Unit filename="src/md_Character/Healer.cpp" />
 		<Unit filename="src/md_Character/Mob.cpp" />

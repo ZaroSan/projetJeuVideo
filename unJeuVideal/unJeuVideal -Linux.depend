@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1572874087 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\main.cpp
+1572877567 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\main.cpp
 	<iostream>
 	"FactoryCharacter.h"
 	"Menu.h"
@@ -14,14 +14,14 @@
 	"Ranger.h"
 	"Healer.h"
 
-1572876032 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\personnage.h
+1572880710 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\personnage.h
 
-1572877401 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\wizard.h
+1572879337 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\wizard.h
 	"Personnage.h"
 	"string"
 	"sstream"
 
-1572877367 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\brawler.h
+1572880768 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\brawler.h
 	<Personnage.h>
 	<Attack.h>
 	"string"
@@ -30,12 +30,12 @@
 1572874087 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\attack.h
 	<string>
 
-1572877385 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\ranger.h
+1572879372 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\ranger.h
 	<Personnage.h>
 	"string"
 	"sstream"
 
-1572877374 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\healer.h
+1572879357 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\healer.h
 	<Personnage.h>
 	"string"
 	"sstream"
@@ -455,7 +455,7 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1572874087 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\team.h
+1572878987 c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\include\team.h
 	<string>
 	"FactoryCharacter.h"
 	<vector>
@@ -586,21 +586,21 @@
 	<SFML/Audio/Export.hpp>
 	<string>
 
-1572877511 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\brawler.cpp
+1572880374 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\brawler.cpp
 	"Brawler.h"
 	<iostream>
 	<string>
 
-1572874087 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\healer.cpp
+1572880363 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\healer.cpp
 	"Healer.h"
 
 1572874087 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\mob.cpp
 	"Mob.h"
 
-1572874087 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\ranger.cpp
+1572880355 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\ranger.cpp
 	"Ranger.h"
 
-1572874087 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\wizard.cpp
+1572880317 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_character\wizard.cpp
 	"Wizard.h"
 
 1572874087 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_factory\factorycharacter.cpp
@@ -630,6 +630,9 @@
 	<string>
 	<vector>
 
-1572877493 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_attak\attack.cpp
+1572878255 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\md_attak\attack.cpp
 	"Attack.h"
+	<iostream>
+	<string>
+	<stdlib.h>
 
