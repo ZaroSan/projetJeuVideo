@@ -1,5 +1,8 @@
 #include "Ranger.h"
 
+#include<iostream>
+#include<string>
+
 Ranger::Ranger():Personnage()
 {
     //ctor
@@ -23,4 +26,15 @@ Ranger::Ranger(const Ranger& other)
     this->magicalArmor=other.magicalArmor;
     this->physicalArmor=other.physicalArmor;
     this->power=other.power;
+}
+
+void Ranger::affiche()
+{
+    cout<< "---------------------------------------"<<endl;
+    cout<< "Nom: "<<this->name<<endl;
+    cout<< "PV: "<<this->getLifePoint()<<"/"<<this->getLifePointMax()<<endl;
+    cout<< "Attaque: "<<this->getStrength()<<endl;
+    cout<< "Defense: "<<this->getPhysicalArmor()<<endl;
+    cout<< "Vitesse: "<<this->getSpeed()<<endl;
+    cout<< "Attaque 1: "<<endl;
 }

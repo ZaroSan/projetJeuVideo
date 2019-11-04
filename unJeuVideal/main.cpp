@@ -24,6 +24,10 @@ int main()
     b=new Brawler();
     b->affiche();
 
+ /*   Healer *h=FactoryCharacter::Get()->createHealer();
+    h=new Healer();
+    cout<<"Healer \n"<<h->str();*/
+
 
 /*
     Menu menu;

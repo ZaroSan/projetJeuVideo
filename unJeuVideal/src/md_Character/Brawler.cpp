@@ -33,8 +33,8 @@ Brawler::Brawler(const Brawler& other)
 
 void Brawler::affiche()
 {
-    cout << "---------------------------------------"<<endl;
-    cout << "nom: "<<this->name<<endl;
+    cout<< "---------------------------------------"<<endl;
+    cout<< "Nom: "<<this->name<<endl;
     cout<< "PV: "<<this->getLifePoint()<<"/"<<this->getLifePointMax()<<endl;
     cout<< "Attaque: "<<this->getStrength()<<endl;
     cout<< "Defense: "<<this->getPhysicalArmor()<<endl;
