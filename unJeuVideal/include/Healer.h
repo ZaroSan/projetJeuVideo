@@ -29,7 +29,8 @@ class Healer : public Personnage
             return stri.str();
         };
 
-        static Personnage* __stdcall Create() {return new Healer();}
+        string sendAttack(Attack,Mob*);
+        string boostMagicalArmor(Personnage*);
 
     protected:
 

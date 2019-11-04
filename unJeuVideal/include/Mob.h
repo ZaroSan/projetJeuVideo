@@ -8,7 +8,7 @@ class Mob
         Mob();
         virtual ~Mob();
         Mob(const Mob& other);
-        Mob& operator=(const Mob& other);
+        //Mob& operator=(const Mob& other);
 
         void takeDamage(int damage);
 

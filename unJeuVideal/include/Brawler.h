@@ -34,7 +34,8 @@ class Brawler : public Personnage
             return stri.str();
         };
 
-        static Personnage* __stdcall Create() {return new Brawler();}
+        string sendAttack(Attack,Mob*);
+        string boostPhysicalArmor(Personnage*);
 
         void affiche();
 

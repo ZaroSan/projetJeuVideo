@@ -28,8 +28,7 @@ class Ranger : public Personnage
             stri <<"Life Points :"<<this->lifePoint<<"\nStrength :"<<this->strength<<"\nPower :"<<this->power<<"\nMagical Armor :"<<this->magicalArmor<<"\nPhysical Armor :"<<this->physicalArmor;
             return stri.str();
         };
-
-        static Personnage* __stdcall Create() {return new Ranger();}
+        string sendAttack(Attack,Mob*);
 
     protected:
 

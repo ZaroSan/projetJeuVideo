@@ -1,4 +1,4 @@
-/*
+
 #ifndef GAME_H
 #define GAME_H
 
@@ -14,7 +14,8 @@ class Game
 {
     public:
         Game();
-        int play(FactoryCharacter* , FactoryCharacter*);
+        round();
+        void getCharacter();
 
 
 };
@@ -29,4 +30,4 @@ const string EXTENSION_IMAGE=".png";
 
 
 #endif // GAME_H
-*/
+

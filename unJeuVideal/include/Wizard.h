@@ -27,6 +27,7 @@ class Wizard:public Personnage
             stri <<"Life Points :"<<this->lifePoint<<"\nStrength :"<<this->strength<<"\nPower :"<<this->power<<"\nMagical Armor :"<<this->magicalArmor<<"\nPhysical Armor :"<<this->physicalArmor;
             return stri.str();
         };
+        string sendAttack(Attack,Mob*);
     protected:
 
     private:

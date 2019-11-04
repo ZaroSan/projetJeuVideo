@@ -1,6 +1,6 @@
 #include "Event.h"
 #include "iostream"
-
+#include "stdlib.h"
 using namespace std;
 
 Event::Event()
@@ -29,7 +29,6 @@ void Event::enemyEncounter(FactoryCharacter &FactoryCharacter, vector<Mob> & mob
 {
     bool playerTurn = false;
 	int choice = 0;
-
     int coinToss = rand() %2 +1;
 
     if(coinToss == 1)
