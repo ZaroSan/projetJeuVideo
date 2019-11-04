@@ -34,7 +34,7 @@ class Brawler : public Personnage
             return stri.str();
         };
 
-        string sendAttack(Attack,Mob*);
+        //string sendAttack(Attack,Mob*);
         string boostPhysicalArmor(Personnage*);
 
         void affiche();

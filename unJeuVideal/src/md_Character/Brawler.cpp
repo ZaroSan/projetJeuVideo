@@ -40,13 +40,13 @@ void Brawler::affiche()
     cout<< "Defense: "<<this->getPhysicalArmor()<<endl;
     cout<< "Vitesse: "<<this->getSpeed()<<endl;
     cout<< "Attaque 1: "<<endl;
-    this->attaque[0].toString();
+    /*this->attaque[0].toString();
     cout<< "Attaque 2: "<<endl;
     this->attaque[1].toString();
     cout<< "Attaque 3: "<<endl;
     this->attaque[2].toString();
     cout<< "Attaque 4: "<<endl;
-    this->attaque[3].toString();
+    this->attaque[3].toString();*/
 
 }
 

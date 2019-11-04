@@ -1,6 +1,11 @@
-#include "Attak.h"
+#include "Attack.h"
 
-Attak::Attak()
+Attack::Attack()
 {
     //ctor
+}
+
+Attack::~Attack()
+{
+    //dtor
 }

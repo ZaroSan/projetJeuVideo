@@ -11,7 +11,7 @@ using namespace std;
 
 int main()
 {
-/*
+
     Wizard *w=FactoryCharacter::Get()->createWizard();
     w=new Wizard();
     cout <<"Wizard \n"<<w->str();
@@ -25,7 +25,7 @@ int main()
     b->affiche();
 
 
-*/
+
     Menu menu;
     menu.choix();
 
