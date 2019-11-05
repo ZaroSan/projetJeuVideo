@@ -1,6 +1,9 @@
 #include "Mob.h"
 
-using namespace std;;
+#include<iostream>
+#include<string>
+
+using namespace std;
 
 Mob::Mob()
 {
@@ -24,16 +27,15 @@ Mob::Mob(const Mob& other)
     this->physicalArmor=other.physicalArmor;
     this->power=other.power;
 }
-/*
-std::string Mob::getStats()const
+
+void Mob::getStats()
 {
-	return
-		"Hp: " + std::to_string(this->lifePoint) + "\n" +
-		"Strength: " + std::to_string(this->strength) + "\n" +
-		"Power: " + std::to_string(this->power) + "\n" +
-		"Magical Armor: " + std::to_string(this->magicalArmor) + "\n" +
-		"Physical Armor: " + std::to_string(this->physicalArmor) + "\n";
-}*/
+    cout<< "---------------------------------------"<<endl;
+    cout<< "PV: "<<this->getLifePoint()<<"/"<<this->getLifePointMax()<<endl;
+    cout<< "Attaque: "<<this->getStrength()<<endl;
+    cout<< "Defense: "<<this->getPhysicalArmor()<<endl;
+    cout<< "Vitesse: "<<this->getSpeed()<<endl;
+}
 
 void Mob::takeDamage(int damage)
 {
@@ -44,4 +46,71 @@ void Mob::takeDamage(int damage)
 		this->lifePoint = 0;
 	}
 }
+
+int Mob::getStrength()const
+{
+    return strength;
+}
+
+int Mob::getPower()const
+{
+    return power;
+}
+
+int Mob::getMagicalArmor()const
+{
+    return magicalArmor;
+}
+
+int Mob::getPhysicalArmor()const
+{
+    return physicalArmor;
+}
+
+int Mob::getLifePoint()const
+{
+    return lifePoint;
+}
+
+int Mob::getLifePointMax()const
+{
+    return lifePointFix;
+}
+
+int Mob::getSpeed()const
+{
+    return speed;
+}
+
+void Mob::setStrength(int strength)
+{
+    this->strength = strength;
+}
+
+void Mob::setPower(int power)
+{
+    this->power = power;
+}
+
+void Mob::setMagicalArmor(int magicalArmor)
+{
+    this->magicalArmor = magicalArmor;
+}
+
+void Mob::setPhysicalArmor(int physicalArmor)
+{
+    this->physicalArmor = physicalArmor;
+}
+
+void Mob::setLifePoint(int lifePoint)
+{
+    this->lifePoint = lifePoint;
+}
+
+void Mob::setSpeed(int speed)
+{
+    this->speed = speed;
+}
+
+
 

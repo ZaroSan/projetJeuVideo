@@ -691,18 +691,18 @@
 	<string>
 	<stdlib.h>
 
-1572898659 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\game.cpp
+1572975262 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\game.cpp
 	"Game.h"
+	"Team.h"
 	<iostream>
 	<string>
 	<stdio.h>
 
-1572898659 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\game.h
+1572975262 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\game.h
 	<SFML/Graphics.hpp>
-	<SFML/Audio.hpp>
-	"FactoryCharacter.h"
+	"Team.h"
 
-1572898659 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\factorycharacter.h
+1572975262 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\factorycharacter.h
 	"vector"
 	"Personnage.h"
 	"Wizard.h"
@@ -710,30 +710,31 @@
 	"Ranger.h"
 	"Healer.h"
 
-1572898659 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\personnage.h
+1572975570 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\personnage.h
+	"Attack.h"
 
-1572902615 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\wizard.h
+1572975571 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\wizard.h
 	<Personnage.h>
 	<Attack.h>
 	"string"
 	"sstream"
 
-1572898659 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\brawler.h
+1572975823 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\brawler.h
 	<Personnage.h>
 	<Attack.h>
 	"string"
 	"sstream"
 
-1572898659 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\attack.h
+1572975262 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\attack.h
 	<string>
 
-1572902614 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\ranger.h
+1572975571 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\ranger.h
 	<Personnage.h>
 	<Attack.h>
 	"string"
 	"sstream"
 
-1572902615 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\healer.h
+1572975427 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\healer.h
 	<Personnage.h>
 	<Attack.h>
 	"string"
@@ -745,67 +746,72 @@
 	<string>
 	<stdlib.h>
 
-1572900266 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\md_character\brawler.cpp
+1572975262 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\md_character\brawler.cpp
 	"Brawler.h"
 	<iostream>
 	<string>
 
-1572901781 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\md_character\healer.cpp
+1572975263 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\md_character\healer.cpp
 	"Healer.h"
 	<iostream>
 	<string>
 
-1572901781 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\md_character\ranger.cpp
+1572975263 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\md_character\ranger.cpp
 	"Ranger.h"
 	<iostream>
 	<string>
 
-1572901782 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\md_character\wizard.cpp
+1572975263 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\md_character\wizard.cpp
 	"Wizard.h"
 	<iostream>
 	<string>
 
-1572898659 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\md_factory\factorycharacter.cpp
+1572975263 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\md_factory\factorycharacter.cpp
 	"FactoryCharacter.h"
 
-1572903109 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\main.cpp
+1572975262 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\main.cpp
 	<iostream>
 	"FactoryCharacter.h"
 	"Menu.h"
 	"Attack.h"
+	"Game.h"
+	<string>
+	<cstdlib>
 	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
 
-1572898659 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\menu.h
+1572975262 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\menu.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
 	"Team.h"
 
-1572898659 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\team.h
+1572975262 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\team.h
 	<string>
-	"FactoryCharacter.h"
+	"Personnage.h"
 	<vector>
 
-1572898659 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\md_item\armure.cpp
+1572975263 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\md_item\armure.cpp
 	"Armure.h"
 
-1572898659 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\armure.h
+1572975262 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\armure.h
 	"Item.h"
 
-1572898659 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\item.h
+1572975262 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\item.h
 
-1572898659 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\md_item\item.cpp
+1572975263 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\md_item\item.cpp
 	"Item.h"
 
-1572898659 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\menu.cpp
+1572975262 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\menu.cpp
 	"Menu.h"
 	"Game.h"
 	<iostream>
 	<string>
 
-1572898659 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\team.cpp
+1572975262 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\team.cpp
 	"Team.h"
-	"FactoryCharacter.h"
+	"Personnage.h"
 	<iostream>
 	<string>
 	<vector>
@@ -813,7 +819,9 @@
 1572898659 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\md_character\mob.cpp
 	"Mob.h"
 
-1572898659 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\mob.h
+1572977066 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\mob.h
+	"string"
+	"sstream"
 
 1572874087 source:c:\users\moi\documents\gitc++\projetjeuvideo\unjeuvideal\src\game.cpp
 	"Game.h"
@@ -1017,22 +1025,22 @@
 	<iostream>
 	<string>
 
-1572898659 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\event.cpp
+1572975262 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\event.cpp
 	"Event.h"
 	"iostream"
 	"stdlib.h"
 
-1572898659 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\event.h
+1572975262 d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\include\event.h
 	"FactoryCharacter.h"
 	"Mob.h"
 
-1572898659 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\md_attak\attack.cpp
+1572975262 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\md_attak\attack.cpp
 	"Attack.h"
 	<iostream>
 	<string>
 	<stdlib.h>
 
-1572898659 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\md_character\personnage.cpp
+1572975263 source:d:\contenu pc transfert\cle usb\wchevalier\développement jeux vidéo\projet\projetjeuvideo\unjeuvideal\src\md_character\personnage.cpp
 	"Personnage.h"
 	<iostream>
 	<string>

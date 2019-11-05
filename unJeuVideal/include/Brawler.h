@@ -8,8 +8,24 @@
 #include "sstream"
 using std::string;
 using std::stringstream;
+
 class Brawler : public Personnage
 {
+     private:
+        int lifePoint;
+        int lifePointFix;
+        int power;
+        int strength;
+        int magicalArmor;
+        int physicalArmor;
+        int speed;
+
+        string pathFront;
+        string pathBack;
+
+        string name;
+        Attack attaque[4];
+
     public:
         Brawler();
         virtual ~Brawler();
@@ -38,25 +54,6 @@ class Brawler : public Personnage
         string boostPhysicalArmor(Personnage*);
 
         void affiche();
-
-
-
-    private:
-        int lifePoint;
-        int lifePointFix;
-        int power;
-        int strength;
-        int magicalArmor;
-        int physicalArmor;
-        int speed;
-
-        string pathFront;
-        string pathBack;
-
-        string name;
-        Attack attaque[4];
-
-
 
 };
 

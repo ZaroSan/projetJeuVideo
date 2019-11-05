@@ -6,8 +6,20 @@
 #include "sstream"
 using std::string;
 using std::stringstream;
+
 class Wizard:public Personnage
 {
+    private:
+        int lifePoint;
+        int lifePointFix;
+        int power;
+        int strength;
+        int magicalArmor;
+        int physicalArmor;
+        int speed;
+
+        string name;
+
     public:
         Wizard();
         virtual ~Wizard();
@@ -34,19 +46,6 @@ class Wizard:public Personnage
         //string sendAttack(Attack,Mob*);
 
         void affiche();
-
-    protected:
-
-    private:
-        int lifePoint;
-        int lifePointFix;
-        int power;
-        int strength;
-        int magicalArmor;
-        int physicalArmor;
-        int speed;
-
-        string name;
 };
 
 #endif // WIZARD_H
