@@ -2,7 +2,7 @@
 #define TEAM_H
 
 #include <string>
-#include "FactoryCharacter.h"
+#include "Personnage.h"
 #include <vector>
 
 using namespace std;
@@ -16,12 +16,14 @@ class Team
 
     public:
         Team();
+        Team(Personnage, Personnage);
 
-        vector<Personnage> getListCharacter();
+        vector<Personnage> getListPersonnage();
         void affiche();
-        void removeCharachter(int);
-        void AddCharachter(Personnage);
+        void removePersonnage(int);
+        void AddPersonnage(Personnage);
         bool isEmpty();
+        void insertPersonnage(Personnage, int);
 
 
 };

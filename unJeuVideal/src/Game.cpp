@@ -1,5 +1,5 @@
-/*
 #include "Game.h"
+#include "Team.h"
 
 #include <iostream>
 #include <string>
@@ -13,16 +13,16 @@ Game::Game()
     //ctor
 }
 
-int Game::play(FactoryCharacter* character1, FactoryCharacter* character2)
+int Game::play(Team* team1, Team* team2)
 {
     int mouseX, mouseY;
     int nbTour=1;
     int randAtt;
-    int randCharacter;
+    int randPers;
     bool riposter = false;
 
-    FactoryCharacter J1;   //Les 2 persos en combat
-    FactoryCharacter J2;
+    Personnage J1;   //Les 2 persos en combat
+    Personnage J2;
 
    Sprite lanceur;
    Sprite ennemi;
@@ -33,4 +33,4 @@ int Game::play(FactoryCharacter* character1, FactoryCharacter* character2)
 
 
 }
-*/
+

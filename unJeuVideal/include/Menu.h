@@ -15,15 +15,16 @@ class Menu:RenderWindow
     public:
         Menu();
         int choix();
-        /*
-        bool findCharacter(Team, FactoryCharacter);
-        vector<FactoryCharacter> initialisation();
- */
-    protected:
 
-    private:
+        vector<Personnage> initialisation();
+        bool findPersonnage(Team, Personnage);
+
+
 
 };
+
+const string _BACK="_back";
+const string _ICONE="icone_";
 
 #endif // MENU_H
 

@@ -1,6 +1,8 @@
 #ifndef PERSONNAGE_H
 #define PERSONNAGE_H
 
+#include "Attack.h"
+
 
 class Personnage
 {
@@ -13,11 +15,16 @@ public:
     virtual int getMagicalArmor() const;
     virtual int getPhysicalArmor() const;
     virtual int getLifePoint() const;
+    virtual string getName()const;
     virtual void setStrength(int);
     virtual void setPower(int);
     virtual void setMagicalArmor(int);
     virtual void setPhysicalArmor(int);
     virtual void setLifePoint(int);
+
+
+
+
 
 private:
     int strength;
@@ -25,6 +32,10 @@ private:
     int magicalArmor;
     int physicalArmor;
     int lifePoint;
+
+    string name;
+
+  //  Attack attack[4];
 
 
 

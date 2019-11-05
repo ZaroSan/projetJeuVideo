@@ -3,10 +3,15 @@
 
 #include "Menu.h"
 #include "Attack.h"
+#include "Game.h"
 
 
+#include <string>
+#include <cstdlib>
 
 #include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
+#include <SFML/Window.hpp>
 using namespace std;
 
 int main()
@@ -24,11 +29,15 @@ int main()
     b=new Brawler();
     b->affiche();
 
+    Healer *h=FactoryCharacter::Get()->createHealer();
+    h=new Healer();
+    cout<<"Healer \n"<<h->str();
 
-/*
+
+    Game ultimate_fantasy;
     Menu menu;
     menu.choix();
-*/
+
 
 
 

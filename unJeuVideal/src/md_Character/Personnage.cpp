@@ -44,6 +44,11 @@ int Personnage::getLifePoint()const
     return lifePoint;
 }
 
+string Personnage::getName()const
+{
+    return name;
+}
+
 void Personnage::setStrength(int strength)
 {
     this->strength = strength;
@@ -68,3 +73,5 @@ void Personnage::setLifePoint(int lifePoint)
 {
     this->lifePoint = lifePoint;
 }
+
+

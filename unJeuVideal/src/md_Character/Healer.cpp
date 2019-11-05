@@ -1,5 +1,8 @@
 #include "Healer.h"
 
+#include<iostream>
+#include<string>
+
 Healer::Healer():Personnage()
 {
     //ctor
@@ -23,4 +26,15 @@ Healer::Healer(const Healer& other)
     this->magicalArmor=other.magicalArmor;
     this->physicalArmor=other.physicalArmor;
     this->power=other.power;
+}
+
+void Healer::affiche()
+{
+    cout<< "---------------------------------------"<<endl;
+    cout<< "Nom: "<<this->name<<endl;
+    cout<< "PV: "<<this->getLifePoint()<<"/"<<this->getLifePointMax()<<endl;
+    cout<< "Attaque: "<<this->getStrength()<<endl;
+    cout<< "Defense: "<<this->getPhysicalArmor()<<endl;
+    cout<< "Vitesse: "<<this->getSpeed()<<endl;
+    cout<< "Attaque 1: "<<endl;
 }
