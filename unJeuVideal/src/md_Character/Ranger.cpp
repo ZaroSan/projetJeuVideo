@@ -1,4 +1,5 @@
-#include "Ranger.h"
+
+/*#include "Ranger.h"
 
 #include<iostream>
 #include<string>
@@ -38,3 +39,4 @@ void Ranger::affiche()
     cout<< "Vitesse: "<<this->getSpeed()<<endl;
     cout<< "Attaque 1: "<<endl;
 }
+*/

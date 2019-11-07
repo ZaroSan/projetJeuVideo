@@ -20,6 +20,13 @@ Attack::Attack(string name, int power, int mana, int manaFix)
     this->manaFix=mana;
 }
 
+Attack::Attack(string name)
+{
+    this->name=name;
+    this->power=20;
+    this->mana=10;
+}
+
 Attack::~Attack()
 {
 

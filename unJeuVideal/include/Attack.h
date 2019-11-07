@@ -18,6 +18,7 @@ class Attack
     public:
         Attack();
         Attack(string, int, int, int);
+        Attack(string);
         ~Attack();
 
         string getName();

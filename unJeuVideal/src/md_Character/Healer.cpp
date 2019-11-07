@@ -1,4 +1,5 @@
-#include "Healer.h"
+
+/*#include "Healer.h"
 
 #include<iostream>
 #include<string>
@@ -38,3 +39,4 @@ void Healer::affiche()
     cout<< "Vitesse: "<<this->getSpeed()<<endl;
     cout<< "Attaque 1: "<<endl;
 }
+*/

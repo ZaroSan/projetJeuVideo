@@ -1,8 +1,9 @@
 #include <iostream>
 #include "FactoryCharacter.h"
+#include "Personnage.h"
+
 
 #include "Menu.h"
-#include "Attack.h"
 #include "Game.h"
 
 
@@ -16,7 +17,7 @@ using namespace std;
 
 int main()
 {
-
+/*
     Wizard *w=FactoryCharacter::Get()->createWizard();
     w=new Wizard();
     cout <<"Wizard \n"<<w->str();
@@ -33,7 +34,7 @@ int main()
     h=new Healer();
     cout<<"Healer \n"<<h->str();
 
-
+*/
     Game ultimate_fantasy;
     Menu menu;
     menu.choix();

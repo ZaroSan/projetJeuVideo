@@ -1,3 +1,4 @@
+/*
 #ifndef RANGER_H
 #define RANGER_H
 
@@ -10,17 +11,6 @@ using std::stringstream;
 
 class Ranger : public Personnage
 {
-    private:
-        int lifePoint;
-        int lifePointFix;
-        int power;
-        int strength;
-        int magicalArmor;
-        int physicalArmor;
-        int speed;
-
-        string name;
-
     public:
         Ranger();
         virtual ~Ranger();
@@ -47,6 +37,20 @@ class Ranger : public Personnage
         //string sendAttack(Attack,Mob*);
 
         void affiche();
+
+    protected:
+
+    private:
+        int lifePoint;
+        int lifePointFix;
+        int power;
+        int strength;
+        int magicalArmor;
+        int physicalArmor;
+        int speed;
+
+        string name;
 };
 
 #endif // RANGER_H
+*/

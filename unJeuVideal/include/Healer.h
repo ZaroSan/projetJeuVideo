@@ -1,3 +1,4 @@
+/*
 #ifndef HEARLER_H
 #define HEARLER_H
 
@@ -10,17 +11,6 @@ using std::stringstream;
 
 class Healer : public Personnage
 {
-    private:
-        int lifePoint;
-        int lifePointFix;
-        int power;
-        int strength;
-        int magicalArmor;
-        int physicalArmor;
-        int speed;
-
-        string name;
-
     public:
         Healer();
         virtual ~Healer();
@@ -49,6 +39,22 @@ class Healer : public Personnage
         string boostMagicalArmor(Personnage*);
 
         void affiche();
+
+    protected:
+
+    private:
+        int lifePoint;
+        int lifePointFix;
+        int power;
+        int strength;
+        int magicalArmor;
+        int physicalArmor;
+        int speed;
+
+        string name;
+
+
 };
 
 #endif // HEARLER_H
+*/

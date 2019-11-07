@@ -1,3 +1,4 @@
+/*
 #ifndef BRAWLER_H
 #define BRAWLER_H
 
@@ -8,26 +9,10 @@
 #include "sstream"
 using std::string;
 using std::stringstream;
-
 class Brawler : public Personnage
 {
-     private:
-        int lifePoint;
-        int lifePointFix;
-        int power;
-        int strength;
-        int magicalArmor;
-        int physicalArmor;
-        int speed;
-
-        string pathFront;
-        string pathBack;
-
-        string name;
-        Attack attaque[4];
-
     public:
-        Brawler();
+       // Brawler();
         virtual ~Brawler();
         Brawler(const Brawler& other);
         int getStrength() const{return this->strength;}
@@ -43,7 +28,7 @@ class Brawler : public Personnage
         void setPhysicalArmor(int i){this->physicalArmor=i;}
         void setLifePoint(int i){this->lifePoint=i;}
         void setSpeed(int i){this->speed=i;}
-
+        string getName()const{return this->name;}
         string str(){
             stringstream stri;
             stri <<"Life Points :"<<this->lifePoint<<"\nStrength :"<<this->strength<<"\nPower :"<<this->power<<"\nMagical Armor :"<<this->magicalArmor<<"\nPhysical Armor :"<<this->physicalArmor;
@@ -55,6 +40,29 @@ class Brawler : public Personnage
 
         void affiche();
 
+        Brawler(string);
+
+
+
+    private:
+        int lifePoint;
+        int lifePointFix;
+        int power;
+        int strength;
+        int magicalArmor;
+        int physicalArmor;
+        int speed;
+
+
+        string pathFront;
+        string pathBack;
+
+        string name;
+        Attack attaque[4];
+
+
+
 };
 
 #endif // BRAWLER_H
+*/

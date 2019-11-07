@@ -1,4 +1,5 @@
-#include "Wizard.h"
+
+/*#include "Wizard.h"
 
 #include<iostream>
 #include<string>
@@ -36,4 +37,4 @@ void Wizard::affiche()
     cout<< "Vitesse: "<<this->getSpeed()<<endl;
     cout<< "Attaque 1: "<<endl;
 }
-
+*/

@@ -1,8 +1,10 @@
 #include "Menu.h"
 #include "Game.h"
+#include "Brawler.h"
 
 #include <iostream>
 #include <string>
+
 
 
 using namespace sf;
@@ -22,8 +24,8 @@ int Menu::choix()
 
     string gameMode="Menu";
 
-    vector<Personnage>allPersonnage;
-    allPersonnage = initialisation();
+    vector<Personnage> allPersonnage;
+    allPersonnage=initialisation();
 
     Team team1;
     Team team2;
@@ -46,7 +48,7 @@ int Menu::choix()
 
     for(unsigned int i=0; i<(allPersonnage.size()); i++)
     {
-        if(!Icon[i].loadFromFile(PATH_IMAGE+ICON+allPersonnage[i].getName()+EXTENSION_IMAGE))
+        if(!Icon[i].loadFromFile(PATH_IMAGE+_ICON+allPersonnage[i].getName()+EXTENSION_IMAGE))
         {
             return -1;
         }
@@ -62,6 +64,7 @@ int Menu::choix()
 
 
     Font police;
+
 
     //création de la fenetre
     create(VideoMode(1200,700),"Ultimate Fantasy");
@@ -239,13 +242,10 @@ int Menu::choix()
         }
 
 
-
         for(unsigned int j=0;j<(allPersonnage.size());j++)
         {
         draw(Ipers[j]);
         }
-
-
 
         display();
 
@@ -270,6 +270,41 @@ return false;
 vector<Personnage> Menu::initialisation()
 {
     vector<Personnage>liste;
+
+    Attack a("a", 100, 50, 30);
+    Attack b("b", 100, 50, 30);
+    Attack c("c", 100, 50, 30);
+    Attack d("d", 100, 50, 30);
+
+    Attack e("a", 100, 50, 30);
+    Attack f("b", 100, 50, 30);
+    Attack g("c", 100, 50, 30);
+    Attack h("d", 100, 50, 30);
+
+    Attack attackBrawl[4]={a, b, c, d};
+    Attack attackRanger[4]={e, f, g, h};
+
+
+    Personnage brawler("Brawler",10,10,10,10,10,attackBrawl);
+    Personnage ranger("Ranger",10,10,10,10,10,attackBrawl);
+    //Brawler.setName("Brawler");
+
+    //Personnage* p1= new Brawler();
+
+    //cout <<papa.str();
+  //  Personnage *bal=new Brawler("Brawler");
+    //Personnage Brawler("Brawler");
+//    papa.setName("Brawler");
+
+	//liste.push_back(*bal);
+	liste.push_back(brawler);
+	liste.push_back(ranger);
+
+
+
+    return liste;
+
+
 
 
 }

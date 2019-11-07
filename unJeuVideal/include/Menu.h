@@ -24,7 +24,7 @@ class Menu:RenderWindow
 };
 
 const string _BACK="_back";
-const string _ICONE="icone_";
+const string _ICON="icon_";
 
 #endif // MENU_H
 

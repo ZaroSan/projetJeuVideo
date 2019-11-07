@@ -17,6 +17,7 @@ class FactoryCharacter
             static FactoryCharacter instance;
             return &instance;
         }
+        /*
         Healer *createHealer(){
             Healer h;
             m_FactoryHistory.push_back(&h);
@@ -37,7 +38,7 @@ class FactoryCharacter
             m_FactoryHistory.push_back(&b);
             return &b;
         }
-
+*/
         virtual ~FactoryCharacter();
         FactoryCharacter(const FactoryCharacter& other);
         FactoryCharacter& operator=(const FactoryCharacter& other);
