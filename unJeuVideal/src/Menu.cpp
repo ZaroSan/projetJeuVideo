@@ -273,25 +273,25 @@ vector<Personnage> Menu::initialisation()
 {
     vector<Personnage>liste;
 
-    Attack a("a", 100, 50, 30);
-    Attack b("b", 100, 50, 30);
-    Attack c("c", 100, 50, 30);
-    Attack d("d", 100, 50, 30);
+    Attack a("Fury Charge", 100, 50, 30);
+    Attack b("Focus Blast", 100, 50, 30);
+    Attack c("Full Counter", 100, 50, 30);
+    Attack d("Outrage", 100, 50, 30);
 
-    Attack e("a", 100, 50, 30);
-    Attack f("b", 100, 50, 30);
-    Attack g("c", 100, 50, 30);
-    Attack h("d", 100, 50, 30);
+    Attack e("Perfect Shot", 100, 50, 30);
+    Attack f("Multiple Shots", 100, 50, 30);
+    Attack g("Sharp Dagger", 100, 50, 30);
+    Attack h("Fire Arrow", 100, 50, 30);
 
-    Attack i("i", 100, 50, 30);
-    Attack j("j", 100, 50, 30);
-    Attack k("k", 100, 50, 30);
-    Attack l("l", 100, 50, 30);
+    Attack i("Group Care", 100, 50, 30);
+    Attack j("Heal", 100, 50, 30);
+    Attack k("Resurrection", 100, 50, 30);
+    Attack l("Panacea", 100, 50, 30);
 
-    Attack m("m", 100, 50, 30);
-    Attack n("n", 100, 50, 30);
-    Attack o("o", 100, 50, 30);
-    Attack p("p", 100, 50, 30);
+    Attack m("Blizzard", 100, 50, 30);
+    Attack n("Lightning Impact", 100, 50, 30);
+    Attack o("Heat Wave", 100, 50, 30);
+    Attack p("Explosion", 100, 50, 30);
 
     Attack attackBrawl[4]={a, b, c, d};
     Attack attackRanger[4]={e, f, g, h};

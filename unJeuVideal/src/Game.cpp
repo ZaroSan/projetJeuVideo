@@ -29,19 +29,19 @@ int Game::play(Team* team1, Team* team2)
     Text nomLanceur, nomEnnemi, nomAttaque1,nomAttaque2,nomAttaque3,nomAttaque4,pvLanceur,pvEnnemi;
 
     Texture fond;
-   Sprite lanceur;
-   Sprite ennemi;
+    Sprite lanceur;
+    Sprite ennemi;
 
-   Sprite iPers[2];
-   RectangleShape PersonnageSwitch[2];
+    Sprite iPers[2];
+    RectangleShape PersonnageSwitch[2];
 
-   Texture textIcone[2];
+    Texture textIcone[2];
 
-   Image icone;
+    Image icone;
 
-   RectangleShape fond_ecran;
+    RectangleShape fond_ecran;
 
-   RectangleShape barreVieLanceur(Vector2f(200,20));
+    RectangleShape barreVieLanceur(Vector2f(200,20));
     RectangleShape barreVieEnnemi(Vector2f(200,20));
 
     RectangleShape barreVieLanceurBord(Vector2f(204,24));
