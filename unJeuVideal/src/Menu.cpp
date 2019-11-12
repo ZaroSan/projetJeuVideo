@@ -201,6 +201,8 @@ int Menu::choix()
 
 
 
+
+
                 }
                 break;
                 default:
@@ -281,24 +283,31 @@ vector<Personnage> Menu::initialisation()
     Attack g("c", 100, 50, 30);
     Attack h("d", 100, 50, 30);
 
+    Attack i("i", 100, 50, 30);
+    Attack j("j", 100, 50, 30);
+    Attack k("k", 100, 50, 30);
+    Attack l("l", 100, 50, 30);
+
+    Attack m("m", 100, 50, 30);
+    Attack n("n", 100, 50, 30);
+    Attack o("o", 100, 50, 30);
+    Attack p("p", 100, 50, 30);
+
     Attack attackBrawl[4]={a, b, c, d};
     Attack attackRanger[4]={e, f, g, h};
+    Attack attackHealer[4]={i, j, k, l};
+    Attack attackWizard[4]={m, n, o, p};
 
 
     Personnage brawler("Brawler",10,10,10,10,10,attackBrawl);
     Personnage ranger("Ranger",10,10,10,10,10,attackBrawl);
-    //Brawler.setName("Brawler");
+    Personnage healer("Healer",10,10,10,10,10,attackHealer);
+    Personnage wizard("Wizard",10,10,10,10,10,attackWizard);
 
-    //Personnage* p1= new Brawler();
-
-    //cout <<papa.str();
-  //  Personnage *bal=new Brawler("Brawler");
-    //Personnage Brawler("Brawler");
-//    papa.setName("Brawler");
-
-	//liste.push_back(*bal);
 	liste.push_back(brawler);
 	liste.push_back(ranger);
+	liste.push_back(healer);
+	liste.push_back(wizard);
 
 
 

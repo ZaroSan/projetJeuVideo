@@ -881,18 +881,18 @@
 	<string>
 	<vector>
 
-1572942876 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\game.cpp
+1573549892 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\game.cpp
 	"Game.h"
 	"Team.h"
 	<iostream>
 	<string>
 	<stdio.h>
 
-1572943869 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\main.cpp
+1573123468 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\main.cpp
 	<iostream>
 	"FactoryCharacter.h"
+	"Personnage.h"
 	"Menu.h"
-	"Attack.h"
 	"Game.h"
 	<string>
 	<cstdlib>
@@ -900,17 +900,17 @@
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
 
-1572896126 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\event.cpp
+1573123165 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\event.cpp
 	"Event.h"
 	"iostream"
 	"stdlib.h"
 
-1572906494 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\md_character\brawler.cpp
+1573123665 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\md_character\brawler.cpp
 	"Brawler.h"
 	<iostream>
 	<string>
 
-1572896126 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\factorycharacter.h
+1573123536 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\factorycharacter.h
 	"vector"
 	"Personnage.h"
 	"Wizard.h"
@@ -918,110 +918,115 @@
 	"Ranger.h"
 	"Healer.h"
 
-1572942314 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\personnage.h
+1573546954 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\personnage.h
 	"Attack.h"
+	<string>
+	"sstream"
 
-1572906494 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\wizard.h
+1573123639 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\wizard.h
 	<Personnage.h>
 	<Attack.h>
 	"string"
 	"sstream"
 
-1572896126 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\brawler.h
+1573123518 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\brawler.h
 	<Personnage.h>
 	<Attack.h>
 	"string"
 	"sstream"
 
-1572896126 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\attack.h
+1573123794 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\attack.h
 	<string>
 
-1572906494 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\ranger.h
+1573123619 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\ranger.h
 	<Personnage.h>
 	<Attack.h>
 	"string"
 	"sstream"
 
-1572906494 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\healer.h
+1573123574 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\healer.h
 	<Personnage.h>
 	<Attack.h>
 	"string"
 	"sstream"
 
-1572942505 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\menu.h
+1573123937 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\menu.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
 	"Team.h"
 
-1572942090 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\team.h
+1573123165 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\team.h
 	<string>
 	"Personnage.h"
 	<vector>
 
-1572896126 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\event.h
+1573123165 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\event.h
 	"FactoryCharacter.h"
 	"Mob.h"
 
-1572896126 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\mob.h
+1573123165 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\mob.h
+	"string"
+	"sstream"
 
-1572942820 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\game.h
+1573123165 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\game.h
 	<SFML/Graphics.hpp>
 	"Team.h"
 
-1572906494 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\md_character\healer.cpp
-	"Healer.h"
+1573123675 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\md_character\healer.cpp
 	<iostream>
 	<string>
 
-1572896126 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\md_character\mob.cpp
+1573123165 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\md_character\mob.cpp
 	"Mob.h"
-
-1572906494 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\md_character\ranger.cpp
-	"Ranger.h"
 	<iostream>
 	<string>
 
-1572896670 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\md_attak\attack.cpp
+1573123700 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\md_character\ranger.cpp
+	<iostream>
+	<string>
+
+1573546471 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\md_attak\attack.cpp
 	"Attack.h"
 	<iostream>
 	<string>
 	<stdlib.h>
 
-1572906494 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\md_character\wizard.cpp
-	"Wizard.h"
+1573123713 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\md_character\wizard.cpp
 	<iostream>
 	<string>
 
-1572896126 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\md_factory\factorycharacter.cpp
+1573123165 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\md_factory\factorycharacter.cpp
 	"FactoryCharacter.h"
 
-1572896126 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\md_item\armure.cpp
+1573123165 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\md_item\armure.cpp
 	"Armure.h"
 
-1572896126 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\armure.h
+1573123165 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\armure.h
 	"Item.h"
 
-1572896126 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\item.h
+1573123165 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\item.h
 
-1572896126 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\md_item\item.cpp
+1573123165 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\md_item\item.cpp
 	"Item.h"
 
-1572945237 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\menu.cpp
+1573303532 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\menu.cpp
 	"Menu.h"
 	"Game.h"
+	"Brawler.h"
 	<iostream>
 	<string>
 
-1572942390 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\team.cpp
+1573123165 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\team.cpp
 	"Team.h"
 	"Personnage.h"
 	<iostream>
 	<string>
 	<vector>
 
-1572942321 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\md_character\personnage.cpp
+1573549796 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\md_character\personnage.cpp
 	"Personnage.h"
+	"Game.h"
 	<iostream>
 	<string>
 

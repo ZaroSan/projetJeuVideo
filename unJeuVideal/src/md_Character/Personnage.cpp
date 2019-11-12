@@ -81,68 +81,6 @@ Personnage::~Personnage()
     }
 }
 
-
-/*
-int Personnage::getStrength()const
-{
-    return strength;
-}
-
-int Personnage::getPower()const
-{
-    return power;
-}
-
-int Personnage::getMagicalArmor()const
-{
-    return magicalArmor;
-}
-
-int Personnage::getPhysicalArmor()const
-{
-    return physicalArmor;
-}
-
-int Personnage::getLifePoint()const
-{
-    return lifePoint;
-}
-
-string Personnage::getName()const
-{
-    return name;
-}
-
-void Personnage::setStrength(int strength)
-{
-    this->strength = strength;
-}
-
-void Personnage::setPower(int power)
-{
-    this->power = power;
-}
-
-void Personnage::setMagicalArmor(int magicalArmor)
-{
-    this->magicalArmor = magicalArmor;
-}
-
-void Personnage::setPhysicalArmor(int physicalArmor)
-{
-    this->physicalArmor = physicalArmor;
-}
-
-void Personnage::setLifePoint(int lifePoint)
-{
-    this->lifePoint = lifePoint;
-}
-*/
-/*void Personnage::setName(string Name)
-{
-    this->name=name;
-}
-*/
 string Personnage::getPath(bool front){
 
 	if(front)
@@ -163,4 +101,49 @@ void Personnage::setPath(){
 
 }
 
+void Personnage::affiche()
+{
+    cout << "---------------------------------------"<<endl;
+    cout <<"Nom: "<<this->name<<endl;
+    cout <<"PV: "<<this->getLifePoint()<<"/"<<this->getLifePointMax()<<endl;
+    cout <<"Force: "<<this->getStrength()<<endl;
+    cout <<"Puissance: "<<this->getPower()<<endl;
+    cout <<"Reistance physique: "<<this->getPhysicalArmor()<<endl;
+    cout <<"Reistance Magique: "<<this->getMagicalArmor()<<endl;
+    cout << "Attaque 1: "<<endl;
+	this->attack[0].toString();
+	cout << "Attaque 2: "<<endl;
+	this->attack[1].toString();
+	cout << "Attaque 3: "<<endl;
+	this->attack[2].toString();
+	cout << "Attaque 4: "<<endl;
+	this->attack[3].toString();
+}
+
+bool Personnage::estKO(){
+    if(this->lifePoint<=0)
+        return true;
+    else
+        return false;
+}
+
+Attack* Personnage::getAttack(){
+    return this->attack;
+
+}
+
+int Personnage::getSpeed()const
+{
+    return speed;
+}
+/*
+int Personnage::getDegat(Attack a, Personnage *p)
+{
+    double degat;
+    if(a.getStrength()==true)
+    {
+        degat=this->attack*a.getPower()/(p/)
+    }
+}
+*/
 

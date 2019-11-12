@@ -16,9 +16,9 @@
 					<Add directory="include" />
 				</Compiler>
 				<Linker>
-					<Add library="libsfml-graphics" />
-					<Add library="libsfml-system" />
-					<Add library="libsfml-window" />
+					<Add library="sfml-graphics-d" />
+					<Add library="sfml-window-d" />
+					<Add library="sfml-system-d" />
 					<Add directory="C:/Program Files (x86)/CodeBlocks/SFML-2.5.1/lib" />
 				</Linker>
 			</Target>
@@ -77,6 +77,7 @@
 		<Unit filename="src/md_Character/Brawler.cpp" />
 		<Unit filename="src/md_Character/Healer.cpp" />
 		<Unit filename="src/md_Character/Mob.cpp" />
+		<Unit filename="src/md_Character/Personnage.cpp" />
 		<Unit filename="src/md_Character/Ranger.cpp" />
 		<Unit filename="src/md_Character/Wizard.cpp" />
 		<Unit filename="src/md_Factory/FactoryCharacter.cpp" />

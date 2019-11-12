@@ -57,6 +57,7 @@ public:
         int getMagicalArmor() const{return this->magicalArmor;}
         int getPhysicalArmor() const{return this->physicalArmor;}
         int getLifePoint() const{return this->lifePoint;}
+        int getLifePointMax()const{return this->lifePointMax;}
         void setStrength(int i){this->strength=i;}
         void setPower(int i){this->power=0;}
         void setMagicalArmor(int i){this->magicalArmor=0;}
@@ -71,6 +72,11 @@ public:
         };
     void setPath();
     string getPath(bool);
+
+    void affiche(void);
+    bool estKO();
+    Attack* getAttack();
+    int getSpeed()const;
 
     Personnage & operator=(Personnage const & other)
     {
@@ -103,6 +109,9 @@ private:
     int magicalArmor;
     int physicalArmor;
     int lifePoint;
+    int lifePointMax;
+    int speed;
+    int getDegat(Attack, Personnage*);
 
     string name;
 

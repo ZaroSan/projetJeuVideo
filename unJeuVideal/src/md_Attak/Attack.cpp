@@ -37,6 +37,12 @@ void Attack::setMana(int mana)
     this->mana=mana;
 }
 
+int Attack::getMana()
+{
+    return this->mana;
+}
+
+
 int Attack::getManaFix()
 {
     return this->mana;
