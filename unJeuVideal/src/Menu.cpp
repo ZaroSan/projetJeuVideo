@@ -48,7 +48,7 @@ int Menu::choix()
 
     for(unsigned int i=0; i<(allPersonnage.size()); i++)
     {
-        if(!Icon[i].loadFromFile(PATH_IMAGE+_ICON+allPersonnage[i].getName()+EXTENSION_IMAGE))
+        if(!Icon[i].loadFromFile(PATH_IMAGE+_ICON+allPersonnage[i].getName()+EXTENSION_IMAGE)) //charge l'icone du personnage
         {
             return -1;
         }
@@ -136,7 +136,7 @@ int Menu::choix()
                         {
                             text.setString("BOUTON");
 
-                            close();
+                            close(); //ferme la fenetre et réouvre la suivante via la methode play()
 
                             ultimate_fantasy.play(&team1,&team2);
 
@@ -272,6 +272,9 @@ return false;
 vector<Personnage> Menu::initialisation()
 {
     vector<Personnage>liste;
+    //creation d'attaque avec les différentes stats
+    //string name, int power, int mana, int manaFix
+    // => important à modifier les attribut, add force
 
     Attack Fury_Charge("Fury Charge", 100, 50, 30);
     Attack Focus_Blast("Focus Blast", 100, 50, 30);
@@ -293,17 +296,22 @@ vector<Personnage> Menu::initialisation()
     Attack Heat_Wave("Heat Wave", 100, 50, 30);
     Attack Explosion("Explosion", 100, 50, 30);
 
+
+
     Attack attackBrawl[4]={Fury_Charge, Focus_Blast, Full_Counter, Outrage};
     Attack attackRanger[4]={Perfect_Shot, Multiple_Shots, Sharp_Dagger, Fire_Arrow};
     Attack attackHealer[4]={Group_Care, Heal, Resurrection, Panacea};
     Attack attackWizard[4]={Blizzard, Lightning_Impact, Heat_Wave, Explosion};
 
-
+    //creation personnage
+    //string name, int lifePoint, int strength, int power, int physicalArmor, int magicalArmor, Attack* attack
     Personnage brawler("Brawler",10,10,10,10,10,attackBrawl);
     Personnage ranger("Ranger",10,10,10,10,10,attackBrawl);
     Personnage healer("Healer",10,10,10,10,10,attackHealer);
     Personnage wizard("Wizard",10,10,10,10,10,attackWizard);
 
+
+    //ajout à la liste
 	liste.push_back(brawler);
 	liste.push_back(ranger);
 	liste.push_back(healer);

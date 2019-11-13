@@ -66,7 +66,7 @@ int Game::play(Team* team1, Team* team2)
 
     srand(time(0));
 
-    create(VideoMode(1200,700),"Ultimate Fantasy");
+    create(VideoMode(1200,700),"Ultimate Fantasy"); //creation de la fenetre
 
 
     attaque1.setFillColor(Color::Blue);
