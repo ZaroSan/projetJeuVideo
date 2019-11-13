@@ -273,30 +273,30 @@ vector<Personnage> Menu::initialisation()
 {
     vector<Personnage>liste;
 
-    Attack a("Fury Charge", 100, 50, 30);
-    Attack b("Focus Blast", 100, 50, 30);
-    Attack c("Full Counter", 100, 50, 30);
-    Attack d("Outrage", 100, 50, 30);
+    Attack Fury_Charge("Fury Charge", 100, 50, 30);
+    Attack Focus_Blast("Focus Blast", 100, 50, 30);
+    Attack Full_Counter("Full Counter", 100, 50, 30);
+    Attack Outrage("Outrage", 100, 50, 30);
 
-    Attack e("Perfect Shot", 100, 50, 30);
-    Attack f("Multiple Shots", 100, 50, 30);
-    Attack g("Sharp Dagger", 100, 50, 30);
-    Attack h("Fire Arrow", 100, 50, 30);
+    Attack Perfect_Shot("Perfect Shot", 100, 50, 30);
+    Attack Multiple_Shots("Multiple Shots", 100, 50, 30);
+    Attack Sharp_Dagger("Sharp Dagger", 100, 50, 30);
+    Attack Fire_Arrow("Fire Arrow", 100, 50, 30);
 
-    Attack i("Group Care", 100, 50, 30);
-    Attack j("Heal", 100, 50, 30);
-    Attack k("Resurrection", 100, 50, 30);
-    Attack l("Panacea", 100, 50, 30);
+    Attack Group_Care("Group Care", 100, 50, 30);
+    Attack Heal("Heal", 100, 50, 30);
+    Attack Resurrection("Resurrection", 100, 50, 30);
+    Attack Panacea("Panacea", 100, 50, 30);
 
-    Attack m("Blizzard", 100, 50, 30);
-    Attack n("Lightning Impact", 100, 50, 30);
-    Attack o("Heat Wave", 100, 50, 30);
-    Attack p("Explosion", 100, 50, 30);
+    Attack Blizzard("Blizzard", 100, 50, 30);
+    Attack Lightning_Impact("Lightning Impact", 100, 50, 30);
+    Attack Heat_Wave("Heat Wave", 100, 50, 30);
+    Attack Explosion("Explosion", 100, 50, 30);
 
-    Attack attackBrawl[4]={a, b, c, d};
-    Attack attackRanger[4]={e, f, g, h};
-    Attack attackHealer[4]={i, j, k, l};
-    Attack attackWizard[4]={m, n, o, p};
+    Attack attackBrawl[4]={Fury_Charge, Focus_Blast, Full_Counter, Outrage};
+    Attack attackRanger[4]={Perfect_Shot, Multiple_Shots, Sharp_Dagger, Fire_Arrow};
+    Attack attackHealer[4]={Group_Care, Heal, Resurrection, Panacea};
+    Attack attackWizard[4]={Blizzard, Lightning_Impact, Heat_Wave, Explosion};
 
 
     Personnage brawler("Brawler",10,10,10,10,10,attackBrawl);
