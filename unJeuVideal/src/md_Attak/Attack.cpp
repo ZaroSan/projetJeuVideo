@@ -12,12 +12,12 @@ Attack::Attack()
     //ctor
 }
 
-Attack::Attack(string name, int power, int mana, int manaFix)
+Attack::Attack(string name, int power, int mana, int precision)
 {
     this->name=name;
     this->power=power;
     this->mana=mana;
-    this->manaFix=mana;
+    this->precision=precision;
 }
 
 Attack::Attack(string name)
@@ -65,9 +65,11 @@ int Attack::getPrecision()
 
 void Attack::toString()
 {
-    cout<<"Nom: "<<this->name;
-    cout<<" Puissance: "<<this->power;
+    cout<<"Nom: "<<this->name<<endl;;
+    cout<<" Puissance: "<<this->power<<endl;;
     cout<<" Mana: "<<this->mana<<endl;
+    cout<<" Precision: "<<this->precision<<endl;
+
 
 }
 

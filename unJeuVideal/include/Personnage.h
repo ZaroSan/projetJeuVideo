@@ -2,6 +2,7 @@
 #define PERSONNAGE_H
 
 #include "Attack.h"
+#include"Mob.h"
 
 #include <string>
 #include "sstream"
@@ -70,6 +71,12 @@ public:
     bool estKO();
     Attack* getAttack();
 
+    string lancerAttaque(Attack, Personnage*, Mob);
+    static string itoa(double,int);
+    static string itoa(int,int);
+    static string toString(double);
+	static string toString(int);
+
 
 private:
     int strength;
@@ -79,7 +86,7 @@ private:
     int lifePoint;
     int lifePointMax;
     int speed;
-    int getDegat(Attack, Personnage*);
+    int getDegat(Attack, Personnage*, Mob);
 
     string name;
 

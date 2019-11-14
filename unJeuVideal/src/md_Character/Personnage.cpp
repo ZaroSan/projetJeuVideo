@@ -2,6 +2,7 @@
 
 #include"Game.h"
 
+
 #include<iostream>
 #include<string>
 
@@ -29,6 +30,7 @@ Personnage::Personnage(string name, int lifePoint, int strength, int power, int 
     this->lifePoint=lifePoint;
     this->magicalArmor=magicalArmor;
     this->physicalArmor=physicalArmor;
+    this->lifePointMax=lifePoint;
 
     this->name=name;
 
@@ -136,14 +138,143 @@ int Personnage::getSpeed()const
 {
     return speed;
 }
-/*
-int Personnage::getDegat(Attack a, Personnage *p)
+
+int Personnage::getDegat(Attack a, Personnage *p, Mob m)
 {
+    double degatAD; //degat physique
+    double degatAP; //degat magique
     double degat;
-    if(a.getStrength()==true)
+
+    if(p->strength > m.getPhysicalArmor())
     {
-        degat=this->attack*a.getPower()/(p/)
+        degatAD=a.getPower()/(p->strength - m.getPhysicalArmor());
+    }else{
+        degatAD =0;
     }
+
+    if(p->power > m.getMagicalArmor())
+    {
+        degatAP=a.getPower()/(p->power - m.getMagicalArmor());
+    }else{
+        degatAP = 0;
+    }
+
+    degat = (degatAD+degatAP);
+    return (double) degat;
+
+
 }
-*/
+
+string Personnage::lancerAttaque(Attack a, Personnage *p, Mob m)
+{
+    double degat=0;
+    string s;
+    int pourcent;
+    int proba;
+
+
+    srand(time(0));
+    proba=(rand()%99+1);
+
+    s=this->getName()+" lance "+a.getName()+" !\n";
+
+    if(proba >a.getPrecision()){
+
+        s+=this->getName()+" rate son attaque !\n";
+    }else{
+
+        if(a.getPower()!=0)
+        {
+            degat=getDegat(a, p, m);
+            m.setLifePoint(m.getLifePoint()-degat);
+
+
+            pourcent=(int)(100*degat/m.getLifePointMax());
+
+            if (pourcent>=100)
+               pourcent=100;
+
+            s=m.getName()+" perd "+Personnage::toString(pourcent)+"% de ses PV !\n"; //peut etre rajouter un algo itoa pour le calculer si necessaire
+
+            if (m.estKO()){
+              m.setLifePoint(0);
+              s+=m.getName()+" est KO!\n ";
+             }
+
+
+
+
+        }
+
+    }
+
+    return s;
+
+
+
+}
+
+string Personnage::toString(int n)
+{
+    return itoa(n, 10);
+}
+
+string Personnage::toString(double n)
+{
+    return itoa(n, 10);
+}
+
+string Personnage::itoa(int value, int base)
+{
+    string buf;
+
+        // check that the base if valid
+        if (base < 2 || base > 16) return buf;
+
+        enum { kMaxDigits = 35 };
+        buf.reserve( kMaxDigits ); // Pre-allocate enough space.
+
+
+        int quotient = value;
+
+        // Translating number to string with base:
+        do {
+            buf += "0123456789abcdef"[ std::abs( quotient % base ) ];
+            quotient /= base;
+        } while ( quotient );
+
+        // Append the negative sign
+        if ( value < 0) buf += '-';
+
+        std::reverse( buf.begin(), buf.end() );
+    return buf;
+}
+
+string Personnage::itoa(double value, int base) {
+
+        string buf;
+
+        // check that the base if valid
+        if (base < 2 || base > 16) return buf;
+
+        enum { kMaxDigits = 35 };
+        buf.reserve( kMaxDigits ); // Pre-allocate enough space.
+
+
+        int quotient = value;
+
+        // Translating number to string with base:
+        do {
+            buf += "0123456789abcdef"[ std::abs( quotient % base ) ];
+            quotient /= base;
+        } while ( quotient );
+
+        // Append the negative sign
+        if ( value < 0) buf += '-';
+
+        std::reverse( buf.begin(), buf.end() );
+        return buf;
+}
+
+
 

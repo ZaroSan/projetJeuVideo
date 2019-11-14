@@ -310,6 +310,8 @@ vector<Personnage> Menu::initialisation()
     Personnage healer("Healer",10,10,10,10,10,attackHealer);
     Personnage wizard("Wizard",10,10,10,10,10,attackWizard);
 
+    brawler.affiche();
+
 
     //ajout à la liste
 	liste.push_back(brawler);
