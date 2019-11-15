@@ -42,7 +42,7 @@ Personnage::Personnage(string name, int lifePoint, int strength, int power, int 
 
     setPath();
 
-    cout<<"Construction personnage "<<this->getName()<<endl;
+   // cout<<"Construction personnage "<<this->getName()<<endl;
 }
 
 Personnage::Personnage(string name)
@@ -52,6 +52,7 @@ Personnage::Personnage(string name)
     this->lifePoint=100;
     this->magicalArmor=10;
     this->physicalArmor=10;
+    this->speed=10;
 
     this->name=name;
 
@@ -99,7 +100,7 @@ void Personnage::setPath(){
 
     pathBack=PATH_IMAGE+this->getName()+BACK+EXTENSION_IMAGE;
     pathFront=PATH_IMAGE+this->getName()+EXTENSION_IMAGE;
-
+    cout<<pathBack<<endl;
 
 }
 
@@ -194,7 +195,7 @@ string Personnage::lancerAttaque(Attack a, Personnage *p, Mob m)
             if (pourcent>=100)
                pourcent=100;
 
-            s=m.getName()+" perd "+Personnage::toString(pourcent)+"% de ses PV !\n"; //peut etre rajouter un algo itoa pour le calculer si necessaire
+            s+=m.getName()+" perd "+Personnage::toString(pourcent)+"% de ses PV !\n"; //peut etre rajouter un algo itoa pour le calculer si necessaire
 
             if (m.estKO()){
               m.setLifePoint(0);

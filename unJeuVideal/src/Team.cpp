@@ -1,5 +1,6 @@
 #include "Team.h"
 #include "Personnage.h"
+#include "Mob.h"
 
 #include <iostream>
 #include <string>
@@ -10,10 +11,10 @@ Team::Team()
     //ctor
 }
 
-Team::Team(Personnage perso1,Personnage perso2)
+Team::Team(Personnage perso,Mob mob)
 {
-    team.push_back(perso1);
-    team.push_back(perso2);
+    team.push_back(perso);
+    teamEnnemy.push_back(mob);
 }
 
 void Team::affiche()
@@ -37,10 +38,26 @@ bool Team::isEmpty()
     return vide;
 }
 
+bool Team::isEmptyEnnemy()
+{
+    bool vide=false;
+
+    if(this->getListMob().empty())
+    {
+        vide=true;
+    }
+    return vide;
+}
+
 
 vector<Personnage> Team::getListPersonnage()
 {
     return this->team;
+}
+
+vector<Mob> Team::getListMob()
+{
+    return this->teamEnnemy;
 }
 
 void Team::removePersonnage(int n)
@@ -48,9 +65,19 @@ void Team::removePersonnage(int n)
     this->team.erase(this->team.begin()+n);
 }
 
+void Team::removeMob(int n)
+{
+    this->teamEnnemy.erase(this->teamEnnemy.begin()+n);
+}
+
 void Team::AddPersonnage(Personnage p)
 {
     this->team.push_back(p);
+}
+
+void Team::AddMob(Mob p)
+{
+    this->teamEnnemy.push_back(p);
 }
 
 void Team::insertPersonnage(Personnage p, int n)

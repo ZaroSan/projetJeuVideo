@@ -13,9 +13,10 @@ class Game:RenderWindow
 {
     public:
         Game();
-        round();
-        void getCharacter();
         int play(Team*, Team*);
+       // round();
+     //   void getCharacter();
+
 
 
 };

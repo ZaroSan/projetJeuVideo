@@ -15,6 +15,7 @@ Mob::Mob()
     this->power=40;
     this->magicalArmor=40;
     this->physicalArmor=40;
+    this->speed=40;
 
     this->name="Mob";
 
@@ -44,6 +45,7 @@ Mob::Mob(string name, int lifePoint, int strength, int power, int physicalArmor,
     this->magicalArmor=magicalArmor;
     this->physicalArmor=physicalArmor;
     this->lifePointMax=lifePoint;
+    this->speed=speed;
 
     this->name=name;
 
@@ -55,7 +57,7 @@ Mob::Mob(string name, int lifePoint, int strength, int power, int physicalArmor,
 
     setPath();
 
-    cout<<"Construction Mob "<<this->getName()<<endl;
+  //  cout<<"Construction Mob "<<this->getName()<<endl;
 }
 
 Mob::Mob(string name)
@@ -78,11 +80,13 @@ Mob::Mob(string name)
 
 Mob::Mob(const Mob& other)
 {
+    this->name=other.name;
     this->lifePoint=other.lifePoint;
     this->strength=other.strength;
     this->magicalArmor=other.magicalArmor;
     this->physicalArmor=other.physicalArmor;
     this->power=other.power;
+    this->speed=speed;
 }
 
 void Mob::affiche()
@@ -123,7 +127,7 @@ int Mob::getSpeed()const
 
 void Mob::setPath(){
 
-   // pathBack=PATH_IMAGE+this->getName()+BACK+EXTENSION_IMAGE;
+    pathBack=PATH_IMAGE+this->getName()+BACK+EXTENSION_IMAGE;
     pathFront=PATH_IMAGE+this->getName()+EXTENSION_IMAGE;
 
 
@@ -196,7 +200,7 @@ string Mob::lancerAttaque(Attack a, Personnage p, Mob *m)
             if (pourcent>=100)
                pourcent=100;
 
-            s=p.getName()+" perd "+Mob::toString(pourcent)+"% de ses PV !\n"; //peut etre rajouter un algo itoa pour le calculer si necessaire
+            s+=p.getName()+" perd "+Mob::toString(pourcent)+"% de ses PV !\n"; //peut etre rajouter un algo itoa pour le calculer si necessaire
 
             if (p.estKO()){
               p.setLifePoint(0);
@@ -292,17 +296,7 @@ string Mob::itoa(double value, int base) {
 
 
 
-/*
-void Mob::takeDamage(int damage)
-{
-	this->lifePoint -= damage;
 
-	if (this->lifePoint <= 0)
-	{
-		this->lifePoint = 0;
-	}
-}
-*/
 
 
 
