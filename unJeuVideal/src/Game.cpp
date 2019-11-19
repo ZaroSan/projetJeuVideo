@@ -15,6 +15,7 @@ Game::Game()
 
 int Game::play(Team* team1, Team* team2)
 {
+
     int mouseX, mouseY;
     int nbTour=1;
     int randAtt;
@@ -422,20 +423,20 @@ int Game::play(Team* team1, Team* team2)
 
     /**************************************Chargement et position du sprite ****************************************/
     J1.setPath();
-cout<<"lien:"<<J1.getPath(false)<<endl;
-    if (!p1.loadFromFile(J1.getPath(false),IntRect(50,50,0,0))){ // Si le chargement du fichier a échoué
+//cout<<"lien:"<<J1.getPath(false)<<endl;
+    if (!p1.loadFromFile(J1.getPath(false),IntRect(150,200,0,0))){ // Si le chargement du fichier a échoué
        cout<<"test dans la boucle"<<endl;
                   return -1; // On ferme le programme
     }else{
         p1.setSmooth(true);
         lanceur.setTexture(p1);
-        lanceur.setTextureRect(IntRect(0,0,50, 50));
+        lanceur.setTextureRect(IntRect(0,0,200, 150));
         lanceur.setPosition(0, getSize().y-450);
     }
 
 
     J2.setPath();
-     if (!p2.loadFromFile(J2.getPath(true),IntRect(50,50,0,0)))
+     if (!p2.loadFromFile(J2.getPath(true),IntRect(150,200,0,0)))
     {
         cout<<"test p2"<<endl;
         return -1;
@@ -443,7 +444,7 @@ cout<<"lien:"<<J1.getPath(false)<<endl;
     {
         p2.setSmooth(true);
         ennemi.setTexture(p2);
-        ennemi.setTextureRect(IntRect(0,0,50,50));
+        ennemi.setTextureRect(IntRect(0,0,200,150));
         ennemi.setPosition(getSize().x-300,getSize().y-450);
     }
 
@@ -469,7 +470,7 @@ cout<<"lien:"<<J1.getPath(false)<<endl;
         nomIcone[i].setScale(0.5, 0.5);
 
     }
-
+/*
 
     for(unsigned int j=0;j<team2->getListMob().size();j++)
     {
@@ -491,7 +492,7 @@ cout<<"lien:"<<J1.getPath(false)<<endl;
 
     }
 
-
+*/
     /**************************************Position et tailles des boutons/textes ****************************************/
 
         barreVieLanceur.setPosition(lanceur.getPosition().x+lanceur.getTextureRect().width,(lanceur.getPosition().y+lanceur.getTextureRect().height/4)-100);
@@ -513,6 +514,7 @@ cout<<"lien:"<<J1.getPath(false)<<endl;
         nomEnnemi.setColor(Color::Blue);
         nomEnnemi.setPosition(barreVieEnnemi.getPosition().x,barreVieEnnemi.getPosition().y-42);
 
+        cout<<"lien attaque1 : "<<J1.getAttack()[0].getName()<<endl;
         nomAttaque1.setString(J1.getAttack()[0].getName());
         nomAttaque1.setFont(police);
         nomAttaque1.setPosition(attaque1.getPosition());
@@ -528,7 +530,7 @@ cout<<"lien:"<<J1.getPath(false)<<endl;
         nomAttaque3.setPosition(attaque1.getPosition());
         nomAttaque3.setScale(0.75, 0.75);
 
-        nomAttaque4.setString(J1.getAttack()[3].getName());
+        nomAttaque4.setString((J1.getAttack()[3]).getName());
         nomAttaque4.setFont(police);
         nomAttaque4.setPosition(attaque1.getPosition());
         nomAttaque4.setScale(0.75, 0.75);

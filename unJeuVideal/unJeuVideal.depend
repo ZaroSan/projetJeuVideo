@@ -881,7 +881,7 @@
 	<string>
 	<vector>
 
-1574150108 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\game.cpp
+1574168661 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\game.cpp
 	"Game.h"
 	"Team.h"
 	<iostream>
@@ -918,7 +918,7 @@
 	"Ranger.h"
 	"Healer.h"
 
-1574005112 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\personnage.h
+1574154509 d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\include\personnage.h
 	"Attack.h"
 	"Mob.h"
 	<string>
@@ -1014,10 +1014,9 @@
 1573123165 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\md_item\item.cpp
 	"Item.h"
 
-1573850361 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\menu.cpp
+1574168740 source:d:\onedrive\documents\bloc 3\dev jeu video\gitc++\projetjeuvideo\unjeuvideal\src\menu.cpp
 	"Menu.h"
 	"Game.h"
-	"Brawler.h"
 	<iostream>
 	<string>
 

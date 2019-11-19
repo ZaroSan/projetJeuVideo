@@ -1,6 +1,6 @@
 #include "Menu.h"
 #include "Game.h"
-#include "Brawler.h"
+
 
 #include <iostream>
 #include <string>
@@ -362,6 +362,7 @@ vector<Personnage> Menu::initialisation()
     Attack attackHealer[4]={Group_Care, Heal, Resurrection, Panacea};
     Attack attackWizard[4]={Blizzard, Lightning_Impact, Heat_Wave, Explosion};
 
+
     //creation personnage
     //string name, int lifePoint, int strength, int power, int physicalArmor, int magicalArmor, Attack* attack
     Personnage brawler("Brawler",10,10,10,10,10,attackBrawl);
@@ -369,7 +370,7 @@ vector<Personnage> Menu::initialisation()
     Personnage healer("Healer",10,10,10,10,10,attackHealer);
     Personnage wizard("Wizard",10,10,10,10,10,attackWizard);
 
-   // brawler.affiche();
+  //  cout<<"je suis un  tetst = "<<brawler.getAttack()->getName()<<endl;
 
 
     //ajout à la liste
