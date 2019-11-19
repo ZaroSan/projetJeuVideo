@@ -6,6 +6,7 @@
 #include<iostream>
 #include<string>
 
+
 Personnage::Personnage()
 {
     //ctor
@@ -14,6 +15,7 @@ Personnage::Personnage()
     this->lifePoint=100;
     this->magicalArmor=10;
     this->physicalArmor=10;
+    this->lifePointMax=lifePoint;
 
     this->name="Brawler";
 

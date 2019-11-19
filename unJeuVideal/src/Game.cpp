@@ -65,6 +65,7 @@ int Game::play(Team* team1, Team* team2)
 
     string script="";
 
+
     Event event;
 
     srand(time(0));
@@ -420,28 +421,29 @@ int Game::play(Team* team1, Team* team2)
     }
 
     /**************************************Chargement et position du sprite ****************************************/
-
-    if (!p1.loadFromFile(J1.getPath(false),IntRect(150,200,0,0))){// Si le chargement du fichier a échoué
-
-        cout<<"je suis un tets : "+p1.loadFromFile(J1.getPath(false))<<endl;
+    J1.setPath();
+cout<<"lien:"<<J1.getPath(false)<<endl;
+    if (!p1.loadFromFile(J1.getPath(false),IntRect(50,50,0,0))){ // Si le chargement du fichier a échoué
+       cout<<"test dans la boucle"<<endl;
                   return -1; // On ferme le programme
     }else{
         p1.setSmooth(true);
         lanceur.setTexture(p1);
-        lanceur.setTextureRect(IntRect(0,0,150, 200));
+        lanceur.setTextureRect(IntRect(0,0,50, 50));
         lanceur.setPosition(0, getSize().y-450);
     }
 
 
-
-     if (!p2.loadFromFile(J2.getPath(true),IntRect(150,200,0,0)))
+    J2.setPath();
+     if (!p2.loadFromFile(J2.getPath(true),IntRect(50,50,0,0)))
     {
+        cout<<"test p2"<<endl;
         return -1;
     }else
     {
         p2.setSmooth(true);
         ennemi.setTexture(p2);
-        ennemi.setTextureRect(IntRect(0,0,150,200));
+        ennemi.setTextureRect(IntRect(0,0,50,50));
         ennemi.setPosition(getSize().x-300,getSize().y-450);
     }
 

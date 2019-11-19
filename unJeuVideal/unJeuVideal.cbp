@@ -55,7 +55,36 @@
 			<Add library="sfml-system" />
 			<Add directory="C:/Program Files (x86)/CodeBlocks/SFML-2.5.1/lib" />
 		</Linker>
-		<Unit filename="include/Armure.h" />
+		<Unit filename="Images/Brawler.png" />
+		<Unit filename="Images/Brawler_back.png" />
+		<Unit filename="Images/Elf-list.png" />
+		<Unit filename="Images/Elf.png" />
+		<Unit filename="Images/Elf_back.png" />
+		<Unit filename="Images/Healer.png" />
+		<Unit filename="Images/Healer_back.png" />
+		<Unit filename="Images/Orc-list.png" />
+		<Unit filename="Images/Orc.png" />
+		<Unit filename="Images/Orc_back.png" />
+		<Unit filename="Images/Ranger.png" />
+		<Unit filename="Images/Ranger_back.png" />
+		<Unit filename="Images/Skeleton.png" />
+		<Unit filename="Images/Skeleton_back.png" />
+		<Unit filename="Images/Wizard-face.png" />
+		<Unit filename="Images/Wizard_back.png" />
+		<Unit filename="Images/brawler-list.png" />
+		<Unit filename="Images/calibri.ttf" />
+		<Unit filename="Images/healer-list.png" />
+		<Unit filename="Images/icon_Brawler.png" />
+		<Unit filename="Images/icon_Elf.png" />
+		<Unit filename="Images/icon_Healer.png" />
+		<Unit filename="Images/icon_Orc.png" />
+		<Unit filename="Images/icon_Ranger.png" />
+		<Unit filename="Images/icon_Skeleton.png" />
+		<Unit filename="Images/icon_Wizard.png" />
+		<Unit filename="Images/landscape.jpeg" />
+		<Unit filename="Images/ranger-list.png" />
+		<Unit filename="Images/skeleton-list.png" />
+		<Unit filename="Images/wizard.png" />
 		<Unit filename="include/Attack.h" />
 		<Unit filename="include/Brawler.h" />
 		<Unit filename="include/Event.h" />
@@ -82,8 +111,6 @@
 		<Unit filename="src/md_Character/Ranger.cpp" />
 		<Unit filename="src/md_Character/Wizard.cpp" />
 		<Unit filename="src/md_Factory/FactoryCharacter.cpp" />
-		<Unit filename="src/md_Item/Armure.cpp" />
-		<Unit filename="src/md_Item/Item.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
