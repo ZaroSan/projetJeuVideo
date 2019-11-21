@@ -17,6 +17,7 @@ Attack::Attack(string name, int power, int mana, int precision)
     this->name=name;
     this->power=power;
     this->mana=mana;
+    this->manaFix=mana;
     this->precision=precision;
 }
 

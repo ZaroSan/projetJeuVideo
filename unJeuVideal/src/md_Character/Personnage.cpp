@@ -16,6 +16,7 @@ Personnage::Personnage()
     this->magicalArmor=10;
     this->physicalArmor=10;
     this->lifePointMax=lifePoint;
+    this->speed=speed;
 
     this->name="Brawler";
 
@@ -33,6 +34,7 @@ Personnage::Personnage(string name, int lifePoint, int strength, int power, int 
     this->magicalArmor=magicalArmor;
     this->physicalArmor=physicalArmor;
     this->lifePointMax=lifePoint;
+    this->speed=speed;
 
     this->name=name;
 
@@ -66,12 +68,26 @@ Personnage::Personnage(string name)
      setPath();
 }
 Personnage::Personnage (const Personnage& other){
-    this->name=other.name;
-    this->lifePoint=other.lifePoint;
-    this->strength=other.strength;
-    this->magicalArmor=other.magicalArmor;
-    this->physicalArmor=other.physicalArmor;
-    this->power=other.power;
+        this->lifePoint=other.lifePoint;
+        this->strength=other.strength;
+        this->power=other.power;
+        this->magicalArmor=other.magicalArmor;
+        this->physicalArmor=other.physicalArmor;
+        this->speed=other.speed;
+        this->lifePointMax=other.lifePointMax;
+
+
+        this->name=other.name;
+
+        this->attack[0]=other.attack[0];
+        this->attack[1]=other.attack[1];
+        this->attack[2]=other.attack[2];
+        this->attack[3]=other.attack[3];
+
+        this->pathFront=other.pathFront;
+        this->pathBack=other.pathBack;
+
+
 }
 
 Personnage::~Personnage()

@@ -332,8 +332,7 @@ vector<Personnage> Menu::initialisation()
 {
     vector<Personnage>liste;
     //creation d'attaque avec les différentes stats
-    //string name, int power, int mana, int manaFix
-    // => important à modifier les attribut, add force
+    //string name, int power, int mana, int precision
 
     Attack Fury_Charge("Fury Charge", 100, 50, 30);
     Attack Focus_Blast("Focus Blast", 100, 50, 30);
@@ -365,8 +364,8 @@ vector<Personnage> Menu::initialisation()
 
     //creation personnage
     //string name, int lifePoint, int strength, int power, int physicalArmor, int magicalArmor, Attack* attack
-    Personnage brawler("Brawler",10,10,10,10,10,attackBrawl);
-    Personnage ranger("Ranger",10,10,10,10,10,attackBrawl);
+    Personnage brawler("Brawler", 350, 110, 40, 80, 75, attackBrawl);
+    Personnage ranger("Ranger",10,10,10,10,10,attackRanger);
     Personnage healer("Healer",10,10,10,10,10,attackHealer);
     Personnage wizard("Wizard",10,10,10,10,10,attackWizard);
 

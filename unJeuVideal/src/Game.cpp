@@ -5,6 +5,7 @@
 #include <string>
 #include <stdio.h>
 
+
 using namespace sf;
 using namespace std;
 
@@ -48,6 +49,7 @@ int Game::play(Team* team1, Team* team2)
     RectangleShape barreVieLanceur(Vector2f(200,20));
     RectangleShape barreVieEnnemi(Vector2f(200,20));
 
+
     RectangleShape barreVieLanceurBord(Vector2f(204,24));
     RectangleShape barreVieEnnemiBord(Vector2f(204,24));
 
@@ -63,6 +65,7 @@ int Game::play(Team* team1, Team* team2)
     Text text;
 
     Text tour;
+
 
     string script="";
 
@@ -336,6 +339,7 @@ int Game::play(Team* team1, Team* team2)
                                 nomLanceur.setScale(1,1);
 
 
+
                                 if (riposter)
                                 {                                                  //si on switche sans etre KO, l'ennemi attaque quand meme
                                     riposter=false;
@@ -368,6 +372,8 @@ int Game::play(Team* team1, Team* team2)
             barreVieEnnemiBord.setScale(0,0);
             pvEnnemi.setScale(0,0);
             nomEnnemi.setScale(0,0);
+
+
 
 
             script="\n L'ennemi à perdu !\n";
@@ -404,6 +410,7 @@ int Game::play(Team* team1, Team* team2)
         barreVieLanceurBord.setScale(0,0);
         pvLanceur.setScale(0,0);
         nomLanceur.setScale(0,0);
+
 
         if(team1->isEmpty())
         {
@@ -493,6 +500,7 @@ int Game::play(Team* team1, Team* team2)
     }
 
 */
+
     /**************************************Position et tailles des boutons/textes ****************************************/
 
         barreVieLanceur.setPosition(lanceur.getPosition().x+lanceur.getTextureRect().width,(lanceur.getPosition().y+lanceur.getTextureRect().height/4)-100);
@@ -503,6 +511,7 @@ int Game::play(Team* team1, Team* team2)
 
         barreVieLanceurBord.setOutlineColor(Color::Black);
         barreVieEnnemiBord.setOutlineColor(Color::Black);
+
 
         nomLanceur.setString(J1.getName());
         nomLanceur.setFont(police);
@@ -520,6 +529,7 @@ int Game::play(Team* team1, Team* team2)
         nomAttaque1.setPosition(attaque1.getPosition());
         nomAttaque1.setScale(0.75, 0.75);
 
+        cout<<"lien attaque2 : "<<J1.getAttack()[1].getName()<<endl;
         nomAttaque2.setString(J1.getAttack()[1].getName());
         nomAttaque2.setFont(police);
         nomAttaque2.setPosition(attaque1.getPosition());
@@ -537,9 +547,12 @@ int Game::play(Team* team1, Team* team2)
 
         //point de vie en fonction des degats
 
+        cout<<J1.getLifePoint()<<endl;
         if((100*J1.getLifePoint()/J1.getLifePointMax()) >=50)
         {
+            cout<<"couleur verte "<<endl;
             barreVieLanceur.setFillColor(Color::Green);
+
 
         }else if((100*J1.getLifePoint()/J1.getLifePointMax()) >=20){
             barreVieLanceur.setFillColor(Color::Yellow);
@@ -559,7 +572,6 @@ int Game::play(Team* team1, Team* team2)
         }else{
             barreVieEnnemi.setFillColor(Color::Red);
         }
-
 
         text.setString(script);
         tour.setString("Tour : "+Personnage::toString(nbTour)+"Personnages restants: "+Mob::toString((int)team2->getListMob().size()));
@@ -607,6 +619,7 @@ int Game::play(Team* team1, Team* team2)
         draw(nomAttaque2);
         draw(nomAttaque3);
         draw(nomAttaque4);
+
 
         for(unsigned int k=0;k<team1->getListPersonnage().size();k++)
         {

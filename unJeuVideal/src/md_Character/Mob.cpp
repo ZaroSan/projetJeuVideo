@@ -80,13 +80,24 @@ Mob::Mob(string name)
 
 Mob::Mob(const Mob& other)
 {
-    this->name=other.name;
-    this->lifePoint=other.lifePoint;
-    this->strength=other.strength;
-    this->magicalArmor=other.magicalArmor;
-    this->physicalArmor=other.physicalArmor;
-    this->power=other.power;
-    this->speed=speed;
+        this->lifePoint=other.lifePoint;
+        this->strength=other.strength;
+        this->power=other.power;
+        this->magicalArmor=other.magicalArmor;
+        this->physicalArmor=other.physicalArmor;
+        this->speed=other.speed;
+        this->lifePointMax=other.lifePointMax;
+
+
+        this->name=other.name;
+
+        this->attack[0]=other.attack[0];
+        this->attack[1]=other.attack[1];
+        this->attack[2]=other.attack[2];
+        this->attack[3]=other.attack[3];
+
+        this->pathFront=other.pathFront;
+        this->pathBack=other.pathBack;
 }
 
 void Mob::affiche()

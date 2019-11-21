@@ -29,6 +29,7 @@ public:
         this->speed=other.speed;
         this->lifePointMax=other.lifePointMax;
 
+
         this->name=other.name;
 
         this->attack[0]=other.attack[0];
