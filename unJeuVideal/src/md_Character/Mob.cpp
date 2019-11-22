@@ -195,7 +195,7 @@ string Mob::lancerAttaque(Attack a, Personnage p, Mob *m)
 
     s=this->getName()+" lance "+a.getName()+" !\n";
 
-    if(proba >a.getPrecision()){
+    if(a.getPrecision() <= proba){
 
         s+=this->getName()+" rate son attaque !\n";
     }else{

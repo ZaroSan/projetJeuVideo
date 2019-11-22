@@ -196,14 +196,23 @@ int Menu::choix()
 
                                         if(team1.getListPersonnage().size()==2)
                                         {
-                                            text.setString("Votre equipe est complete \n Choissisez l'équipe de l'IA !");
+                                            text.setString("Votre équipe est complète \n Choissisez l'équipe de l'IA !");
                                             choixJ="Joueur 2";
                                         }
                                     }
+                                    else if(findPersonnage(team1, allPersonnage[k])==true)
+                                    {
+                                            text.setString("Ce personnage existe déjà");
+                                    }
 
-                                }else
+                                }
+                                else if (choixJ=="Joueur 2" && team2.getListPersonnage().size()<2)
                                 {
-                                    text.setString("Ce personnage existe deja");
+                                    text.setString("Veuillez maintenant choisir 2 mobs");
+                                }
+                                else
+                                {
+                                    text.setString("Ce personnage existe déjà");
                                 }
                             }
                         }
@@ -227,14 +236,23 @@ int Menu::choix()
 
                                         if(team2.getListMob().size()==2)
                                         {
-                                             text.setString("Votre equipe est complete \n Appuyez sur le bouton pour lancer le combat");
+                                             text.setString("Votre équipe est complète \n Appuyez sur le bouton pour lancer le combat");
                                              choixJ="Fin";
                                         }
                                     }
+                                    else if(findMob(team2, allMob[l])==true)
+                                    {
+                                        text.setString("Ce mob existe déjà");
+                                    }
 
-                                }else
+                                }
+                                else if (choixJ=="Joueur 1" && team1.getListPersonnage().size()<2)
                                 {
-                                    text.setString("Ce Mob existe deja");
+                                    text.setString("Veuillez d'abord choisir 2 personnages");
+                                }
+                                else
+                                {
+                                    text.setString("Ce Mob existe déjà");
                                 }
                             }
                         }

@@ -378,7 +378,7 @@ int Game::play(Team* team1, Team* team2)
 
 
 
-            script="\n L'ennemi à perdu !\n";
+            script="\n L'ennemi a perdu !\n";
         }else
         {
             for(unsigned int i=0;i<team2->getListMob().size();i++)
@@ -416,7 +416,7 @@ int Game::play(Team* team1, Team* team2)
 
         if(team1->isEmpty())
         {
-            script="\n Le joueur à perdu !";
+            script="\n Le joueur a perdu !";
         }else
         {
             for(unsigned int i=0;i<team1->getListPersonnage().size();i++)
@@ -439,7 +439,7 @@ int Game::play(Team* team1, Team* team2)
     }else{
         p1.setSmooth(true);
         lanceur.setTexture(p1);
-        lanceur.setTextureRect(IntRect(0,0,200, 150));
+        lanceur.setTextureRect(IntRect(-100,0,200, 150));
         lanceur.setPosition(0, getSize().y-450);
     }
 
@@ -588,7 +588,7 @@ int Game::play(Team* team1, Team* team2)
         }
 
         text.setString(script);
-        tour.setString("Tour : "+Personnage::toString(nbTour)+"Personnages restants: "+Mob::toString((int)team2->getListMob().size()));
+        tour.setString("Tour : "+Personnage::toString(nbTour)+"\nPersonnages restants: "+Mob::toString((int)team2->getListMob().size()));
 
         barreVieLanceur.setSize(Vector2f((J1.getLifePoint()*200)/J1.getLifePointMax(),20));
         barreVieEnnemi.setSize(Vector2f((J2.getLifePoint()*200)/J2.getLifePointMax(),20));
