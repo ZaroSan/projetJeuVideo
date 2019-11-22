@@ -28,7 +28,9 @@ int Game::play(Team* team1, Team* team2)
 
     Font police;
 
-    Text nomLanceur, nomEnnemi, nomAttaque1,nomAttaque2,nomAttaque3,nomAttaque4,pvLanceur,pvEnnemi;
+    Text nomLanceur, nomEnnemi, nomAttaque1,nomAttaque2,nomAttaque3,nomAttaque4,pvLanceur,pvEnnemi, mana1, mana2, mana3, mana4;
+
+
 
 
 
@@ -523,27 +525,41 @@ int Game::play(Team* team1, Team* team2)
         nomEnnemi.setColor(Color::Blue);
         nomEnnemi.setPosition(barreVieEnnemi.getPosition().x,barreVieEnnemi.getPosition().y-42);
 
-        cout<<"lien attaque1 : "<<J1.getAttack()[0].getName()<<endl;
         nomAttaque1.setString(J1.getAttack()[0].getName());
         nomAttaque1.setFont(police);
         nomAttaque1.setPosition(attaque1.getPosition());
         nomAttaque1.setScale(0.75, 0.75);
+        mana1.setFont(police);
+        mana1.setString(" Mana: "+Personnage::toString(J1.getAttack()[0].getMana())+"/"+Personnage::toString(J1.getAttack()[0].getManaFix()));
+        mana1.setPosition(nomAttaque1.getPosition().x, nomAttaque1.getPosition().y+30);
+        mana1.setScale(0.5, 0.5);
 
-        cout<<"lien attaque2 : "<<J1.getAttack()[1].getName()<<endl;
         nomAttaque2.setString(J1.getAttack()[1].getName());
         nomAttaque2.setFont(police);
         nomAttaque2.setPosition(attaque2.getPosition());
         nomAttaque2.setScale(0.75, 0.75);
+        mana2.setFont(police);
+        mana2.setString(" Mana: "+Personnage::toString(J1.getAttack()[1].getMana())+"/"+Personnage::toString(J1.getAttack()[1].getManaFix()));
+        mana2.setPosition(nomAttaque2.getPosition().x, nomAttaque2.getPosition().y+30);
+        mana2.setScale(0.5, 0.5);
 
         nomAttaque3.setString(J1.getAttack()[2].getName());
         nomAttaque3.setFont(police);
         nomAttaque3.setPosition(attaque3.getPosition());
         nomAttaque3.setScale(0.75, 0.75);
+        mana3.setFont(police);
+        mana3.setString(" Mana: "+Personnage::toString(J1.getAttack()[2].getMana())+"/"+Personnage::toString(J1.getAttack()[2].getManaFix()));
+        mana3.setPosition(nomAttaque3.getPosition().x, nomAttaque3.getPosition().y+30);
+        mana3.setScale(0.5, 0.5);
 
         nomAttaque4.setString((J1.getAttack()[3]).getName());
         nomAttaque4.setFont(police);
         nomAttaque4.setPosition(attaque4.getPosition());
         nomAttaque4.setScale(0.75, 0.75);
+        mana4.setFont(police);
+        mana4.setString(" Mana: "+Personnage::toString(J1.getAttack()[3].getMana())+"/"+Personnage::toString(J1.getAttack()[3].getManaFix()));
+        mana4.setPosition(nomAttaque4.getPosition().x, nomAttaque4.getPosition().y+30);
+        mana4.setScale(0.5, 0.5);
 
         //point de vie en fonction des degats
 
@@ -617,6 +633,11 @@ int Game::play(Team* team1, Team* team2)
         draw(nomAttaque2);
         draw(nomAttaque3);
         draw(nomAttaque4);
+
+        draw(mana1);
+        draw(mana2);
+        draw(mana3);
+        draw(mana4);
 
 
         for(unsigned int k=0;k<team1->getListPersonnage().size();k++)
