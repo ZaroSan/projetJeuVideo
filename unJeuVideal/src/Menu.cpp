@@ -220,7 +220,7 @@ int Menu::choix()
                                     {
 
                                         teamP2[team2.getListMob().size()]=Imob[l];
-                                        teamP2[team2.getListMob().size()].setPosition(400+(team1.getListMob().size()*40),650);
+                                        teamP2[team2.getListMob().size()].setPosition(400+(team2.getListMob().size()*40),650);
                                         team2.AddMob(allMob[l]);
 
                                         text.setString("Mob ajouté");
