@@ -532,17 +532,17 @@ int Game::play(Team* team1, Team* team2)
         cout<<"lien attaque2 : "<<J1.getAttack()[1].getName()<<endl;
         nomAttaque2.setString(J1.getAttack()[1].getName());
         nomAttaque2.setFont(police);
-        nomAttaque2.setPosition(attaque1.getPosition());
+        nomAttaque2.setPosition(attaque2.getPosition());
         nomAttaque2.setScale(0.75, 0.75);
 
         nomAttaque3.setString(J1.getAttack()[2].getName());
         nomAttaque3.setFont(police);
-        nomAttaque3.setPosition(attaque1.getPosition());
+        nomAttaque3.setPosition(attaque3.getPosition());
         nomAttaque3.setScale(0.75, 0.75);
 
         nomAttaque4.setString((J1.getAttack()[3]).getName());
         nomAttaque4.setFont(police);
-        nomAttaque4.setPosition(attaque1.getPosition());
+        nomAttaque4.setPosition(attaque4.getPosition());
         nomAttaque4.setScale(0.75, 0.75);
 
         //point de vie en fonction des degats

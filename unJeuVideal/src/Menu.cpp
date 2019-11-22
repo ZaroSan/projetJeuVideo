@@ -127,7 +127,7 @@ int Menu::choix()
             return -1;
         }
 
-        tex
+
 
 
 	while (this->isOpen())
