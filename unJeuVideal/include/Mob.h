@@ -47,6 +47,8 @@ class Mob
         this->power=other.power;
         this->magicalArmor=other.magicalArmor;
         this->physicalArmor=other.physicalArmor;
+        this->speed=other.speed;
+        this->lifePointMax=other.lifePointMax;
 
         this->name=other.name;
 

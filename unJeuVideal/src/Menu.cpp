@@ -88,7 +88,7 @@ int Menu::choix()
 
 
     //création de la fenetre
-    create(VideoMode(1200,700),"Ultimate Fantasy");
+    create(VideoMode(1200,700),"Ultimate Fantasy", sf::Style::Close);
     sf::Text text, nomPers,nomMob, text1, text2;
     nomPers.setFont(police);
     nomPers.setCharacterSize(24);
@@ -126,6 +126,8 @@ int Menu::choix()
             cout <<"Erreur lors du chargement de la police"<<endl;
             return -1;
         }
+
+        tex
 
 
 	while (this->isOpen())
@@ -334,7 +336,7 @@ vector<Personnage> Menu::initialisation()
     //creation d'attaque avec les différentes stats
     //string name, int power, int mana, int precision
 
-    Attack Fury_Charge("Fury Charge", 100, 50, 30);
+    Attack Fury_Charge("Fury Charge", 100, 10, 100);
     Attack Focus_Blast("Focus Blast", 100, 50, 30);
     Attack Full_Counter("Full Counter", 100, 50, 30);
     Attack Outrage("Outrage", 100, 50, 30);
@@ -392,10 +394,10 @@ vector<Mob>Menu::initialisationEnnemy()
 {
     vector<Mob>liste;
 
-    Attack Masse_Os("Masse Os", 100, 50, 30);
-    Attack Coup_De_Crane("Coup de crane", 100, 50, 30);
-    Attack Tibia_Long("Tibia long", 100, 50, 30);
-    Attack Phalange("Phalange", 100, 50, 30);
+    Attack Masse_Os("Masse Os", 100, 50, 100);
+    Attack Coup_De_Crane("Coup de crane", 100, 50, 100);
+    Attack Tibia_Long("Tibia long", 100, 50, 100);
+    Attack Phalange("Phalange", 100, 50, 100);
 
     Attack Coup_De_Kanabo("Coup de Kanabo", 100, 50, 30);
     Attack poing_Geant("Poing geant", 100, 50, 30);

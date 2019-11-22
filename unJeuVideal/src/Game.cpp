@@ -74,7 +74,7 @@ int Game::play(Team* team1, Team* team2)
 
     srand(time(0));
 
-    create(VideoMode(1200,700),"Ultimate Fantasy"); //creation de la fenetre
+    create(VideoMode(1200,700),"Ultimate Fantasy",sf::Style::Close); //creation de la fenetre
 
 
     attaque1.setFillColor(Color::Blue);
@@ -547,10 +547,8 @@ int Game::play(Team* team1, Team* team2)
 
         //point de vie en fonction des degats
 
-        cout<<J1.getLifePoint()<<endl;
         if((100*J1.getLifePoint()/J1.getLifePointMax()) >=50)
         {
-            cout<<"couleur verte "<<endl;
             barreVieLanceur.setFillColor(Color::Green);
 
 
@@ -599,16 +597,16 @@ int Game::play(Team* team1, Team* team2)
 
         draw(fond_ecran);
 
-        draw(afficheText);
-
         draw(lanceur);
         draw(ennemi);
 
-        draw(barreVieLanceur);
-        draw(barreVieEnnemi);
+        draw(afficheText);
 
         draw(barreVieLanceurBord);
         draw(barreVieEnnemiBord);
+
+        draw(barreVieLanceur);
+        draw(barreVieEnnemi);
 
         draw(attaque1);
         draw(attaque2);
