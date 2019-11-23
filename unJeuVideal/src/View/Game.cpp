@@ -39,7 +39,6 @@ int Game::play(Team* team1, Team* team2)
     Sprite ennemi;
 
     Sprite iPers[2];
-    Sprite iMob[2];
     RectangleShape PersonnageSwitch[2];
 
     Texture textIcone[2];
@@ -481,29 +480,7 @@ int Game::play(Team* team1, Team* team2)
         nomIcone[i].setScale(0.5, 0.5);
 
     }
-/*
 
-    for(unsigned int j=0;j<team2->getListMob().size();j++)
-    {
-        if(!textIcone[j].loadFromFile(PATH_IMAGE+ICON+team2->getListMob()[j].getName()+EXTENSION_IMAGE))
-        {
-            cout <<"Erreur lors du chargement de getlistMob"<<endl;
-            return -1;
-        }else{
-            textIcone[j].setSmooth(true);
-            iMob[j].setTexture(textIcone[j]);
-            //iMob[i].setPosition(PersonnageSwitch[i].getPosition().x+5, PersonnageSwitch[i].getPosition().y+5);
-        }
-
-       // PersonnageSwitch[i].setSize(Vector2f(140, 150));
-        nomIcone[j].setFont(police);
-        nomIcone[j].setString(team2->getListMob()[j].getName());
-        nomIcone[j].setColor(Color::Black);
-        nomIcone[j].setScale(0.5, 0.5);
-
-    }
-
-*/
 
     /**************************************Position et tailles des boutons/textes ****************************************/
 
@@ -649,15 +626,7 @@ int Game::play(Team* team1, Team* team2)
             draw(nomIcone[k]);
 
         }
-/*
-        for(unsigned int n=0;n<team2->getListMob().size();n++)
-        {
-          //  draw(PersonnageSwitch[k]);
-            draw(iMob[n]);
-            draw(nomIcone[n]);
 
-        }
-*/
         draw(text);
         draw(tour);
         draw(pvLanceur);

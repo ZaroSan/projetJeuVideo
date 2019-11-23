@@ -3,7 +3,7 @@
 
 #include <string>
 #include "Personnage.h"
-#include "Mob.h"
+
 #include <vector>
 
 using namespace std;
@@ -12,7 +12,6 @@ class Team
 {
     private:
         vector<Personnage> team;
-       // vector<Mob> teamEnnemy;
         //liste de personnages
 
 
@@ -24,11 +23,8 @@ class Team
 
         void affiche();
         void removePersonnage(int);
-     //   void removeMob(int);
         void AddPersonnage(Personnage);
-      //  void AddMob(Mob);
         bool isEmpty();
-      //  bool isEmptyEnnemy();
         void insertPersonnage(Personnage, int);
 
 

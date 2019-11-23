@@ -1,5 +1,4 @@
 #include <iostream>
-#include "FactoryCharacter.h"
 #include "Personnage.h"
 
 

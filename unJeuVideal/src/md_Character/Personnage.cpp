@@ -92,7 +92,7 @@ Personnage::Personnage (const Personnage& other){
 
 Personnage::~Personnage()
 {
-    //dtor
+    /*dtor
     static int i=0;
     if(i<5000)
     {
@@ -100,6 +100,7 @@ Personnage::~Personnage()
     }else{
     i=0;
     }
+     cout<<"Destruction personnage "<<this->getName()<<endl;*/
 }
 
 string Personnage::getPath(bool front){
@@ -201,7 +202,6 @@ string Personnage::lancerAttaque(Attack a, Personnage *p)
 
         s+=this->getName()+" rate son attaque !\n";
     }else{
-      //  cout<<"Avant "<<m.getName()<<" "<< m.getLifePoint()<<endl;
         if(a.getPower()!=0)
         {
             degat=getDegat(a, p);
