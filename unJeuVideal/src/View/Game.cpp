@@ -202,7 +202,7 @@ int Game::play(Team* team1, Team* team2)
 
                                     if(!J2.estKO())
                                     {
-                                        script+=J2.lancerAttaque(J2.getAttack()[1],&J2)+"\n";
+                                        script+=J2.lancerAttaque(J2.getAttack()[randAtt],&J1)+"\n";
 
                                     }
 
