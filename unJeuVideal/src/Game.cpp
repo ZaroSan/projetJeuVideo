@@ -160,6 +160,8 @@ int Game::play(Team* team1, Team* team2)
                         /***********************************Attaques ***************************/
                             if (attaque1.getGlobalBounds().contains(mouseX,mouseY)){        //si on clique sur les boutons d'attaque
                                     if(J1.getAttack()[0].getMana()>0){
+                                            cout<<"j1 : "<<J1.getSpeed()<<endl;
+                                            cout<<"j2 : "<<J2.getSpeed()<<endl;
                                        if(J1.getSpeed()>=J2.getSpeed())
                                         {
                                                 script=J1.lancerAttaque(J1.getAttack()[0],&J1, J2 );
@@ -431,7 +433,7 @@ int Game::play(Team* team1, Team* team2)
     }
 
     /**************************************Chargement et position du sprite ****************************************/
-    J1.setPath();
+    //J1.setPath();
 //cout<<"lien:"<<J1.getPath(false)<<endl;
     if (!p1.loadFromFile(J1.getPath(false),IntRect(150,200,0,0))){ // Si le chargement du fichier a échoué
        cout<<"test dans la boucle"<<endl;
@@ -444,7 +446,7 @@ int Game::play(Team* team1, Team* team2)
     }
 
 
-    J2.setPath();
+  //  J2.setPath();
      if (!p2.loadFromFile(J2.getPath(true),IntRect(150,200,0,0)))
     {
         cout<<"test p2"<<endl;

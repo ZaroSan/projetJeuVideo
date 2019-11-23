@@ -16,7 +16,7 @@ public:
     //formes canoniques
     Personnage();
     Personnage(string);
-    Personnage(string, int, int, int, int, int, Attack* );
+    Personnage(string, int, int, int, int, int,int, Attack* );
     virtual ~Personnage();
     Personnage (const Personnage& other);
     Personnage & operator=(Personnage const & other)

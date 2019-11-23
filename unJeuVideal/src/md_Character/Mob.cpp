@@ -37,7 +37,7 @@ Mob::~Mob()
     }
 }
 
-Mob::Mob(string name, int lifePoint, int strength, int power, int physicalArmor, int magicalArmor, Attack* attack)
+Mob::Mob(string name, int lifePoint, int strength, int power, int physicalArmor, int magicalArmor,int speed, Attack* attack)
 {
     this->strength=strength;
     this->power=power;
@@ -164,14 +164,14 @@ int Mob::getDegat(Attack a, Personnage p, Mob *m)
 
     if(m->strength > p.getPhysicalArmor())
     {
-        degatAD=a.getPower()/(m->strength - p.getPhysicalArmor());
+        degatAD=a.getPower()+(m->strength - p.getPhysicalArmor());
     }else{
         degatAD =0;
     }
 
     if(m->power > p.getMagicalArmor())
     {
-        degatAP=a.getPower()/(m->power - p.getMagicalArmor());
+        degatAP=a.getPower()+(m->power - p.getMagicalArmor());
     }else{
         degatAP = 0;
     }
@@ -204,6 +204,7 @@ string Mob::lancerAttaque(Attack a, Personnage p, Mob *m)
         {
             degat=getDegat(a, p, m);
             p.setLifePoint(p.getLifePoint()-degat);
+
 
 
             pourcent=(int)(100*degat/p.getLifePointMax());

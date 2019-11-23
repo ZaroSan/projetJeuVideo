@@ -87,7 +87,7 @@ int Menu::choix()
     Font police;
 
 
-    //création de la fenetre
+    //crï¿½ation de la fenetre
     create(VideoMode(1200,700),"Ultimate Fantasy", sf::Style::Close);
     sf::Text text, nomPers,nomMob, text1, text2;
     nomPers.setFont(police);
@@ -99,7 +99,7 @@ int Menu::choix()
 	text2.setFont(police);
 	text2.setCharacterSize(24);
 	text.setFont(police);
-	text.setCharacterSize(24); // exprimée en pixels
+	text.setCharacterSize(24); // exprimï¿½e en pixels
 
 	// choix de la couleur du texte
 	textButton.setColor(sf::Color::White);
@@ -119,7 +119,7 @@ int Menu::choix()
 	text2.setString("Personnages du joueur 2");
 	text.setString("Au joueur 1 de choisir !");
 
-    setFramerateLimit(60); //limiter à 60 fps
+    setFramerateLimit(60); //limiter ï¿½ 60 fps
 
     if (!police.loadFromFile("Images/calibri.ttf"))
         {
@@ -171,7 +171,7 @@ int Menu::choix()
                         {
                             text.setString("BOUTON");
 
-                            close(); //ferme la fenetre et réouvre la suivante via la methode play()
+                            close(); //ferme la fenetre et rï¿½ouvre la suivante via la methode play()
 
                             ultimate_fantasy.play(&team1,&team2);
 
@@ -192,17 +192,17 @@ int Menu::choix()
                                         teamP1[team1.getListPersonnage().size()].setPosition(400+(team1.getListPersonnage().size()*40),580);
                                         team1.AddPersonnage(allPersonnage[k]);
 
-                                        text.setString("Personnage ajouté");
+                                        text.setString("Personnage ajoutï¿½");
 
                                         if(team1.getListPersonnage().size()==2)
                                         {
-                                            text.setString("Votre équipe est complète \n Choissisez l'équipe de l'IA !");
+                                            text.setString("Votre ï¿½quipe est complï¿½te \n Choissisez l'ï¿½quipe de l'IA !");
                                             choixJ="Joueur 2";
                                         }
                                     }
                                     else if(findPersonnage(team1, allPersonnage[k])==true)
                                     {
-                                            text.setString("Ce personnage existe déjà");
+                                            text.setString("Ce personnage existe dï¿½jï¿½");
                                     }
 
                                 }
@@ -212,7 +212,7 @@ int Menu::choix()
                                 }
                                 else
                                 {
-                                    text.setString("Ce personnage existe déjà");
+                                    text.setString("Ce personnage existe dï¿½jï¿½");
                                 }
                             }
                         }
@@ -232,17 +232,17 @@ int Menu::choix()
                                         teamP2[team2.getListMob().size()].setPosition(400+(team2.getListMob().size()*40),650);
                                         team2.AddMob(allMob[l]);
 
-                                        text.setString("Mob ajouté");
+                                        text.setString("Mob ajoutï¿½");
 
                                         if(team2.getListMob().size()==2)
                                         {
-                                             text.setString("Votre équipe est complète \n Appuyez sur le bouton pour lancer le combat");
+                                             text.setString("Votre ï¿½quipe est complï¿½te \n Appuyez sur le bouton pour lancer le combat");
                                              choixJ="Fin";
                                         }
                                     }
                                     else if(findMob(team2, allMob[l])==true)
                                     {
-                                        text.setString("Ce mob existe déjà");
+                                        text.setString("Ce mob existe dï¿½jï¿½");
                                     }
 
                                 }
@@ -252,7 +252,7 @@ int Menu::choix()
                                 }
                                 else
                                 {
-                                    text.setString("Ce Mob existe déjà");
+                                    text.setString("Ce Mob existe dï¿½jï¿½");
                                 }
                             }
                         }
@@ -351,48 +351,48 @@ return false;
 vector<Personnage> Menu::initialisation()
 {
     vector<Personnage>liste;
-    //creation d'attaque avec les différentes stats
+    //creation d'attaque avec les diffï¿½rentes stats
     //string name, int power, int mana, int precision
 
     Attack Fury_Charge("Fury Charge", 100, 10, 80);
-    Attack Focus_Blast("Focus Blast", 100, 50, 30);
-    Attack Full_Counter("Full Counter", 100, 50, 30);
-    Attack Outrage("Outrage", 100, 50, 30);
+    Attack Focus_Blast("Focus Blast", 40, 15, 90);
+    Attack Full_Counter("Full Counter", 75, 10, 100);
+    Attack Outrage("Outrage", 60, 15, 80);
 
-    Attack Perfect_Shot("Perfect Shot", 100, 50, 30);
-    Attack Multiple_Shots("Multiple Shots", 100, 50, 30);
-    Attack Sharp_Dagger("Sharp Dagger", 100, 50, 30);
-    Attack Fire_Arrow("Fire Arrow", 100, 50, 30);
+    Attack Perfect_Shot("Perfect Shot", 85, 5, 120);
+    Attack Multiple_Shots("Multiple Shots", 65, 15, 100);
+    Attack Sharp_Dagger("Sharp Dagger", 70, 15, 100);
+    Attack Fire_Arrow("Fire Arrow", 100, 5, 120);
 
-    Attack Group_Care("Group Care", 100, 50, 30);
-    Attack Heal("Heal", 100, 50, 30);
-    Attack Resurrection("Resurrection", 100, 50, 30);
-    Attack Panacea("Panacea", 100, 50, 30);
+    Attack Group_Care("Group Care", 55, 10, 60);
+    Attack Flower_Power("Flower Power", 65, 10, 60);
+    Attack Soul_Power("Soul Power", 65, 10, 60);
+    Attack Panacea("Panacea", 100, 10, 60);
 
-    Attack Blizzard("Blizzard", 100, 50, 30);
-    Attack Lightning_Impact("Lightning Impact", 100, 50, 30);
-    Attack Heat_Wave("Heat Wave", 100, 50, 30);
-    Attack Explosion("Explosion", 100, 50, 30);
+    Attack Blizzard("Blizzard", 100, 10, 100);
+    Attack Lightning_Impact("Lightning Impact", 100, 15, 90);
+    Attack Heat_Wave("Heat Wave", 55, 50, 70);
+    Attack Explosion("Explosion", 120, 1, 50);
 
 
 
     Attack attackBrawl[4]={Fury_Charge, Focus_Blast, Full_Counter, Outrage};
     Attack attackRanger[4]={Perfect_Shot, Multiple_Shots, Sharp_Dagger, Fire_Arrow};
-    Attack attackHealer[4]={Group_Care, Heal, Resurrection, Panacea};
+    Attack attackHealer[4]={Group_Care, Flower_Power, Soul_Power, Panacea};
     Attack attackWizard[4]={Blizzard, Lightning_Impact, Heat_Wave, Explosion};
 
 
     //creation personnage
-    //string name, int lifePoint, int strength, int power, int physicalArmor, int magicalArmor, Attack* attack
-    Personnage brawler("Brawler", 350, 110, 40, 80, 75, attackBrawl);
-    Personnage ranger("Ranger",10,10,10,10,10,attackRanger);
-    Personnage healer("Healer",10,10,10,10,10,attackHealer);
-    Personnage wizard("Wizard",10,10,10,10,10,attackWizard);
+    //string name, int lifePoint, int strength, int power, int physicalArmor, int magicalArmor,int speed, Attack* attack
+    Personnage brawler("Brawler", 350, 100, 15, 80, 75,55,attackBrawl);
+    Personnage ranger("Ranger",278,95,15,50,50,100,attackRanger);
+    Personnage healer("Healer",150,50,90,30,30,45,attackHealer);
+    Personnage wizard("Wizard",275,45,100,30,30,75,attackWizard);
 
   //  cout<<"je suis un  tetst = "<<brawler.getAttack()->getName()<<endl;
 
 
-    //ajout à la liste
+    //ajout ï¿½ la liste
 	liste.push_back(brawler);
 	liste.push_back(ranger);
 	liste.push_back(healer);
@@ -411,29 +411,34 @@ vector<Personnage> Menu::initialisation()
 vector<Mob>Menu::initialisationEnnemy()
 {
     vector<Mob>liste;
+  //creation d'attaque avec les diffï¿½rentes stats
+    //string name, int power, int mana, int precision
 
-    Attack Masse_Os("Masse Os", 100, 50, 100);
-    Attack Coup_De_Crane("Coup de crane", 100, 50, 100);
-    Attack Tibia_Long("Tibia long", 100, 50, 100);
-    Attack Phalange("Phalange", 100, 50, 100);
+    Attack Masse_Os("Masse Os", 100, 15, 100);
+    Attack Coup_De_Crane("Coup de crane", 75, 10, 75);
+    Attack Tibia_Long("Tibia long", 55, 15, 65);
+    Attack Phalange("Phalange", 30, 15, 25);
 
-    Attack Coup_De_Kanabo("Coup de Kanabo", 100, 50, 30);
-    Attack poing_Geant("Poing geant", 100, 50, 30);
-    Attack Grande_frappe("Grande frappe", 100, 50, 30);
-    Attack Behemoth_Bullet("Behemoth Bullet", 100, 50, 30);
+    Attack Coup_De_Kanabo("Coup de Kanabo", 85, 15, 95);
+    Attack poing_Geant("Poing geant", 100, 15, 100);
+    Attack Grande_frappe("Grande frappe", 60, 15, 75);
+    Attack Behemoth_Bullet("Behemoth Bullet", 85, 15, 55);
 
-    Attack True_Dark("True Dark", 100, 50, 30);
-    Attack Beautiful_Snow("Beautiful Snow", 100, 50, 30);
-    Attack Bubble_Push("Bubble Push", 100, 50, 30);
-    Attack Terror_Thrust("Terror Thrust", 100, 50, 30);
+    Attack True_Dark("True Dark", 100, 15, 100);
+    Attack Beautiful_Snow("Beautiful Snow", 65, 15, 66);
+    Attack Bubble_Push("Bubble Push", 55, 15, 55);
+    Attack Terror_Thrust("Terror Thrust", 100, 15, 100);
 
     Attack attackSkeleton[4]={Masse_Os, Coup_De_Crane, Tibia_Long, Phalange};
     Attack attackOrc[4]={Coup_De_Kanabo, poing_Geant, Grande_frappe, Behemoth_Bullet};
     Attack attackElf[4]={True_Dark, Beautiful_Snow, Bubble_Push, Terror_Thrust};
 
-    Mob skeleton("Skeleton", 10,10,10,10,10,attackSkeleton);
-    Mob orc("Orc",10,10,10,10,10,attackOrc);
-    Mob elf("Elf",10,10,10,10,10,attackElf);
+
+    //creation personnage
+    //string name, int lifePoint, int strength, int power, int physicalArmor, int magicalArmor, int speed, Attack* attack
+    Mob skeleton("Skeleton", 300,60,60,30,30,60,attackSkeleton);
+    Mob orc("Orc",325,100,30,65,65,50,attackOrc);
+    Mob elf("Elf",275,50,100,50,50,60,attackElf);
 
 
 

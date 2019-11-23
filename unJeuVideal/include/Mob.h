@@ -37,7 +37,7 @@ class Mob
         //formes canoniques
     Mob();
     Mob(string);
-    Mob(string, int, int, int, int, int, Attack* );
+    Mob(string, int, int, int, int, int,int, Attack* );
     virtual ~Mob();
     Mob (const Mob& other);
     Mob & operator=(Mob const & other)

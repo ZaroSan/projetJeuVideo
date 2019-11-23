@@ -26,7 +26,7 @@ Personnage::Personnage()
     this->attack[3] = Attack("attaque4");
 }
 
-Personnage::Personnage(string name, int lifePoint, int strength, int power, int physicalArmor, int magicalArmor, Attack* attack)
+Personnage::Personnage(string name, int lifePoint, int strength, int power, int physicalArmor, int magicalArmor,int speed, Attack* attack)
 {
     this->strength=strength;
     this->power=power;
@@ -166,14 +166,14 @@ int Personnage::getDegat(Attack a, Personnage *p, Mob m)
 
     if(p->strength > m.getPhysicalArmor())
     {
-        degatAD=a.getPower()/(p->strength - m.getPhysicalArmor());
+        degatAD=a.getPower()+(p->strength - m.getPhysicalArmor());
     }else{
         degatAD =0;
     }
 
     if(p->power > m.getMagicalArmor())
     {
-        degatAP=a.getPower()/(p->power - m.getMagicalArmor());
+        degatAP=a.getPower()+(p->power - m.getMagicalArmor());
     }else{
         degatAP = 0;
     }
@@ -193,11 +193,11 @@ string Personnage::lancerAttaque(Attack a, Personnage *p, Mob m)
 
 
     srand(time(0));
-    proba=rand()%100+1;
+    proba=(rand()%99+1);;
 
     s=this->getName()+" lance "+a.getName()+" !\n";
 
-    if(a.getPrecision() <= proba){
+    if(proba >a.getPrecision()){
 
         s+=this->getName()+" rate son attaque !\n";
     }else{
@@ -206,6 +206,7 @@ string Personnage::lancerAttaque(Attack a, Personnage *p, Mob m)
         {
             degat=getDegat(a, p, m);
             m.setLifePoint(m.getLifePoint()-degat);
+
 
 
             pourcent=(int)(100*degat/m.getLifePointMax());
