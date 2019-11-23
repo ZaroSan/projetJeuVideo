@@ -1,4 +1,4 @@
-#ifndef EVENT_H
+/*#ifndef EVENT_H
 #define EVENT_H
 #include"FactoryCharacter.h"
 #include"Mob.h"
@@ -21,3 +21,4 @@ class Event
 };
 
 #endif // MOB_H
+*/

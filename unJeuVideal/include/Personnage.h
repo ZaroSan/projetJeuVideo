@@ -58,7 +58,7 @@ public:
     void setPower(int i){this->power=0;}
     void setMagicalArmor(int i){this->magicalArmor=0;}
     void setPhysicalArmor(int i){this->physicalArmor=i;}
-    void setLifePoint(int i){this->lifePoint=i;}
+    void setLifePoint(int lifePoint){this->lifePoint=lifePoint;}
     void setName(string str){this->name=str;};
     void setPath();
 
@@ -74,7 +74,7 @@ public:
     bool estKO();
     Attack* getAttack();
 
-    string lancerAttaque(Attack, Personnage*, Mob);
+    string lancerAttaque(Attack, Personnage*);
     static string itoa(double,int);
     static string itoa(int,int);
     static string toString(double);
@@ -89,7 +89,7 @@ private:
     int lifePoint;
     int lifePointMax;
     int speed;
-    int getDegat(Attack, Personnage*, Mob);
+    int getDegat(Attack, Personnage*);
 
     string name;
 

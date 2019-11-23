@@ -25,9 +25,9 @@ int Menu::choix()
     string gameMode="Menu";
 
     vector<Personnage> allPersonnage;
-    vector<Mob> allMob;
+  //  vector<Mob> allMob;
     allPersonnage=initialisation();
-    allMob=initialisationEnnemy();
+   // allMob=initialisationEnnemy();
 
     Team team1;
     Team team2;
@@ -47,9 +47,9 @@ int Menu::choix()
     Texture tex;
 
     Sprite Ipers[allPersonnage.size()];
-    Sprite Imob[allMob.size()];
+//    Sprite Imob[allMob.size()];
     Texture Icon[allPersonnage.size()];
-    Texture IconMob[allMob.size()];
+  //  Texture IconMob[allMob.size()];
 
     for(unsigned int i=0; i<(allPersonnage.size()); i++)
     {
@@ -65,7 +65,7 @@ int Menu::choix()
             Ipers[i].setPosition(10+(80*(i%15)),300+50*(i/15));
         }
     }
-
+/*
     for(unsigned int j=0; j<(allMob.size()); j++)
     {
         if(!IconMob[j].loadFromFile(PATH_IMAGE+_ICON+allMob[j].getName()+EXTENSION_IMAGE)) //charge l'icone du mob
@@ -81,7 +81,7 @@ int Menu::choix()
         }
     }
 
-
+*/
 
 
     Font police;
@@ -92,8 +92,8 @@ int Menu::choix()
     sf::Text text, nomPers,nomMob, text1, text2;
     nomPers.setFont(police);
     nomPers.setCharacterSize(24);
-    nomMob.setFont(police);
-    nomMob.setCharacterSize(24);
+  //  nomMob.setFont(police);
+   // nomMob.setCharacterSize(24);
     text1.setFont(police);
     text1.setCharacterSize(24);
 	text2.setFont(police);
@@ -133,143 +133,103 @@ int Menu::choix()
 	while (this->isOpen())
     {
         sf::Event event;
-        while (pollEvent(event))
-        {
-            for(unsigned int j=0; j<(allPersonnage.size()); j++)
-            {
-                if(Ipers[j].getGlobalBounds().contains(Mouse::getPosition(*this).x,Mouse::getPosition(*this).y))
-                {
-                    nomPers.setString(allPersonnage[j].getName());
-                }
-            }
-            for(unsigned int n=0; n<(allMob.size()); n++)
-            {
-                if(Imob[n].getGlobalBounds().contains(Mouse::getPosition(*this).x,Mouse::getPosition(*this).y))
-                {
-                    nomMob.setString(allMob[n].getName());
-                }
-            }
+        while (pollEvent(event)){                             //boucle des �v�nements
 
-            switch (event.type)
+          for (unsigned int t=0;t<(allPersonnage.size());t++)
+          {
+            if(Ipers[t].getGlobalBounds().contains(Mouse::getPosition(*this).x,Mouse::getPosition(*this).y))
             {
-                case Event::Closed:      //si on ferme la fenetre
+                nomPers.setString(allPersonnage[t].getName());
+            }
+          }
+            switch (event.type){
+
+                case Event::Closed:                                 //si on ferme la fenetre
                     close();
+
                     break;
-                case Event::KeyPressed:  //si on appuie sur la touche escape
-                    if(event.key.code==Keyboard::Escape)
-                        close();
+
+                case Event::KeyPressed:                             //si on appuie sur une touche
+
+                    if (event.key.code==Keyboard::Escape)
+                       close();
 
                     break;
 
                 case Event::MouseButtonPressed:
-                    if(event.mouseButton.button==Mouse::Left)
-                    {
-                        mouseX=Mouse::getPosition(*this).x;            //on recupere la position de la souris
-                        mouseY=Mouse::getPosition(*this).y;
+                     if (event.mouseButton.button==Mouse::Left){             //bouton gauche
+                            mouseX=Mouse::getPosition(*this).x;            //on recupere la position de la souris
+                            mouseY=Mouse::getPosition(*this).y;
 
-                        if ((button.getGlobalBounds().contains(mouseX,mouseY))&& choixJ=="Fin")
-                        {
-                            text.setString("BOUTON");
+                             if ((button.getGlobalBounds().contains(mouseX,mouseY))&& choixJ=="Fin")
+                             {
+                                text.setString("BOUTON");
 
-                            close(); //ferme la fenetre et r�ouvre la suivante via la methode play()
+								close();
 
-                            ultimate_fantasy.play(&team1,&team2);
+                                ultimate_fantasy.play(&team1, &team2);
 
-                            return EXIT_SUCCESS;
+                                return EXIT_SUCCESS;
+                             }
 
-                        }
-
-                        for(unsigned int k=0;k<(allPersonnage.size());k++)
-                        {
-                            if(Ipers[k].getGlobalBounds().contains(mouseX, mouseY))
+                            for (unsigned int k=0;k<(allPersonnage.size());k++)
                             {
-                                if(choixJ=="Joueur 1")
+                                if (Ipers[k].getGlobalBounds().contains(mouseX,mouseY))
                                 {
-                                    if(findPersonnage(team1, allPersonnage[k])==false)
-                                    {
+                                   if(choixJ=="Joueur 1")
+                                   {
 
+                                    if(findPersonnage(team1,allPersonnage[k])==false)
+                                    {
                                         teamP1[team1.getListPersonnage().size()]=Ipers[k];
                                         teamP1[team1.getListPersonnage().size()].setPosition(400+(team1.getListPersonnage().size()*40),580);
                                         team1.AddPersonnage(allPersonnage[k]);
 
-                                        text.setString("Personnage ajout�");
+                                        text.setString("Personnage Ajoute");
 
                                         if(team1.getListPersonnage().size()==2)
                                         {
-                                            text.setString("Votre �quipe est compl�te \n Choissisez l'�quipe de l'IA !");
-                                            choixJ="Joueur 2";
+                                             text.setString("Votre equipe est complete \n Au joueur 2 de chosir");
+                                             choixJ="Joueur 2";
+
                                         }
-                                    }
-                                    else if(findPersonnage(team1, allPersonnage[k])==true)
-                                    {
-                                            text.setString("Ce personnage existe d�j�");
-                                    }
-
-                                }
-                                else if (choixJ=="Joueur 2" && team2.getListPersonnage().size()<2)
-                                {
-                                    text.setString("Veuillez maintenant choisir 2 mobs");
-                                }
-                                else
-                                {
-                                    text.setString("Ce personnage existe d�j�");
-                                }
-                            }
-                        }
-
-
-
-                        for(unsigned int l=0;l<(allMob.size());l++)
-                        {
-                            if(Imob[l].getGlobalBounds().contains(mouseX, mouseY))
-                            {
-                                if(choixJ=="Joueur 2")
-                                {
-                                    if(findMob(team2, allMob[l])==false)
-                                    {
-
-                                        teamP2[team2.getListMob().size()]=Imob[l];
-                                        teamP2[team2.getListMob().size()].setPosition(400+(team2.getListMob().size()*40),650);
-                                        team2.AddMob(allMob[l]);
-
-                                        text.setString("Mob ajout�");
-
-                                        if(team2.getListMob().size()==2)
+                                      }
+                                        else
                                         {
-                                             text.setString("Votre �quipe est compl�te \n Appuyez sur le bouton pour lancer le combat");
+                                          text.setString("Ce Personnage existe deja");
+                                        }
+                                   }
+                                   else
+                                   {
+                                       if(choixJ=="Joueur 2")
+                                       {
+
+                                         if(findPersonnage(team2,allPersonnage[k])==false)
+                                        {
+                                        teamP2[team2.getListPersonnage().size()]=Ipers[k];
+                                        teamP2[team2.getListPersonnage().size()].setPosition(400+(team2.getListPersonnage().size()*40),650);
+                                        team2.AddPersonnage(allPersonnage[k]);
+
+                                        text.setString("Personnage Ajoute");
+                                        if(team2.getListPersonnage().size()==2)
+                                        {
+                                             text.setString("Votre equipe est complete \n Appuyez sur le bouton pour lancer le combat");
                                              choixJ="Fin";
                                         }
+                                        }
+                                        else
+                                        {
+                                          text.setString("Ce Personnage existe deja");
+                                        }
                                     }
-                                    else if(findMob(team2, allMob[l])==true)
-                                    {
-                                        text.setString("Ce mob existe d�j�");
-                                    }
-
-                                }
-                                else if (choixJ=="Joueur 1" && team1.getListPersonnage().size()<2)
-                                {
-                                    text.setString("Veuillez d'abord choisir 2 personnages");
-                                }
-                                else
-                                {
-                                    text.setString("Ce Mob existe d�j�");
+                                   }
                                 }
                             }
-                        }
-
-//
-
-                    }
-
-
-                break;
+                            }                       //si on clique
+                     break;
                 default:
                     break;
-
-
-
             }
-
         }
 
 /**************** Chargement et position Sprite **********/
@@ -283,11 +243,11 @@ int Menu::choix()
         draw(text1);
         draw(text2);
         draw(nomPers);
-        draw(nomMob);
+       // draw(nomMob);
 
         draw(text);
         draw(iPersonnage);
-        draw(iMob);
+      //  draw(iMob);
 
          if(choixJ=="Fin")
          {
@@ -299,7 +259,7 @@ int Menu::choix()
         {
         draw(teamP1[o]);
         }
-        for(unsigned int r=0;r<team2.getListMob().size();r++)
+        for(unsigned int r=0;r<team1.getListPersonnage().size();r++)
         {
         draw(teamP2[r]);
         }
@@ -309,12 +269,12 @@ int Menu::choix()
         {
         draw(Ipers[j]);
         }
-
+/*
         for(unsigned int h=0;h<(allMob.size());h++)
         {
         draw(Imob[h]);
         }
-
+*/
         display();
 
     }
@@ -334,7 +294,7 @@ bool Menu::findPersonnage(Team t,Personnage p)
     }
 return false;
 }
-
+/*
 bool Menu::findMob(Team t,Mob m)
 {
     for(unsigned int j=0;j<t.getListMob().size();j++)
@@ -346,7 +306,7 @@ bool Menu::findMob(Team t,Mob m)
     }
 return false;
 }
-
+*/
 
 vector<Personnage> Menu::initialisation()
 {
@@ -400,6 +360,42 @@ vector<Personnage> Menu::initialisation()
 
 
 
+
+
+	Attack Masse_Os("Masse Os", 100, 15, 100);
+    Attack Coup_De_Crane("Coup de crane", 75, 10, 75);
+    Attack Tibia_Long("Tibia long", 55, 15, 65);
+    Attack Phalange("Phalange", 30, 15, 25);
+
+    Attack Coup_De_Kanabo("Coup de Kanabo", 85, 15, 95);
+    Attack poing_Geant("Poing geant", 100, 15, 100);
+    Attack Grande_frappe("Grande frappe", 60, 15, 75);
+    Attack Behemoth_Bullet("Behemoth Bullet", 85, 15, 55);
+
+    Attack True_Dark("True Dark", 100, 15, 100);
+    Attack Beautiful_Snow("Beautiful Snow", 65, 15, 66);
+    Attack Bubble_Push("Bubble Push", 55, 15, 55);
+    Attack Terror_Thrust("Terror Thrust", 100, 15, 100);
+
+    Attack attackSkeleton[4]={Masse_Os, Coup_De_Crane, Tibia_Long, Phalange};
+    Attack attackOrc[4]={Coup_De_Kanabo, poing_Geant, Grande_frappe, Behemoth_Bullet};
+    Attack attackElf[4]={True_Dark, Beautiful_Snow, Bubble_Push, Terror_Thrust};
+
+
+    //creation personnage
+    //string name, int lifePoint, int strength, int power, int physicalArmor, int magicalArmor, int speed, Attack* attack
+    Personnage skeleton("Skeleton", 300,60,60,30,30,60,attackSkeleton);
+    Personnage orc("Orc",325,100,30,65,65,50,attackOrc);
+    Personnage elf("Elf",275,50,100,50,50,60,attackElf);
+
+
+
+    liste.push_back(skeleton);
+    liste.push_back(orc);
+    liste.push_back(elf);
+
+
+
     return liste;
 
 
@@ -407,7 +403,7 @@ vector<Personnage> Menu::initialisation()
 
 }
 
-
+/*
 vector<Mob>Menu::initialisationEnnemy()
 {
     vector<Mob>liste;
@@ -450,4 +446,4 @@ vector<Mob>Menu::initialisationEnnemy()
 
 
 }
-
+*/

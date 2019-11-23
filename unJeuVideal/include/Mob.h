@@ -1,4 +1,4 @@
-#ifndef MOB_H
+/*#ifndef MOB_H
 #define MOB_H
 
 #include "Attack.h"
@@ -78,7 +78,7 @@ class Mob
     void setPower(int i){this->power=0;}
     void setMagicalArmor(int i){this->magicalArmor=0;}
     void setPhysicalArmor(int i){this->physicalArmor=i;}
-    void setLifePoint(int i){this->lifePoint=i;}
+    void setLifePoint(int lifePoint){this->lifePoint=lifePoint;}
     void setName(string str){this->name=str;};
     void setPath();
 
@@ -105,3 +105,4 @@ class Mob
 };
 
 #endif // MOB_H
+*/

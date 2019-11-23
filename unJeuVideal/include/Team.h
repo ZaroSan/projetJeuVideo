@@ -12,23 +12,23 @@ class Team
 {
     private:
         vector<Personnage> team;
-        vector<Mob> teamEnnemy;
+       // vector<Mob> teamEnnemy;
         //liste de personnages
 
 
     public:
         Team();
-        Team(Personnage, Mob);
+        Team(Personnage, Personnage);
 
         vector<Personnage> getListPersonnage();
-        vector<Mob> getListMob();
+
         void affiche();
         void removePersonnage(int);
-        void removeMob(int);
+     //   void removeMob(int);
         void AddPersonnage(Personnage);
-        void AddMob(Mob);
+      //  void AddMob(Mob);
         bool isEmpty();
-        bool isEmptyEnnemy();
+      //  bool isEmptyEnnemy();
         void insertPersonnage(Personnage, int);
 
 

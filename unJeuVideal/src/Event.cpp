@@ -1,4 +1,4 @@
-#include "Event.h"
+/*#include "Event.h"
 #include "iostream"
 #include "stdlib.h"
 using namespace std;
@@ -138,13 +138,14 @@ void Event::enemyEncounter(FactoryCharacter &FactoryCharacter, vector<Mob> & mob
 
 			}
         }
-  /*      if(!FactoryCharacter.isAlive())
+       if(!FactoryCharacter.isAlive())
         {
             playerDefeated=true;
-        }*/
+        }
         else if(mobs.size()<=0)
         {
             enemiesDefeated=true;
         }
     }
 }
+*/
