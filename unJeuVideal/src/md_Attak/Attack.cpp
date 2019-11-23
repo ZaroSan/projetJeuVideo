@@ -46,7 +46,7 @@ int Attack::getMana()
 
 int Attack::getManaFix()
 {
-    return this->mana;
+    return this->manaFix;
 }
 
 string Attack::getName()

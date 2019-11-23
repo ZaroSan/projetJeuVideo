@@ -354,7 +354,7 @@ vector<Personnage> Menu::initialisation()
     //creation d'attaque avec les différentes stats
     //string name, int power, int mana, int precision
 
-    Attack Fury_Charge("Fury Charge", 100, 10, 100);
+    Attack Fury_Charge("Fury Charge", 100, 10, 80);
     Attack Focus_Blast("Focus Blast", 100, 50, 30);
     Attack Full_Counter("Full Counter", 100, 50, 30);
     Attack Outrage("Outrage", 100, 50, 30);
