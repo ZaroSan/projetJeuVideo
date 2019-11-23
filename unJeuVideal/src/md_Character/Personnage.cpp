@@ -193,20 +193,42 @@ string Personnage::lancerAttaque(Attack a, Personnage *p, Mob m)
 
 
     srand(time(0));
-    proba=(rand()%99+1);;
+    proba=rand()%100+1;
 
     s=this->getName()+" lance "+a.getName()+" !\n";
 
-    if(proba >a.getPrecision()){
+    if(a.getPrecision() < proba){
 
         s+=this->getName()+" rate son attaque !\n";
-    }else{
+ //       cout<<a.getPrecision()<<endl;
+ //       cout<<proba<<endl;
+        if(a.getName()==this->getAttack()[0].getName())
+        {
+            this->getAttack()[0].setPrecision(a.getPrecision()+10);
+        //    cout<<a.getPrecision()<<endl;
+        }
+        else if(a.getName()==this->getAttack()[1].getName())
+        {
+            this->getAttack()[1].setPrecision(a.getPrecision()+10);
+        //    cout<<a.getPrecision()<<endl;
+        }
+        else if(a.getName()==this->getAttack()[2].getName())
+        {
+            this->getAttack()[2].setPrecision(a.getPrecision()+10);
+        //    cout<<a.getPrecision()<<endl;
+        }
+        else if(a.getName()==this->getAttack()[3].getName())
+        {
+            this->getAttack()[3].setPrecision(a.getPrecision()+10);
+        //    cout<<a.getPrecision()<<endl;
+        }
 
+    }else{
+ //       cout<<proba<<endl;
         if(a.getPower()!=0)
         {
             degat=getDegat(a, p, m);
             m.setLifePoint(m.getLifePoint()-degat);
-
 
 
             pourcent=(int)(100*degat/m.getLifePointMax());
