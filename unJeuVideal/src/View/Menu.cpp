@@ -24,8 +24,8 @@ int Menu::choix()
 
     string gameMode="Menu";
 
-    vector<Personnage> allPersonnage;
-    allPersonnage=initialisation();
+    vector<Personnage> allPersonnage;  //liste de personnages
+    allPersonnage=initialisation(); 
 
     Team team1;
     Team team2;
@@ -41,7 +41,6 @@ int Menu::choix()
     button.setPosition(700, 600);
 
     Sprite iPersonnage;
-  //  Sprite iMob;
     Texture tex;
 
     Sprite Ipers[allPersonnage.size()];
@@ -108,13 +107,13 @@ int Menu::choix()
 	while (this->isOpen())
     {
         sf::Event event;
-        while (pollEvent(event)){                             //boucle des �v�nements
+        while (pollEvent(event)){                             //boucle des evenements
 
           for (unsigned int t=0;t<(allPersonnage.size());t++)
           {
             if(Ipers[t].getGlobalBounds().contains(Mouse::getPosition(*this).x,Mouse::getPosition(*this).y))
             {
-                nomPers.setString(allPersonnage[t].getName());
+                nomPers.setString(allPersonnage[t].getName()); //nom au dessus des perso
             }
           }
             switch (event.type){
@@ -142,7 +141,8 @@ int Menu::choix()
 
 								close();
 
-                                ultimate_fantasy.play(&team1, &team2);
+                                ultimate_fantasy.play(&team1, &team2); //dans cette boucle on appelle la méthode play de Game.cpp qui cntient une fenetre
+                                                                        // et on ferme cette fenetre
 
                                 return EXIT_SUCCESS;
                              }
@@ -153,7 +153,7 @@ int Menu::choix()
                                 {
                                    if(choixJ=="Joueur 1")
                                    {
-
+                                    //ajout du perso dans la team1
                                     if(findPersonnage(team1,allPersonnage[k])==false)
                                     {
                                         teamP1[team1.getListPersonnage().size()]=Ipers[k];
@@ -161,7 +161,7 @@ int Menu::choix()
                                         team1.AddPersonnage(allPersonnage[k]);
 
                                         text.setString("Personnage Ajoute");
-
+                                        //si la team1 = 2 perso, on passe à la team2
                                         if(team1.getListPersonnage().size()==2)
                                         {
                                              text.setString("Votre equipe est complete \n Au joueur 2 de chosir");
@@ -169,7 +169,7 @@ int Menu::choix()
 
                                         }
                                       }
-                                        else
+                                        else //impossible de prendre deux fois le meme perso par equipe
                                         {
                                           text.setString("Ce Personnage existe deja");
                                         }
@@ -178,7 +178,7 @@ int Menu::choix()
                                    {
                                        if(choixJ=="Joueur 2")
                                        {
-
+                                            //ajout du perso dans la team2
                                          if(findPersonnage(team2,allPersonnage[k])==false)
                                         {
                                         teamP2[team2.getListPersonnage().size()]=Ipers[k];
@@ -186,6 +186,7 @@ int Menu::choix()
                                         team2.AddPersonnage(allPersonnage[k]);
 
                                         text.setString("Personnage Ajoute");
+                                        //verification de la taille de l'équipe
                                         if(team2.getListPersonnage().size()==2)
                                         {
                                              text.setString("Votre equipe est complete \n Appuyez sur le bouton pour lancer le combat");
@@ -228,7 +229,7 @@ int Menu::choix()
            draw(button);
            draw(textButton);
          }
-
+        //dessine les icones des différents perso de chaque equipes
         for(unsigned int o=0;o<team1.getListPersonnage().size();o++)
         {
         draw(teamP1[o]);

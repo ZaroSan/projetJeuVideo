@@ -92,17 +92,11 @@ Personnage::Personnage (const Personnage& other){
 
 Personnage::~Personnage()
 {
-    /*dtor
-    static int i=0;
-    if(i<5000)
-    {
-        i++;
-    }else{
-    i=0;
-    }
-     cout<<"Destruction personnage "<<this->getName()<<endl;*/
+    //dtor
+    
 }
 
+// pour savoir si on prends le devant ou le dos du personnage
 string Personnage::getPath(bool front){
 
 	if(front)
@@ -115,6 +109,7 @@ string Personnage::getPath(bool front){
 	}
 }
 
+//concatenation des différentes constantes pour savoir l'image à prendre
 void Personnage::setPath(){
 
     pathBack=PATH_IMAGE+this->getName()+BACK+EXTENSION_IMAGE;
@@ -122,7 +117,7 @@ void Personnage::setPath(){
     cout<<pathBack<<endl;
 
 }
-
+//pour tester si un perso est complet
 void Personnage::affiche()
 {
     cout << "---------------------------------------"<<endl;
@@ -141,7 +136,7 @@ void Personnage::affiche()
 	cout << "Attaque 4: "<<endl;
 	this->attack[3].toString();
 }
-
+//on test si le personnage est tjs en vie
 bool Personnage::estKO(){
     if(this->lifePoint<=0)
         return true;
@@ -159,6 +154,8 @@ int Personnage::getSpeed()const
     return speed;
 }
 
+
+//méthode de calcul de degats
 int Personnage::getDegat(Attack a, Personnage *p)
 {
     double degatAD; //degat physique
@@ -207,7 +204,7 @@ string Personnage::lancerAttaque(Attack a, Personnage *p)
             degat=getDegat(a, p);
 
            p->setLifePoint(p->getLifePoint()-degat);
-
+            //inflige des degats aux personnages(le notre comme celui en face)
 
 
 
@@ -217,7 +214,7 @@ string Personnage::lancerAttaque(Attack a, Personnage *p)
             if (pourcent>=100)
                pourcent=100;
 
-            s+=p->getName()+" perd "+Personnage::toString(pourcent)+"% de ses PV !\n"; //peut etre rajouter un algo itoa pour le calculer si necessaire
+            s+=p->getName()+" perd "+Personnage::toString(pourcent)+"% de ses PV !\n"; //on se sert de l'itoa pour calculer le pourcentage perdu de point de vie
 
             if (p->estKO()){
               p->setLifePoint(0);
@@ -247,6 +244,9 @@ string Personnage::toString(double n)
     return itoa(n, 10);
 }
 
+
+
+//Algo permettant de convertir un entier  en une chaine de caractère
 string Personnage::itoa(int value, int base)
 {
     string buf;

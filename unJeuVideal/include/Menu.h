@@ -17,9 +17,8 @@ class Menu:RenderWindow
         int choix();
 
         vector<Personnage> initialisation();
-   // vector<Mob> initialisationEnnemy();
         bool findPersonnage(Team, Personnage);
-      //  bool findMob(Team, Mob);
+
 
 
 
