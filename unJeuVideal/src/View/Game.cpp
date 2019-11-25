@@ -172,11 +172,11 @@ int Game::play(Team* team1, Team* team2)
 
                                         }
                                         else{
-                                            script+=J2.sendAttack(J2.getAttack()[randAtt],&J1)+"\n";
+                                            script=J2.sendAttack(J2.getAttack()[randAtt],&J1)+"\n";
 
                                             if(!J1.isKO())
                                             {
-                                                script=J1.sendAttack(J1.getAttack()[0],&J2)+"\n";
+                                                script+=J1.sendAttack(J1.getAttack()[0],&J2)+"\n";
                                             }
                                         }
                                         //décrémente le mana de l'attaque utiliser
@@ -208,11 +208,11 @@ int Game::play(Team* team1, Team* team2)
                                     }
 
                                 }else{
-                                    script+=J2.sendAttack(J2.getAttack()[randAtt],&J1)+"\n";
+                                    script=J2.sendAttack(J2.getAttack()[randAtt],&J1)+"\n";
 
                                     if(!J1.isKO())
                                     {
-                                        script=J1.sendAttack(J1.getAttack()[1],&J2)+"\n";
+                                        script+=J1.sendAttack(J1.getAttack()[1],&J2)+"\n";
                                     }
                                 }
                                         J1.getAttack()[1].setMana(J1.getAttack()[1].getMana()-1);
@@ -242,11 +242,11 @@ int Game::play(Team* team1, Team* team2)
                                     }
 
                                 }else{
-                                    script+=J2.sendAttack(J2.getAttack()[randAtt],&J1)+"\n";
+                                    script=J2.sendAttack(J2.getAttack()[randAtt],&J1)+"\n";
 
                                     if(!J1.isKO())
                                     {
-                                        script=J1.sendAttack(J1.getAttack()[2],&J2)+"\n";
+                                        script+=J1.sendAttack(J1.getAttack()[2],&J2)+"\n";
                                     }
                                 }
                                         J1.getAttack()[2].setMana(J1.getAttack()[2].getMana()-1);
@@ -276,11 +276,11 @@ int Game::play(Team* team1, Team* team2)
                                     }
 
                                 }else{
-                                    script+=J2.sendAttack(J2.getAttack()[randAtt],&J1)+"\n";
+                                    script=J2.sendAttack(J2.getAttack()[randAtt],&J1)+"\n";
 
                                     if(!J1.isKO())
                                     {
-                                        script=J1.sendAttack(J1.getAttack()[3],&J2)+"\n";
+                                        script+=J1.sendAttack(J1.getAttack()[3],&J2)+"\n";
                                     }
                                 }
                                         J1.getAttack()[3].setMana(J1.getAttack()[3].getMana()-1);
