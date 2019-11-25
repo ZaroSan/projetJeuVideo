@@ -14,10 +14,10 @@ class Menu:RenderWindow
 {
     public:
         Menu();
-        int choix();
+        int choice();
 
-        vector<Personnage> initialisation();
-        bool findPersonnage(Team, Personnage);
+        vector<Character> initialisation();
+        bool findPersonnage(Team, Character);
 
 
 

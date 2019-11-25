@@ -15,7 +15,7 @@ Menu::Menu()
 
 }
 
-int Menu::choix()
+int Menu::choice()
 {
 
     Game ultimate_fantasy;
@@ -24,8 +24,8 @@ int Menu::choix()
 
     string gameMode="Menu";
 
-    vector<Personnage> allPersonnage;  //liste de personnages
-    allPersonnage=initialisation(); 
+    vector<Character> allPersonnage;  //liste de personnages
+    allPersonnage=initialisation();
 
     Team team1;
     Team team2;
@@ -253,7 +253,7 @@ return EXIT_SUCCESS;
 
 }
 
-bool Menu::findPersonnage(Team t,Personnage p)
+bool Menu::findPersonnage(Team t,Character p)
 {
     for(unsigned int i=0;i<t.getListPersonnage().size();i++)
     {
@@ -266,9 +266,9 @@ return false;
 }
 
 
-vector<Personnage> Menu::initialisation()
+vector<Character> Menu::initialisation()
 {
-    vector<Personnage>liste;
+    vector<Character>liste;
     //creation d'attaque avec les diff�rentes stats
     //string name, int power, int mana, int precision
 
@@ -302,10 +302,10 @@ vector<Personnage> Menu::initialisation()
 
     //creation personnage
     //string name, int lifePoint, int strength, int power, int physicalArmor, int magicalArmor,int speed, Attack* attack
-    Personnage brawler("Brawler", 350, 100, 15, 80, 75,55,attackBrawl);
-    Personnage ranger("Ranger",278,95,15,50,50,100,attackRanger);
-    Personnage healer("Healer",150,50,90,30,30,45,attackHealer);
-    Personnage wizard("Wizard",275,45,100,30,30,75,attackWizard);
+    Character brawler("Brawler", 350, 100, 15, 80, 75,55,attackBrawl);
+    Character ranger("Ranger",278,95,15,50,50,100,attackRanger);
+    Character healer("Healer",150,50,90,30,30,45,attackHealer);
+    Character wizard("Wizard",275,45,100,30,30,75,attackWizard);
 
   //  cout<<"je suis un  tetst = "<<brawler.getAttack()->getName()<<endl;
 
@@ -342,9 +342,9 @@ vector<Personnage> Menu::initialisation()
 
     //creation personnage
     //string name, int lifePoint, int strength, int power, int physicalArmor, int magicalArmor, int speed, Attack* attack
-    Personnage skeleton("Skeleton", 300,60,60,30,30,60,attackSkeleton);
-    Personnage orc("Orc",325,100,30,65,65,50,attackOrc);
-    Personnage elf("Elf",275,50,100,50,50,60,attackElf);
+    Character skeleton("Skeleton", 300,60,60,30,30,60,attackSkeleton);
+    Character orc("Orc",325,100,30,65,65,50,attackOrc);
+    Character elf("Elf",275,50,100,50,50,60,attackElf);
 
 
 

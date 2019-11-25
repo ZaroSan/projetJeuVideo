@@ -1,4 +1,4 @@
-#include "Personnage.h"
+#include "Character.h"
 
 #include"Game.h"
 
@@ -7,7 +7,7 @@
 #include<string>
 
 
-Personnage::Personnage()
+Character::Character()
 {
     //ctor
     this->strength=10;
@@ -26,7 +26,7 @@ Personnage::Personnage()
     this->attack[3] = Attack("attaque4");
 }
 
-Personnage::Personnage(string name, int lifePoint, int strength, int power, int physicalArmor, int magicalArmor,int speed, Attack* attack)
+Character::Character(string name, int lifePoint, int strength, int power, int physicalArmor, int magicalArmor,int speed, Attack* attack)
 {
     this->strength=strength;
     this->power=power;
@@ -49,7 +49,7 @@ Personnage::Personnage(string name, int lifePoint, int strength, int power, int 
    // cout<<"Construction personnage "<<this->getName()<<endl;
 }
 
-Personnage::Personnage(string name)
+Character::Character(string name)
 {
     this->strength=10;
     this->power=10;
@@ -67,7 +67,7 @@ Personnage::Personnage(string name)
 
      setPath();
 }
-Personnage::Personnage (const Personnage& other){
+Character::Character (const Character& other){
         this->lifePoint=other.lifePoint;
         this->strength=other.strength;
         this->power=other.power;
@@ -90,14 +90,14 @@ Personnage::Personnage (const Personnage& other){
 
 }
 
-Personnage::~Personnage()
+Character::~Character()
 {
     //dtor
-    
+
 }
 
 // pour savoir si on prends le devant ou le dos du personnage
-string Personnage::getPath(bool front){
+string Character::getPath(bool front){
 
 	if(front)
 	{
@@ -110,7 +110,7 @@ string Personnage::getPath(bool front){
 }
 
 //concatenation des différentes constantes pour savoir l'image à prendre
-void Personnage::setPath(){
+void Character::setPath(){
 
     pathBack=PATH_IMAGE+this->getName()+BACK+EXTENSION_IMAGE;
     pathFront=PATH_IMAGE+this->getName()+EXTENSION_IMAGE;
@@ -118,7 +118,7 @@ void Personnage::setPath(){
 
 }
 //pour tester si un perso est complet
-void Personnage::affiche()
+void Character::affiche()
 {
     cout << "---------------------------------------"<<endl;
     cout <<"Nom: "<<this->name<<endl;
@@ -137,26 +137,26 @@ void Personnage::affiche()
 	this->attack[3].toString();
 }
 //on test si le personnage est tjs en vie
-bool Personnage::estKO(){
+bool Character::estKO(){
     if(this->lifePoint<=0)
         return true;
     else
         return false;
 }
 
-Attack* Personnage::getAttack(){
+Attack* Character::getAttack(){
     return this->attack;
 
 }
 
-int Personnage::getSpeed()const
+int Character::getSpeed()const
 {
     return speed;
 }
 
 
 //méthode de calcul de degats
-int Personnage::getDegat(Attack a, Personnage *p)
+int Character::getDegat(Attack a, Character *p)
 {
     double degatAD; //degat physique
     double degatAP; //degat magique
@@ -182,7 +182,7 @@ int Personnage::getDegat(Attack a, Personnage *p)
 
 }
 
-string Personnage::lancerAttaque(Attack a, Personnage *p)
+string Character::sendAttack(Attack a, Character *p)
 {
     double degat=0;
     string s;
@@ -214,8 +214,7 @@ string Personnage::lancerAttaque(Attack a, Personnage *p)
             if (pourcent>=100)
                pourcent=100;
 
-            s+=p->getName()+" perd "+Personnage::toString(pourcent)+"% de ses PV !\n"; //on se sert de l'itoa pour calculer le pourcentage perdu de point de vie
-
+            s+=p->getName()+" perd "+Character::toString(pourcent)+"% de ses PV !\n";
             if (p->estKO()){
               p->setLifePoint(0);
               s+=p->getName()+" est KO!\n ";
@@ -234,12 +233,12 @@ string Personnage::lancerAttaque(Attack a, Personnage *p)
 
 }
 
-string Personnage::toString(int n)
+string Character::toString(int n)
 {
     return itoa(n, 10);
 }
 
-string Personnage::toString(double n)
+string Character::toString(double n)
 {
     return itoa(n, 10);
 }
@@ -247,7 +246,7 @@ string Personnage::toString(double n)
 
 
 //Algo permettant de convertir un entier  en une chaine de caractère
-string Personnage::itoa(int value, int base)
+string Character::itoa(int value, int base)
 {
     string buf;
 
@@ -273,7 +272,7 @@ string Personnage::itoa(int value, int base)
     return buf;
 }
 
-string Personnage::itoa(double value, int base) {
+string Character::itoa(double value, int base) {
 
         string buf;
 

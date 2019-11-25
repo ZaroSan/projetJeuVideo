@@ -1,5 +1,5 @@
-#ifndef PERSONNAGE_H
-#define PERSONNAGE_H
+#ifndef CHARACTER_H
+#define CHARACTER_H
 
 #include "Attack.h"
 
@@ -10,37 +10,36 @@ using std::string;
 using std::stringstream;
 
 using namespace std;
-class Personnage
+class Character
 {
 public:
     //formes canoniques
-    Personnage();
-    Personnage(string);
-    Personnage(string, int, int, int, int, int,int, Attack* );
-    virtual ~Personnage();
-    Personnage (const Personnage& other);
-    Personnage & operator=(Personnage const & other)
-    {
-        this->lifePoint=other.lifePoint;
-        this->strength=other.strength;
-        this->power=other.power;
-        this->magicalArmor=other.magicalArmor;
-        this->physicalArmor=other.physicalArmor;
-        this->speed=other.speed;
-        this->lifePointMax=other.lifePointMax;
+  Character();
+  Character(string);
+  Character(string, int, int, int, int, int, int, Attack *);
+  virtual ~Character();
+  Character(const Character &other);
+  Character &operator=(Character const &other)
+  {
+      this->lifePoint = other.lifePoint;
+      this->strength = other.strength;
+      this->power = other.power;
+      this->magicalArmor = other.magicalArmor;
+      this->physicalArmor = other.physicalArmor;
+      this->speed = other.speed;
+      this->lifePointMax = other.lifePointMax;
 
+      this->name = other.name;
 
-        this->name=other.name;
+      this->attack[0] = other.attack[0];
+      this->attack[1] = other.attack[1];
+      this->attack[2] = other.attack[2];
+      this->attack[3] = other.attack[3];
 
-        this->attack[0]=other.attack[0];
-        this->attack[1]=other.attack[1];
-        this->attack[2]=other.attack[2];
-        this->attack[3]=other.attack[3];
+      this->pathFront = other.pathFront;
+      this->pathBack = other.pathBack;
 
-        this->pathFront=other.pathFront;
-        this->pathBack=other.pathBack;
-
-        return*this;
+      return *this;
     }
 
     //Getters + setters
@@ -74,7 +73,7 @@ public:
     bool estKO();
     Attack* getAttack();
 
-    string lancerAttaque(Attack, Personnage*);
+    string sendAttack(Attack, Character*);
     static string itoa(double,int);
     static string itoa(int,int);
     static string toString(double);
@@ -89,7 +88,7 @@ private:
     int lifePoint;
     int lifePointMax;
     int speed;
-    int getDegat(Attack, Personnage*);
+    int getDegat(Attack, Character*);
 
     string name;
 

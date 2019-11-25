@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Personnage.h"
+#include "Character.h"
 
 
 #include "Menu.h"
@@ -19,7 +19,7 @@ int main()
 
     Game ultimate_fantasy;
     Menu menu;
-    menu.choix();
+    menu.choice();
 
 
     return 0;

@@ -1,5 +1,5 @@
 #include "Team.h"
-#include "Personnage.h"
+#include "Character.h"
 
 
 #include <iostream>
@@ -11,7 +11,7 @@ Team::Team()
     //ctor
 }
 
-Team::Team(Personnage perso1,Personnage perso2)
+Team::Team(Character perso1,Character perso2)
 {
     team.push_back(perso1);
     team.push_back(perso2);
@@ -40,7 +40,7 @@ bool Team::isEmpty()
 
 
 
-vector<Personnage> Team::getListPersonnage()
+vector<Character> Team::getListPersonnage()
 {
     return this->team;
 }
@@ -54,14 +54,14 @@ void Team::removePersonnage(int n)
 
 
 
-void Team::AddPersonnage(Personnage p)
+void Team::AddPersonnage(Character p)
 {
     this->team.push_back(p);
 }
 
 
 
-void Team::insertPersonnage(Personnage p, int n)
+void Team::insertPersonnage(Character p, int n)
 {
     this->team.insert(this->team.begin()+n,p);
 }

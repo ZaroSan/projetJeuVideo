@@ -14,8 +14,7 @@ class Game:RenderWindow
     public:
         Game();
         int play(Team*, Team*);
-       // round();
-     //   void getCharacter();
+       
 
 
 

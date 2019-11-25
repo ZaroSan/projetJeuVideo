@@ -2,7 +2,7 @@
 #define TEAM_H
 
 #include <string>
-#include "Personnage.h"
+#include "Character.h"
 
 #include <vector>
 
@@ -11,21 +11,21 @@ using namespace std;
 class Team
 {
     private:
-        vector<Personnage> team;
+        vector<Character> team;
         //liste de personnages
 
 
     public:
         Team();
-        Team(Personnage, Personnage);
+        Team(Character, Character);
 
-        vector<Personnage> getListPersonnage();
+        vector<Character> getListPersonnage();
 
         void affiche();
         void removePersonnage(int);
-        void AddPersonnage(Personnage);
+        void AddPersonnage(Character);
         bool isEmpty();
-        void insertPersonnage(Personnage, int);
+        void insertPersonnage(Character, int);
 
 
 };
