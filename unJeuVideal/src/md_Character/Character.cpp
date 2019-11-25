@@ -184,7 +184,7 @@ int Character::getDamage(Attack a, Character *p)
 
 string Character::sendAttack(Attack a, Character *p)
 {
-    double degat=0;
+    double damage=0;
     string s;
     int pourcent;
     int proba;
@@ -201,15 +201,15 @@ string Character::sendAttack(Attack a, Character *p)
     }else{
         if(a.getPower()!=0)
         {
-            degat=getDamage(a, p);
+            damage=getDamage(a, p);
 
-           p->setLifePoint(p->getLifePoint()-degat);
+           p->setLifePoint(p->getLifePoint()-damage);
             //inflige des degats aux personnages(le notre comme celui en face)
 
 
 
 
-            pourcent=(int)(100*degat/p->getLifePointMax());
+            pourcent=(int)(100*damage/p->getLifePointMax());
 
             if (pourcent>=100)
                pourcent=100;
