@@ -192,9 +192,7 @@ string Character::sendAttack(Attack a, Character *p)
     int pourcent;
     int proba;
 
-
-    srand(time(0));
-    proba=(rand()%99+1);
+    proba=(rand()%100+1);
 
     s=this->getName()+" lance "+a.getName()+" !\n";
 

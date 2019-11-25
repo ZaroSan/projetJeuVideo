@@ -17,6 +17,7 @@ using namespace std;
 int main()
 {
 
+    srand(time(0));
     Game ultimate_fantasy;
     Menu menu;
     menu.choice();
