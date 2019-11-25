@@ -64,6 +64,7 @@ int Attack::getPrecision()
     return this->precision;
 }
 
+//méthodes pour tester les différents attributs d'une attaque
 void Attack::toString()
 {
     cout<<"Nom: "<<this->name<<endl;;

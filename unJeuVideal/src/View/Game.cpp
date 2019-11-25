@@ -35,6 +35,7 @@ int Game::play(Team* team1, Team* team2)
     Sprite user;
     Sprite ennemy;
 
+    //element de l'equipe en bas à droite
     Sprite iPers[2];
     RectangleShape CharacterSwitch[2];
 
@@ -42,20 +43,23 @@ int Game::play(Team* team1, Team* team2)
 
     Image icone;
 
-    RectangleShape wallpaper;
+    RectangleShape wallpaper; //fond du jeu
 
+    //barre de vie du Joueur1 et Joueur2
     RectangleShape hpUserBar(Vector2f(200,20));
     RectangleShape hpEnnemyBar(Vector2f(200,20));
 
-
+    //bords blanc des barres de vies
     RectangleShape hpUserBar_side(Vector2f(204,24));
     RectangleShape hpEnnemyBar_side(Vector2f(204,24));
 
+    //creations des rectangles pour les attaques
     RectangleShape attack1(Vector2f(150,50));
     RectangleShape attack2(Vector2f(150,50));
     RectangleShape attack3(Vector2f(150,50));
     RectangleShape attack4(Vector2f(150,50));
 
+    //creation du rectangle blanc où les actions s'écrivent
 	RectangleShape showText(Vector2f(800,200));
 
 	Text nomIcone[6];
@@ -74,13 +78,14 @@ int Game::play(Team* team1, Team* team2)
 
     create(VideoMode(1200,700),"Ultimate Fantasy",sf::Style::Close); //creation de la fenetre
 
-
+    //donne une couleur à rectangle contenant l'attaque + celui du milieu
     attack1.setFillColor(Color::Blue);
     attack2.setFillColor(Color::Blue);
     attack3.setFillColor(Color::Blue);
     attack4.setFillColor(Color::Blue);
     showText.setFillColor(Color::White);
 
+    //position de ces elements graphiques
     attack1.setPosition(0,getSize().y-50);
     attack2.setPosition(200,getSize().y-50);
     attack3.setPosition(400,getSize().y-50);
@@ -88,6 +93,7 @@ int Game::play(Team* team1, Team* team2)
 
     showText.setPosition(0,getSize().y-280);
 
+    //positions des élements pour l'équipe
     CharacterSwitch[0].setPosition(900,getSize().y-170);
     CharacterSwitch[1].setPosition(1100,getSize().y-170);
 
@@ -128,7 +134,7 @@ int Game::play(Team* team1, Team* team2)
 
 
     while(this->isOpen()){
-        randAtt=rand()%4;
+        randAtt=rand()%4; //permet à l'ia de choisir entre les 4 attaques prédefini
 
         while(pollEvent(event)){
             switch(event.type){
@@ -155,11 +161,12 @@ int Game::play(Team* team1, Team* team2)
                        if(!J1.isKO()){
                         /***********************************Attaques ***************************/
                             if (attack1.getGlobalBounds().contains(mouseX,mouseY)){        //si on clique sur les boutons d'attaque
-                                    if(J1.getAttack()[0].getMana()>0){
-                                       if(J1.getSpeed()>=J2.getSpeed())
+                                    if(J1.getAttack()[0].getMana()>0){ //verification que le mana soit >0
+                                       if(J1.getSpeed()>=J2.getSpeed()) //compare la vitesse des 2 perso pour savoir qui attaque en premier
                                         {
+                                            //le perso 1 lance l'attaque
                                                 script=J1.sendAttack(J1.getAttack()[0],&J2);
-
+                                            //si le joueur 2 n'est pas mort, il attaque aussi
                                                 if(!J2.isKO())
                                                 {
                                                     script+=J2.sendAttack(J2.getAttack()[randAtt],&J1);
@@ -174,7 +181,7 @@ int Game::play(Team* team1, Team* team2)
                                                 script=J1.sendAttack(J1.getAttack()[0],&J2);
                                             }
                                         }
-
+                                        //décrémente le mana de l'attaque utiliser
                                         J1.getAttack()[0].setMana(J1.getAttack()[0].getMana()-1);
                                         J2.getAttack()[randAtt].setMana(J2.getAttack()[randAtt].getMana()-1);
 
@@ -306,11 +313,13 @@ int Game::play(Team* team1, Team* team2)
                             if(!J1.isKO())
                             {
                                 retaliate = true;
+                                //si on echange de personnage, le joueur 2 riposte et on perds donc un tour
                             }
 
                             if(team1->getListCharacter()[i].getName()==J1.getName())
                             {
                                 script = J1.getName()+" est deja en combat ! \n";
+                                //empeche de renvoyer le personnage deja present en combat
                             }
                             else{
 
@@ -320,7 +329,7 @@ int Game::play(Team* team1, Team* team2)
                                 for(unsigned int j=0;j<team1->getListCharacter().size();j++){
                                         if (team1->getListCharacter()[j].getName()==J1.getName()){      //on cherche l'ancien perso dans la liste
                                             team1->removeCharacter(j);                                 //on le supprime
-                                            team1->insertCharacter(J1,j);                              //on met � jour le personnage avant le switch
+                                            team1->insertCharacter(J1,j);                              //on met à jour le personnage avant le switch
                                         }
                                     }
 
@@ -340,7 +349,7 @@ int Game::play(Team* team1, Team* team2)
 
 
                                 if (retaliate)
-                                {                                                  //si on switche sans etre KO, l'ennemi attaque quand meme
+                                {               //si on switche sans etre KO, l'ennemi attaque quand meme
                                     retaliate=false;
                                     script+=J2.sendAttack(J2.getAttack()[randAtt],&J1)+"\n";
                                     J2.getAttack()[randAtt].setMana(J2.getAttack()[randAtt].getMana()-1);
@@ -374,6 +383,7 @@ int Game::play(Team* team1, Team* team2)
 
             script="\n L'ennemi a perdu !\n";
 
+            //fin du jeu si l'ennemi perds : ferme la fenetre
             sf::sleep(sf::milliseconds(2000));
             return -1;
 
@@ -393,7 +403,7 @@ int Game::play(Team* team1, Team* team2)
             {
                 randEnnemy=rand()%(team2->getListCharacter().size());
                 {
-                    J2=team2->getListCharacter()[randEnnemy];
+                    J2=team2->getListCharacter()[randEnnemy]; //ajoute un perso aleatoire de son equipe sur le terrain, ici le dernier car equipe de 2
                 }
             }
 
@@ -419,6 +429,7 @@ int Game::play(Team* team1, Team* team2)
         {
             script="\n Le joueur a perdu !";
 
+        //fin du jeu si on gagne: ferme la fenetre
             sf::sleep(sf::milliseconds(1000));
             return -1;
 
@@ -584,15 +595,6 @@ int Game::play(Team* team1, Team* team2)
         hpEnnemy.setPosition(hpEnnemyBar.getPosition().x+hpEnnemyBar.getSize().x-hpEnnemy.getGlobalBounds().width,hpEnnemyBar.getPosition().y);
         hpEnnemy.setCharacterSize(18);
         hpEnnemy.setColor(Color::Black);
-
-/*
-      //  sf::Time t1 = 5000;
-        if(team1->isEmpty() || team2->isEmpty())
-        {
-            sf::sleep(sf::milliseconds(5000));
-            return -1;
-        }
-*/
 
         /**********************Affichages*******************/
 

@@ -14,12 +14,12 @@ class Game:RenderWindow
     public:
         Game();
         int play(Team*, Team*);
-       
+
 
 
 
 };
-
+//constantes pour faciliter les chemins d'accées
 const string PATH_IMAGE="Images/";
 const string BACK="_back";
 const string ICON="icon_";

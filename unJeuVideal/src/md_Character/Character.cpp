@@ -114,7 +114,6 @@ void Character::setPath(){
 
     pathBack=PATH_IMAGE+this->getName()+BACK+EXTENSION_IMAGE;
     pathFront=PATH_IMAGE+this->getName()+EXTENSION_IMAGE;
-    cout<<pathBack<<endl;
 
 }
 //pour tester si un perso est complet
@@ -144,6 +143,7 @@ bool Character::isKO(){
         return false;
 }
 
+//recupere l'attaque pour un personnage
 Attack* Character::getAttack(){
     return this->attack;
 
@@ -155,7 +155,8 @@ int Character::getSpeed()const
 }
 
 
-//méthode de calcul de degats
+//méthode de calcul de degats : différence entre les attributs de degats physique et magique ainsi que  l'armure armure et magique + la puissance de l'attaque
+// puis on additionne ces deux valeurs
 int Character::getDamage(Attack a, Character *p)
 {
     double degatAD; //degat physique
@@ -182,6 +183,8 @@ int Character::getDamage(Attack a, Character *p)
 
 }
 
+
+//méthode permettant à un personnage de lancer une attaque
 string Character::sendAttack(Attack a, Character *p)
 {
     double damage=0;
@@ -191,36 +194,41 @@ string Character::sendAttack(Attack a, Character *p)
 
 
     srand(time(0));
-    proba=(rand()%99+1);;
+    proba=(rand()%99+1);
 
     s=this->getName()+" lance "+a.getName()+" !\n";
 
+    //on compare le nombre alétoire et la precision de l'attaque
+    //si elle est est supérieure : on rate l'attaque et perds donc un tour
+    //sinon : on inflige des degats
     if(proba >a.getPrecision()){
 
         s+=this->getName()+" rate son attaque !\n";
     }else{
         if(a.getPower()!=0)
         {
-            damage=getDamage(a, p);
+            damage=getDamage(a, p); //on affecte la valeur de la méthode precedente
 
            p->setLifePoint(p->getLifePoint()-damage);
             //inflige des degats aux personnages(le notre comme celui en face)
 
 
 
-
+            //calcul le pourcentage de point de vie par rapport à la vie (restante) du personage
             pourcent=(int)(100*damage/p->getLifePointMax());
 
+            //on vérifie que le pourcentage ne peut pas etre > 100
             if (pourcent>=100)
                pourcent=100;
 
+            //utilisation de la méthode itoa pour convertir la valeur du pourcentage en une chaine de caractère
             s+=p->getName()+" perd "+Character::toString(pourcent)+"% de ses PV !\n";
+
+            //si le perso n'as plus de vie, sa barre de vie affiche 0
             if (p->isKO()){
               p->setLifePoint(0);
               s+=p->getName()+" est KO!\n ";
              }
-
-
 
 
         }

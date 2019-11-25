@@ -25,30 +25,31 @@ int Menu::choice()
     string gameMode="Menu";
 
     vector<Character> allCharacter;  //liste de personnages
-    allCharacter=initialisation();
+    allCharacter=initialisation();   //initialise la liste de personnages
 
+    //créer 2 equipes
     Team team1;
     Team team2;
 
+    //var pour permettre de dessiner les sprites dans chaques equipes
     Sprite teamP1[2];
     Sprite teamP2[2];
 
     Text textButton;
     String choiceP="Joueur 1";
 
+    //element boutton
     RectangleShape button(Vector2f(220, 50));
     button.setFillColor(Color::Red);
     button.setPosition(700, 600);
 
-    Sprite iCharacter;
-    Texture tex;
-
+    //var pour l'icone du personnage
     Sprite Icharact[allCharacter.size()];
     Texture Icon[allCharacter.size()];
 
     for(unsigned int i=0; i<(allCharacter.size()); i++)
     {
-        if(!Icon[i].loadFromFile(PATH_IMAGE+_ICON+allCharacter[i].getName()+EXTENSION_IMAGE)) //charge l'icone du personnage
+        if(!Icon[i].loadFromFile(PATH_IMAGE+_ICON+allCharacter[i].getName()+EXTENSION_IMAGE)) //charge l'icone du personnage suivant le chemin defini : Images/"nom".png
         {
             cout <<"Erreur lors du chargement dans menu allCharacter"<<endl;
             return -1;
@@ -65,8 +66,9 @@ int Menu::choice()
     Font police;
 
 
-    //cr�ation de la fenetre
+    //création de la fenetre
     create(VideoMode(1200,700),"Ultimate Fantasy", sf::Style::Close);
+    //création d'élements d'écriture
     sf::Text text, nomCharact, text1, text2;
     nomCharact.setFont(police);
     nomCharact.setCharacterSize(24);
@@ -77,7 +79,7 @@ int Menu::choice()
 	text.setFont(police);
 	text.setCharacterSize(24); // exprim�e en pixels
 
-	// choix de la couleur du texte
+	// choix de la couleur du texte + position
 	textButton.setColor(sf::Color::White);
 	text1.setColor(sf::Color::Black);
     text2.setColor(sf::Color::Black);
@@ -93,8 +95,10 @@ int Menu::choice()
 	text2.setString("Personnages du joueur 2");
 	text.setString("Au joueur 1 de choisir !");
 
-    setFramerateLimit(60); //limiter � 60 fps
+    setFramerateLimit(60); //limiter à 60 fps
 
+
+    //verification du chargement de la police
     if (!police.loadFromFile("Images/calibri.ttf"))
         {
             cout <<"Erreur lors du chargement de la police"<<endl;
@@ -154,7 +158,7 @@ int Menu::choice()
                                    if(choiceP=="Joueur 1")
                                    {
                                     //ajout du perso dans la team1
-                                    if(findPersonnage(team1,allCharacter[k])==false)
+                                    if(findCharacter(team1,allCharacter[k])==false)
                                     {
                                         teamP1[team1.getListCharacter().size()]=Icharact[k];
                                         teamP1[team1.getListCharacter().size()].setPosition(400+(team1.getListCharacter().size()*40),580);
@@ -179,7 +183,7 @@ int Menu::choice()
                                        if(choiceP=="Joueur 2")
                                        {
                                             //ajout du perso dans la team2
-                                         if(findPersonnage(team2,allCharacter[k])==false)
+                                         if(findCharacter(team2,allCharacter[k])==false)
                                         {
                                         teamP2[team2.getListCharacter().size()]=Icharact[k];
                                         teamP2[team2.getListCharacter().size()].setPosition(400+(team2.getListCharacter().size()*40),650);
@@ -220,29 +224,28 @@ int Menu::choice()
         draw(text2);
         draw(nomCharact);
 
-
-        draw(text);
-        draw(iCharacter);
-
          if(choiceP=="Fin")
          {
            draw(button);
            draw(textButton);
          }
-        //dessine les icones des différents perso de chaque equipes
+
+        //dessine les icones des différents perso choisis dans l'équipe 1
         for(unsigned int o=0;o<team1.getListCharacter().size();o++)
         {
         draw(teamP1[o]);
         }
+        //dessine les icones des différents perso choisis dans l'équipe 2
         for(unsigned int r=0;r<team1.getListCharacter().size();r++)
         {
         draw(teamP2[r]);
         }
 
 
+       // dessine dans le menu les icones de chaque personnage
         for(unsigned int j=0;j<(allCharacter.size());j++)
         {
-        draw(Icharact[j]);
+            draw(Icharact[j]);
         }
 
         display();
@@ -253,7 +256,8 @@ return EXIT_SUCCESS;
 
 }
 
-bool Menu::findPersonnage(Team t,Character p)
+//on recherche si le personnage est deja dans l'equipe
+bool Menu::findCharacter(Team t,Character p)
 {
     for(unsigned int i=0;i<t.getListCharacter().size();i++)
     {

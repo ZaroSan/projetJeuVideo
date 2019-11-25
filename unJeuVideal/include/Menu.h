@@ -17,13 +17,13 @@ class Menu:RenderWindow
         int choice();
 
         vector<Character> initialisation();
-        bool findPersonnage(Team, Character);
+        bool findCharacter(Team, Character);
 
 
 
 
 };
-
+//constantes pour faciliter les chemins d'accées
 const string _BACK="_back";
 const string _ICON="icon_";
 
