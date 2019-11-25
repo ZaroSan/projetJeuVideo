@@ -118,7 +118,7 @@ void Character::setPath(){
 
 }
 //pour tester si un perso est complet
-void Character::affiche()
+void Character::show()
 {
     cout << "---------------------------------------"<<endl;
     cout <<"Nom: "<<this->name<<endl;
@@ -137,7 +137,7 @@ void Character::affiche()
 	this->attack[3].toString();
 }
 //on test si le personnage est tjs en vie
-bool Character::estKO(){
+bool Character::isKO(){
     if(this->lifePoint<=0)
         return true;
     else
@@ -156,7 +156,7 @@ int Character::getSpeed()const
 
 
 //méthode de calcul de degats
-int Character::getDegat(Attack a, Character *p)
+int Character::getDamage(Attack a, Character *p)
 {
     double degatAD; //degat physique
     double degatAP; //degat magique
@@ -201,7 +201,7 @@ string Character::sendAttack(Attack a, Character *p)
     }else{
         if(a.getPower()!=0)
         {
-            degat=getDegat(a, p);
+            degat=getDamage(a, p);
 
            p->setLifePoint(p->getLifePoint()-degat);
             //inflige des degats aux personnages(le notre comme celui en face)
@@ -215,7 +215,7 @@ string Character::sendAttack(Attack a, Character *p)
                pourcent=100;
 
             s+=p->getName()+" perd "+Character::toString(pourcent)+"% de ses PV !\n";
-            if (p->estKO()){
+            if (p->isKO()){
               p->setLifePoint(0);
               s+=p->getName()+" est KO!\n ";
              }

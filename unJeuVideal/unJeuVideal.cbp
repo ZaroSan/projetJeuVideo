@@ -86,15 +86,15 @@
 		<Unit filename="Images/ranger.png" />
 		<Unit filename="Images/skeleton-list.png" />
 		<Unit filename="include/Attack.h" />
+		<Unit filename="include/Character.h" />
 		<Unit filename="include/Game.h" />
 		<Unit filename="include/Menu.h" />
-		<Unit filename="include/Personnage.h" />
 		<Unit filename="include/Team.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/View/Game.cpp" />
 		<Unit filename="src/View/Menu.cpp" />
 		<Unit filename="src/md_Attack_Strategy/Attack.cpp" />
-		<Unit filename="src/md_Character/Personnage.cpp" />
+		<Unit filename="src/md_Character/Character.cpp" />
 		<Unit filename="src/md_Character/Team.cpp" />
 		<Extensions>
 			<code_completion />

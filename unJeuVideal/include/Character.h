@@ -69,8 +69,8 @@ public:
         return stri.str();
     };
 
-    void affiche(void);
-    bool estKO();
+    void show(void);
+    bool isKO();
     Attack* getAttack();
 
     string sendAttack(Attack, Character*);
@@ -88,7 +88,7 @@ private:
     int lifePoint;
     int lifePointMax;
     int speed;
-    int getDegat(Attack, Character*);
+    int getDamage(Attack, Character*);
 
     string name;
 

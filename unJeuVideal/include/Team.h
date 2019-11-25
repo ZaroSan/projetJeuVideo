@@ -19,13 +19,13 @@ class Team
         Team();
         Team(Character, Character);
 
-        vector<Character> getListPersonnage();
+        vector<Character> getListCharacter();
 
-        void affiche();
-        void removePersonnage(int);
-        void AddPersonnage(Character);
+        void show();
+        void removeCharacter(int);
+        void AddCharacter(Character);
         bool isEmpty();
-        void insertPersonnage(Character, int);
+        void insertCharacter(Character, int);
 
 
 };

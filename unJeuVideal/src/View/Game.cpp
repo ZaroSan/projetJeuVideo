@@ -109,8 +109,8 @@ int Game::play(Team* team1, Team* team2)
 	text.setPosition(5,getSize().y-260);
 	text.setCharacterSize(15);
 
-	J1=team1->getListPersonnage()[0];
-	J2=team2->getListPersonnage()[0];
+	J1=team1->getListCharacter()[0];
+	J2=team2->getListCharacter()[0];
 
 	script=("BATTLE\nJ1 envoie "+J1.getName()+" !\nJ2 envoie "+J2.getName()+" !\n");
     setFramerateLimit(60);
@@ -155,7 +155,7 @@ int Game::play(Team* team1, Team* team2)
                        mouseX=Mouse::getPosition(*this).x;            //on recupere la position de la souris
                        mouseY=Mouse::getPosition(*this).y;
 
-                       if(!J1.estKO()){
+                       if(!J1.isKO()){
                         /***********************************Attaques ***************************/
                             if (attaque1.getGlobalBounds().contains(mouseX,mouseY)){        //si on clique sur les boutons d'attaque
                                     if(J1.getAttack()[0].getMana()>0){
@@ -163,7 +163,7 @@ int Game::play(Team* team1, Team* team2)
                                         {
                                                 script=J1.sendAttack(J1.getAttack()[0],&J2);
 
-                                                if(!J2.estKO())
+                                                if(!J2.isKO())
                                                 {
                                                     cout<<"hello";
                                                     script+=J2.sendAttack(J2.getAttack()[randAtt],&J1);
@@ -173,7 +173,7 @@ int Game::play(Team* team1, Team* team2)
                                         else{
                                             script+=J2.sendAttack(J2.getAttack()[randAtt],&J1);
 
-                                            if(!J1.estKO())
+                                            if(!J1.isKO())
                                             {
                                                 script=J1.sendAttack(J1.getAttack()[0],&J2);
                                             }
@@ -200,7 +200,7 @@ int Game::play(Team* team1, Team* team2)
                                 {
                                     script=J1.sendAttack(J1.getAttack()[1],&J2)+"\n";
 
-                                    if(!J2.estKO())
+                                    if(!J2.isKO())
                                     {
                                         script+=J2.sendAttack(J2.getAttack()[randAtt],&J1)+"\n";
 
@@ -209,7 +209,7 @@ int Game::play(Team* team1, Team* team2)
                                 }else{
                                     script+=J2.sendAttack(J2.getAttack()[randAtt],&J1)+"\n";
 
-                                    if(!J1.estKO())
+                                    if(!J1.isKO())
                                     {
                                         script=J1.sendAttack(J1.getAttack()[1],&J2)+"\n";
                                     }
@@ -235,7 +235,7 @@ int Game::play(Team* team1, Team* team2)
                                 {
                                     script=J1.sendAttack(J1.getAttack()[2],&J2)+"\n";
 
-                                    if(!J2.estKO())
+                                    if(!J2.isKO())
                                     {
                                         script+=J2.sendAttack(J2.getAttack()[randAtt],&J1)+"\n";
                                     }
@@ -243,7 +243,7 @@ int Game::play(Team* team1, Team* team2)
                                 }else{
                                     script+=J2.sendAttack(J2.getAttack()[randAtt],&J1)+"\n";
 
-                                    if(!J1.estKO())
+                                    if(!J1.isKO())
                                     {
                                         script=J1.sendAttack(J1.getAttack()[2],&J2)+"\n";
                                     }
@@ -269,7 +269,7 @@ int Game::play(Team* team1, Team* team2)
                                 {
                                     script=J1.sendAttack(J1.getAttack()[3],&J2)+"\n";
 
-                                    if(!J2.estKO())
+                                    if(!J2.isKO())
                                     {
                                         script+=J2.sendAttack(J2.getAttack()[randAtt],&J1)+"\n";
                                     }
@@ -277,7 +277,7 @@ int Game::play(Team* team1, Team* team2)
                                 }else{
                                     script+=J2.sendAttack(J2.getAttack()[randAtt],&J1)+"\n";
 
-                                    if(!J1.estKO())
+                                    if(!J1.isKO())
                                     {
                                         script=J1.sendAttack(J1.getAttack()[3],&J2)+"\n";
                                     }
@@ -303,32 +303,32 @@ int Game::play(Team* team1, Team* team2)
 
     /*************************************************************Gestion du switch ******************************************/
 
-                    for(unsigned int i=0;i<team1->getListPersonnage().size();i++)
+                    for(unsigned int i=0;i<team1->getListCharacter().size();i++)
                     {
                         if(PersonnageSwitch[i].getGlobalBounds().contains(mouseX, mouseY))
                         {
-                            if(!J1.estKO())
+                            if(!J1.isKO())
                             {
                                 riposter = true;
                             }
 
-                            if(team1->getListPersonnage()[i].getName()==J1.getName())
+                            if(team1->getListCharacter()[i].getName()==J1.getName())
                             {
                                 script = J1.getName()+" est d�j� en combat ! \n";
                             }
                             else{
 
                                 script=J1.getName()+" est retir� par le joueur !\n";
-                                script+="Le joueur envoie "+team1->getListPersonnage()[i].getName()+" !\n";
+                                script+="Le joueur envoie "+team1->getListCharacter()[i].getName()+" !\n";
 
-                                for(unsigned int j=0;j<team1->getListPersonnage().size();j++){
-                                        if (team1->getListPersonnage()[j].getName()==J1.getName()){      //on cherche l'ancien perso dans la liste
-                                            team1->removePersonnage(j);                                 //on le supprime
-                                            team1->insertPersonnage(J1,j);                              //on met � jour le personnage avant le switch
+                                for(unsigned int j=0;j<team1->getListCharacter().size();j++){
+                                        if (team1->getListCharacter()[j].getName()==J1.getName()){      //on cherche l'ancien perso dans la liste
+                                            team1->removeCharacter(j);                                 //on le supprime
+                                            team1->insertCharacter(J1,j);                              //on met � jour le personnage avant le switch
                                         }
                                     }
 
-                                J1=team1->getListPersonnage()[i];
+                                J1=team1->getListCharacter()[i];
 
                                 if(!p1.loadFromFile(J1.getPath(true)))
                                 {
@@ -366,7 +366,7 @@ int Game::play(Team* team1, Team* team2)
 
     /**************************************Gestion des KO pour joueur ennemi****************************************/
 
-    if(J2.estKO())
+    if(J2.isKO())
     {
         if(team2->isEmpty())
         {
@@ -382,19 +382,19 @@ int Game::play(Team* team1, Team* team2)
             script="\n L'ennemi a perdu !\n";
         }else
         {
-            for(unsigned int i=0;i<team2->getListPersonnage().size();i++)
+            for(unsigned int i=0;i<team2->getListCharacter().size();i++)
             {
-                if(team2->getListPersonnage()[i].getName()==J2.getName())
+                if(team2->getListCharacter()[i].getName()==J2.getName())
                 {
-                    team2->removePersonnage(i); //suppresion du l'ennemi dans la liste
+                    team2->removeCharacter(i); //suppresion du l'ennemi dans la liste
                 }
             }
 
-            for(unsigned int i=0; i<team2->getListPersonnage().size(); i++)
+            for(unsigned int i=0; i<team2->getListCharacter().size(); i++)
             {
-                randEnnemy=rand()%(team2->getListPersonnage().size());
+                randEnnemy=rand()%(team2->getListCharacter().size());
                 {
-                    J2=team2->getListPersonnage()[randEnnemy];
+                    J2=team2->getListCharacter()[randEnnemy];
                 }
             }
 
@@ -405,7 +405,7 @@ int Game::play(Team* team1, Team* team2)
 
     /**************************************Gestion des KO pour joueur ****************************************/
 
-    if(J1.estKO())
+    if(J1.isKO())
     {
 
         lanceur.setScale(0,0);
@@ -420,11 +420,11 @@ int Game::play(Team* team1, Team* team2)
             script="\n Le joueur a perdu !";
         }else
         {
-            for(unsigned int i=0;i<team1->getListPersonnage().size();i++)
+            for(unsigned int i=0;i<team1->getListCharacter().size();i++)
             {
-                if(team1->getListPersonnage()[i].getName()==J1.getName())
+                if(team1->getListCharacter()[i].getName()==J1.getName())
                 {
-                    team1->removePersonnage(i); //suppresion du personnage dans la liste
+                    team1->removeCharacter(i); //suppresion du personnage dans la liste
                 }
             }
 
@@ -461,9 +461,9 @@ int Game::play(Team* team1, Team* team2)
 
     /**************************************Icone et bouton switch ****************************************/
 
-    for(unsigned int i=0;i<team1->getListPersonnage().size();i++)
+    for(unsigned int i=0;i<team1->getListCharacter().size();i++)
     {
-        if(!textIcone[i].loadFromFile(PATH_IMAGE+ICON+team1->getListPersonnage()[i].getName()+EXTENSION_IMAGE))
+        if(!textIcone[i].loadFromFile(PATH_IMAGE+ICON+team1->getListCharacter()[i].getName()+EXTENSION_IMAGE))
         {
             cout <<"Erreur lors du chargement de getlistperso"<<endl;
             return -1;
@@ -475,7 +475,7 @@ int Game::play(Team* team1, Team* team2)
 
         PersonnageSwitch[i].setSize(Vector2f(140, 150));
         nomIcone[i].setFont(police);
-        nomIcone[i].setString(team1->getListPersonnage()[i].getName());
+        nomIcone[i].setString(team1->getListCharacter()[i].getName());
         nomIcone[i].setColor(Color::Black);
         nomIcone[i].setScale(0.5, 0.5);
 
@@ -567,7 +567,7 @@ int Game::play(Team* team1, Team* team2)
         }
 
         text.setString(script);
-        tour.setString("Tour : "+Character::toString(nbTour)+"\nPersonnages restants: "+Character::toString((int)team2->getListPersonnage().size()));
+        tour.setString("Tour : "+Character::toString(nbTour)+"\nPersonnages restants: "+Character::toString((int)team2->getListCharacter().size()));
 
         barreVieLanceur.setSize(Vector2f((J1.getLifePoint()*200)/J1.getLifePointMax(),20));
         barreVieEnnemi.setSize(Vector2f((J2.getLifePoint()*200)/J2.getLifePointMax(),20));
@@ -627,7 +627,7 @@ int Game::play(Team* team1, Team* team2)
         draw(mana4);
 
 
-        for(unsigned int k=0;k<team1->getListPersonnage().size();k++)
+        for(unsigned int k=0;k<team1->getListCharacter().size();k++)
         {
             draw(PersonnageSwitch[k]);
             draw(iPers[k]);

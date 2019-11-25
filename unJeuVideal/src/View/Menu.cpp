@@ -156,13 +156,13 @@ int Menu::choice()
                                     //ajout du perso dans la team1
                                     if(findPersonnage(team1,allPersonnage[k])==false)
                                     {
-                                        teamP1[team1.getListPersonnage().size()]=Ipers[k];
-                                        teamP1[team1.getListPersonnage().size()].setPosition(400+(team1.getListPersonnage().size()*40),580);
-                                        team1.AddPersonnage(allPersonnage[k]);
+                                        teamP1[team1.getListCharacter().size()]=Ipers[k];
+                                        teamP1[team1.getListCharacter().size()].setPosition(400+(team1.getListCharacter().size()*40),580);
+                                        team1.AddCharacter(allPersonnage[k]);
 
                                         text.setString("Personnage Ajoute");
                                         //si la team1 = 2 perso, on passe à la team2
-                                        if(team1.getListPersonnage().size()==2)
+                                        if(team1.getListCharacter().size()==2)
                                         {
                                              text.setString("Votre equipe est complete \n Au joueur 2 de chosir");
                                              choixJ="Joueur 2";
@@ -181,13 +181,13 @@ int Menu::choice()
                                             //ajout du perso dans la team2
                                          if(findPersonnage(team2,allPersonnage[k])==false)
                                         {
-                                        teamP2[team2.getListPersonnage().size()]=Ipers[k];
-                                        teamP2[team2.getListPersonnage().size()].setPosition(400+(team2.getListPersonnage().size()*40),650);
-                                        team2.AddPersonnage(allPersonnage[k]);
+                                        teamP2[team2.getListCharacter().size()]=Ipers[k];
+                                        teamP2[team2.getListCharacter().size()].setPosition(400+(team2.getListCharacter().size()*40),650);
+                                        team2.AddCharacter(allPersonnage[k]);
 
                                         text.setString("Personnage Ajoute");
                                         //verification de la taille de l'équipe
-                                        if(team2.getListPersonnage().size()==2)
+                                        if(team2.getListCharacter().size()==2)
                                         {
                                              text.setString("Votre equipe est complete \n Appuyez sur le bouton pour lancer le combat");
                                              choixJ="Fin";
@@ -230,11 +230,11 @@ int Menu::choice()
            draw(textButton);
          }
         //dessine les icones des différents perso de chaque equipes
-        for(unsigned int o=0;o<team1.getListPersonnage().size();o++)
+        for(unsigned int o=0;o<team1.getListCharacter().size();o++)
         {
         draw(teamP1[o]);
         }
-        for(unsigned int r=0;r<team1.getListPersonnage().size();r++)
+        for(unsigned int r=0;r<team1.getListCharacter().size();r++)
         {
         draw(teamP2[r]);
         }
@@ -255,9 +255,9 @@ return EXIT_SUCCESS;
 
 bool Menu::findPersonnage(Team t,Character p)
 {
-    for(unsigned int i=0;i<t.getListPersonnage().size();i++)
+    for(unsigned int i=0;i<t.getListCharacter().size();i++)
     {
-        if(t.getListPersonnage()[i].getName()==p.getName())
+        if(t.getListCharacter()[i].getName()==p.getName())
         {
             return true;
         }

@@ -17,51 +17,51 @@ Team::Team(Character perso1,Character perso2)
     team.push_back(perso2);
 }
 
-void Team::affiche()
+void Team::show()
 {
     unsigned int i;
 
-    for(i=0;i<this->getListPersonnage().size();i++)
+    for(i=0;i<this->getListCharacter().size();i++)
     {
-        cout<<"Personnages "<<i+1<<" : "<<this->getListPersonnage()[i].getName()<<endl;
+        cout<<"Personnages "<<i+1<<" : "<<this->getListCharacter()[i].getName()<<endl;
     }
 }
 
 bool Team::isEmpty()
 {
-    bool vide=false;
+    bool isEmpty=false;
 
-    if(this->getListPersonnage().empty())
+    if(this->getListCharacter().empty())
     {
-        vide=true;
+        isEmpty=true;
     }
-    return vide;
+    return isEmpty;
 }
 
 
 
-vector<Character> Team::getListPersonnage()
+vector<Character> Team::getListCharacter()
 {
     return this->team;
 }
 
 
 
-void Team::removePersonnage(int n)
+void Team::removeCharacter(int n)
 {
     this->team.erase(this->team.begin()+n);
 }
 
 
 
-void Team::AddPersonnage(Character p)
+void Team::AddCharacter(Character p)
 {
     this->team.push_back(p);
 }
 
 
 
-void Team::insertPersonnage(Character p, int n)
+void Team::insertCharacter(Character p, int n)
 {
     this->team.insert(this->team.begin()+n,p);
 }
