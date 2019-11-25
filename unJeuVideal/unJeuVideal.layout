@@ -2,14 +2,9 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="src\View\Menu.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Game.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="9223" topLine="334" />
-		</Cursor>
-	</File>
-	<File name="src\md_Attack_Strategy\Attack.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="925" topLine="6" />
+			<Cursor1 position="237" topLine="6" />
 		</Cursor>
 	</File>
 	<File name="include\Team.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -17,14 +12,14 @@
 			<Cursor1 position="490" topLine="14" />
 		</Cursor>
 	</File>
+	<File name="src\View\Menu.cpp" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8417" topLine="210" />
+		</Cursor>
+	</File>
 	<File name="include\Attack.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="368" topLine="8" />
-		</Cursor>
-	</File>
-	<File name="src\md_Character\Character.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2694" topLine="110" />
 		</Cursor>
 	</File>
 	<File name="include\Menu.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -37,9 +32,9 @@
 			<Cursor1 position="319" topLine="7" />
 		</Cursor>
 	</File>
-	<File name="include\Game.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\View\Game.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="237" topLine="6" />
+			<Cursor1 position="23439" topLine="604" />
 		</Cursor>
 	</File>
 	<File name="include\Character.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -47,14 +42,19 @@
 			<Cursor1 position="2611" topLine="72" />
 		</Cursor>
 	</File>
+	<File name="src\md_Attack_Strategy\Attack.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="925" topLine="6" />
+		</Cursor>
+	</File>
 	<File name="src\md_Character\Team.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1144" topLine="52" />
 		</Cursor>
 	</File>
-	<File name="src\View\Game.cpp" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\md_Character\Character.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="23439" topLine="636" />
+			<Cursor1 position="2694" topLine="110" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

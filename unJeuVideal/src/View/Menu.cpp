@@ -222,6 +222,7 @@ int Menu::choice()
 
         draw(text1);
         draw(text2);
+        draw(text);
         draw(nomCharact);
 
          if(choiceP=="Fin")
