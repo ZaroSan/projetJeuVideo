@@ -74,8 +74,6 @@ int Game::play(Team* team1, Team* team2)
 
     Event event;
 
-    srand(time(0));
-
     create(VideoMode(1200,700),"Ultimate Fantasy",sf::Style::Close); //creation de la fenetre
 
     //donne une couleur à rectangle contenant l'attaque + celui du milieu
@@ -165,20 +163,20 @@ int Game::play(Team* team1, Team* team2)
                                        if(J1.getSpeed()>=J2.getSpeed()) //compare la vitesse des 2 perso pour savoir qui attaque en premier
                                         {
                                             //le perso 1 lance l'attaque
-                                                script=J1.sendAttack(J1.getAttack()[0],&J2);
+                                                script=J1.sendAttack(J1.getAttack()[0],&J2)+"\n";
                                             //si le joueur 2 n'est pas mort, il attaque aussi
                                                 if(!J2.isKO())
                                                 {
-                                                    script+=J2.sendAttack(J2.getAttack()[randAtt],&J1);
+                                                    script+=J2.sendAttack(J2.getAttack()[randAtt],&J1)+"\n";
                                                 }
 
                                         }
                                         else{
-                                            script+=J2.sendAttack(J2.getAttack()[randAtt],&J1);
+                                            script+=J2.sendAttack(J2.getAttack()[randAtt],&J1)+"\n";
 
                                             if(!J1.isKO())
                                             {
-                                                script=J1.sendAttack(J1.getAttack()[0],&J2);
+                                                script=J1.sendAttack(J1.getAttack()[0],&J2)+"\n";
                                             }
                                         }
                                         //décrémente le mana de l'attaque utiliser
@@ -324,7 +322,7 @@ int Game::play(Team* team1, Team* team2)
                             else{
 
                                 script=J1.getName()+" est retire par le joueur !\n";
-                                script+="Le joueur envoie "+team1->getListCharacter()[i].getName()+" !\n";
+                                script+="Le joueur envoie "+team1->getListCharacter()[i].getName()+" !\n\n";
 
                                 for(unsigned int j=0;j<team1->getListCharacter().size();j++){
                                         if (team1->getListCharacter()[j].getName()==J1.getName()){      //on cherche l'ancien perso dans la liste
