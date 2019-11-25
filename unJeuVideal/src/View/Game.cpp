@@ -372,10 +372,13 @@ int Game::play(Team* team1, Team* team2)
             hpEnnemy.setScale(0,0);
             nameEnnemy.setScale(0,0);
 
-
-
-
             script="\n L'ennemi a perdu !\n";
+
+            sf::sleep(sf::milliseconds(2000));
+            return -1;
+
+
+
         }else
         {
             for(unsigned int i=0;i<team2->getListCharacter().size();i++)
@@ -397,6 +400,7 @@ int Game::play(Team* team1, Team* team2)
             script+="\n L'ennemi "+J2.getName()+" apparait sur le terrain !\n";
 
         }
+
     }
 
     /**************************************Gestion des KO pour joueur ****************************************/
@@ -414,6 +418,10 @@ int Game::play(Team* team1, Team* team2)
         if(team1->isEmpty())
         {
             script="\n Le joueur a perdu !";
+
+            sf::sleep(sf::milliseconds(1000));
+            return -1;
+
         }else
         {
             for(unsigned int i=0;i<team1->getListCharacter().size();i++)
@@ -577,15 +585,15 @@ int Game::play(Team* team1, Team* team2)
         hpEnnemy.setCharacterSize(18);
         hpEnnemy.setColor(Color::Black);
 
-
+/*
       //  sf::Time t1 = 5000;
-     /*   if(team1->isEmpty() || team2->isEmpty())
+        if(team1->isEmpty() || team2->isEmpty())
         {
             sf::sleep(sf::milliseconds(5000));
             return -1;
         }
-
 */
+
         /**********************Affichages*******************/
 
         clear(Color::White);
