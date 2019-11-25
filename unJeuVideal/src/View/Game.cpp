@@ -18,54 +18,51 @@ int Game::play(Team* team1, Team* team2)
 {
 
     int mouseX, mouseY;
-    int nbTour=1;
+    int nbRound=1;
     int randAtt;
     int randEnnemy;
-    bool riposter = false;
+    bool retaliate = false; //riposter
 
     Character J1;   //Les 2 persos en combat
     Character J2;
 
     Font police;
 
-    Text nomLanceur, nomEnnemi, nomAttaque1,nomAttaque2,nomAttaque3,nomAttaque4,pvLanceur,pvEnnemi, mana1, mana2, mana3, mana4;
-
-
-
+    Text nameUser, nameEnnemy, nameAttack1,nameAttack2,nameAttack3,nameAttack4,hpUser,hpEnnemy, mana1, mana2, mana3, mana4;
 
 
     Texture fond, p1, p2;  //texture fond + perso 1...
-    Sprite lanceur;
-    Sprite ennemi;
+    Sprite user;
+    Sprite ennemy;
 
     Sprite iPers[2];
-    RectangleShape PersonnageSwitch[2];
+    RectangleShape CharacterSwitch[2];
 
     Texture textIcone[2];
 
     Image icone;
 
-    RectangleShape fond_ecran;
+    RectangleShape wallpaper;
 
-    RectangleShape barreVieLanceur(Vector2f(200,20));
-    RectangleShape barreVieEnnemi(Vector2f(200,20));
+    RectangleShape hpUserBar(Vector2f(200,20));
+    RectangleShape hpEnnemyBar(Vector2f(200,20));
 
 
-    RectangleShape barreVieLanceurBord(Vector2f(204,24));
-    RectangleShape barreVieEnnemiBord(Vector2f(204,24));
+    RectangleShape hpUserBar_side(Vector2f(204,24));
+    RectangleShape hpEnnemyBar_side(Vector2f(204,24));
 
-    RectangleShape attaque1(Vector2f(150,50));
-    RectangleShape attaque2(Vector2f(150,50));
-    RectangleShape attaque3(Vector2f(150,50));
-    RectangleShape attaque4(Vector2f(150,50));
+    RectangleShape attack1(Vector2f(150,50));
+    RectangleShape attack2(Vector2f(150,50));
+    RectangleShape attack3(Vector2f(150,50));
+    RectangleShape attack4(Vector2f(150,50));
 
-	RectangleShape afficheText(Vector2f(800,200));
+	RectangleShape showText(Vector2f(800,200));
 
 	Text nomIcone[6];
 
     Text text;
 
-    Text tour;
+    Text round;
 
 
     string script="";
@@ -78,31 +75,31 @@ int Game::play(Team* team1, Team* team2)
     create(VideoMode(1200,700),"Ultimate Fantasy",sf::Style::Close); //creation de la fenetre
 
 
-    attaque1.setFillColor(Color::Blue);
-    attaque2.setFillColor(Color::Blue);
-    attaque3.setFillColor(Color::Blue);
-    attaque4.setFillColor(Color::Blue);
-    afficheText.setFillColor(Color::White);
+    attack1.setFillColor(Color::Blue);
+    attack2.setFillColor(Color::Blue);
+    attack3.setFillColor(Color::Blue);
+    attack4.setFillColor(Color::Blue);
+    showText.setFillColor(Color::White);
 
-    attaque1.setPosition(0,getSize().y-50);
-    attaque2.setPosition(200,getSize().y-50);
-    attaque3.setPosition(400,getSize().y-50);
-    attaque4.setPosition(600,getSize().y-50);
+    attack1.setPosition(0,getSize().y-50);
+    attack2.setPosition(200,getSize().y-50);
+    attack3.setPosition(400,getSize().y-50);
+    attack4.setPosition(600,getSize().y-50);
 
-    afficheText.setPosition(0,getSize().y-280);
+    showText.setPosition(0,getSize().y-280);
 
-    PersonnageSwitch[0].setPosition(900,getSize().y-170);
-    PersonnageSwitch[1].setPosition(1100,getSize().y-170);
+    CharacterSwitch[0].setPosition(900,getSize().y-170);
+    CharacterSwitch[1].setPosition(1100,getSize().y-170);
 
     for(int i=0; i<2;i++)
     {
-        nomIcone[i].setPosition(PersonnageSwitch[i].getPosition().x+50,PersonnageSwitch[i].getPosition().y);
+        nomIcone[i].setPosition(CharacterSwitch[i].getPosition().x+50,CharacterSwitch[i].getPosition().y);
     }
 
     text.setFont(police);
 
-	tour.setFont(police);
-	tour.setPosition(0,0);
+	round.setFont(police);
+	round.setPosition(0,0);
 
 	text.setColor(sf::Color::Black);
 
@@ -125,9 +122,9 @@ int Game::play(Team* team1, Team* team2)
         return -1;
     }
 
-    fond_ecran.setSize(Vector2f(getSize().x,getSize().y));
-    fond_ecran.setTexture(&fond);
-    fond_ecran.setPosition(0,0);
+    wallpaper.setSize(Vector2f(getSize().x,getSize().y));
+    wallpaper.setTexture(&fond);
+    wallpaper.setPosition(0,0);
 
 
     while(this->isOpen()){
@@ -157,7 +154,7 @@ int Game::play(Team* team1, Team* team2)
 
                        if(!J1.isKO()){
                         /***********************************Attaques ***************************/
-                            if (attaque1.getGlobalBounds().contains(mouseX,mouseY)){        //si on clique sur les boutons d'attaque
+                            if (attack1.getGlobalBounds().contains(mouseX,mouseY)){        //si on clique sur les boutons d'attaque
                                     if(J1.getAttack()[0].getMana()>0){
                                        if(J1.getSpeed()>=J2.getSpeed())
                                         {
@@ -165,7 +162,6 @@ int Game::play(Team* team1, Team* team2)
 
                                                 if(!J2.isKO())
                                                 {
-                                                    cout<<"hello";
                                                     script+=J2.sendAttack(J2.getAttack()[randAtt],&J1);
                                                 }
 
@@ -182,7 +178,7 @@ int Game::play(Team* team1, Team* team2)
                                         J1.getAttack()[0].setMana(J1.getAttack()[0].getMana()-1);
                                         J2.getAttack()[randAtt].setMana(J2.getAttack()[randAtt].getMana()-1);
 
-                                        nbTour ++;
+                                        nbRound ++;
 
                                     }
                                     else{
@@ -192,7 +188,7 @@ int Game::play(Team* team1, Team* team2)
                                     }
                        }
 
-                       if(attaque2.getGlobalBounds().contains(mouseX,mouseY))
+                       if(attack2.getGlobalBounds().contains(mouseX,mouseY))
                        {
                            if(J1.getAttack()[1].getMana() >0)
                            {
@@ -217,7 +213,7 @@ int Game::play(Team* team1, Team* team2)
                                         J1.getAttack()[1].setMana(J1.getAttack()[1].getMana()-1);
                                         J2.getAttack()[randAtt].setMana(J2.getAttack()[randAtt].getMana()-1);
 
-                                        nbTour ++;
+                                        nbRound ++;
 
                                     }
                                     else{
@@ -227,7 +223,7 @@ int Game::play(Team* team1, Team* team2)
                                     }
                            }
 
-                       if(attaque3.getGlobalBounds().contains(mouseX,mouseY))
+                       if(attack3.getGlobalBounds().contains(mouseX,mouseY))
                        {
                            if(J1.getAttack()[2].getMana() >0)
                            {
@@ -251,7 +247,7 @@ int Game::play(Team* team1, Team* team2)
                                         J1.getAttack()[2].setMana(J1.getAttack()[2].getMana()-1);
                                         J2.getAttack()[randAtt].setMana(J2.getAttack()[randAtt].getMana()-1);
 
-                                        nbTour ++;
+                                        nbRound ++;
 
                                     }
                                     else{
@@ -261,7 +257,7 @@ int Game::play(Team* team1, Team* team2)
                                     }
                            }
 
-                       if(attaque4.getGlobalBounds().contains(mouseX,mouseY))
+                       if(attack4.getGlobalBounds().contains(mouseX,mouseY))
                        {
                            if(J1.getAttack()[3].getMana() >0)
                            {
@@ -285,7 +281,7 @@ int Game::play(Team* team1, Team* team2)
                                         J1.getAttack()[3].setMana(J1.getAttack()[3].getMana()-1);
                                         J2.getAttack()[randAtt].setMana(J2.getAttack()[randAtt].getMana()-1);
 
-                                        nbTour ++;
+                                        nbRound ++;
 
                                     }
                                     else{
@@ -305,20 +301,20 @@ int Game::play(Team* team1, Team* team2)
 
                     for(unsigned int i=0;i<team1->getListCharacter().size();i++)
                     {
-                        if(PersonnageSwitch[i].getGlobalBounds().contains(mouseX, mouseY))
+                        if(CharacterSwitch[i].getGlobalBounds().contains(mouseX, mouseY))
                         {
                             if(!J1.isKO())
                             {
-                                riposter = true;
+                                retaliate = true;
                             }
 
                             if(team1->getListCharacter()[i].getName()==J1.getName())
                             {
-                                script = J1.getName()+" est d�j� en combat ! \n";
+                                script = J1.getName()+" est deja en combat ! \n";
                             }
                             else{
 
-                                script=J1.getName()+" est retir� par le joueur !\n";
+                                script=J1.getName()+" est retire par le joueur !\n";
                                 script+="Le joueur envoie "+team1->getListCharacter()[i].getName()+" !\n";
 
                                 for(unsigned int j=0;j<team1->getListCharacter().size();j++){
@@ -335,20 +331,20 @@ int Game::play(Team* team1, Team* team2)
                                     return -1;
                                 }
 
-                                lanceur.setScale(1,1);
-                                barreVieLanceur.setScale(1,1);
-                                barreVieLanceurBord.setScale(1,1);
-                                pvLanceur.setScale(1,1);
-                                nomLanceur.setScale(1,1);
+                                user.setScale(1,1);
+                                hpUserBar.setScale(1,1);
+                                hpUserBar_side.setScale(1,1);
+                                hpUser.setScale(1,1);
+                                nameUser.setScale(1,1);
 
 
 
-                                if (riposter)
+                                if (retaliate)
                                 {                                                  //si on switche sans etre KO, l'ennemi attaque quand meme
-                                    riposter=false;
+                                    retaliate=false;
                                     script+=J2.sendAttack(J2.getAttack()[randAtt],&J1)+"\n";
                                     J2.getAttack()[randAtt].setMana(J2.getAttack()[randAtt].getMana()-1);
-                                    nbTour++;
+                                    nbRound++;
                                 }
                             }
 
@@ -370,11 +366,11 @@ int Game::play(Team* team1, Team* team2)
     {
         if(team2->isEmpty())
         {
-            ennemi.setScale(0,0);
-            barreVieEnnemi.setScale(0,0);
-            barreVieEnnemiBord.setScale(0,0);
-            pvEnnemi.setScale(0,0);
-            nomEnnemi.setScale(0,0);
+            ennemy.setScale(0,0);
+            hpEnnemyBar.setScale(0,0);
+            hpEnnemyBar_side.setScale(0,0);
+            hpEnnemy.setScale(0,0);
+            nameEnnemy.setScale(0,0);
 
 
 
@@ -408,11 +404,11 @@ int Game::play(Team* team1, Team* team2)
     if(J1.isKO())
     {
 
-        lanceur.setScale(0,0);
-        barreVieLanceur.setScale(0,0);
-        barreVieLanceurBord.setScale(0,0);
-        pvLanceur.setScale(0,0);
-        nomLanceur.setScale(0,0);
+        user.setScale(0,0);
+        hpUserBar.setScale(0,0);
+        hpUserBar_side.setScale(0,0);
+        hpUser.setScale(0,0);
+        nameUser.setScale(0,0);
 
 
         if(team1->isEmpty())
@@ -432,30 +428,26 @@ int Game::play(Team* team1, Team* team2)
     }
 
     /**************************************Chargement et position du sprite ****************************************/
-    //J1.setPath();
-//cout<<"lien:"<<J1.getPath(false)<<endl;
+
     if (!p1.loadFromFile(J1.getPath(false),IntRect(150,200,0,0))){ // Si le chargement du fichier a �chou�
-       cout<<"test dans la boucle"<<endl;
                   return -1; // On ferme le programme
     }else{
         p1.setSmooth(true);
-        lanceur.setTexture(p1);
-        lanceur.setTextureRect(IntRect(-100,0,200, 150));
-        lanceur.setPosition(0, getSize().y-450);
+        user.setTexture(p1);
+        user.setTextureRect(IntRect(-100,0,200, 150));
+        user.setPosition(0, getSize().y-450);
     }
 
 
-  //  J2.setPath();
      if (!p2.loadFromFile(J2.getPath(true),IntRect(150,200,0,0)))
     {
-        cout<<"test p2"<<endl;
         return -1;
     }else
     {
         p2.setSmooth(true);
-        ennemi.setTexture(p2);
-        ennemi.setTextureRect(IntRect(0,0,200,150));
-        ennemi.setPosition(getSize().x-300,getSize().y-450);
+        ennemy.setTexture(p2);
+        ennemy.setTextureRect(IntRect(0,0,200,150));
+        ennemy.setPosition(getSize().x-300,getSize().y-450);
     }
 
 
@@ -470,10 +462,10 @@ int Game::play(Team* team1, Team* team2)
         }else{
             textIcone[i].setSmooth(true);
             iPers[i].setTexture(textIcone[i]);
-            iPers[i].setPosition(PersonnageSwitch[i].getPosition().x+5, PersonnageSwitch[i].getPosition().y+5);
+            iPers[i].setPosition(CharacterSwitch[i].getPosition().x+5, CharacterSwitch[i].getPosition().y+5);
         }
 
-        PersonnageSwitch[i].setSize(Vector2f(140, 150));
+        CharacterSwitch[i].setSize(Vector2f(140, 150));
         nomIcone[i].setFont(police);
         nomIcone[i].setString(team1->getListCharacter()[i].getName());
         nomIcone[i].setColor(Color::Black);
@@ -484,106 +476,106 @@ int Game::play(Team* team1, Team* team2)
 
     /**************************************Position et tailles des boutons/textes ****************************************/
 
-        barreVieLanceur.setPosition(lanceur.getPosition().x+lanceur.getTextureRect().width,(lanceur.getPosition().y+lanceur.getTextureRect().height/4)-100);
-        barreVieEnnemi.setPosition(ennemi.getPosition().x-ennemi.getTextureRect().width-150,(ennemi.getPosition().y+ennemi.getTextureRect().height/4)-100);
+        hpUserBar.setPosition(user.getPosition().x+user.getTextureRect().width,(user.getPosition().y+user.getTextureRect().height/4)-100);
+        hpEnnemyBar.setPosition(ennemy.getPosition().x-ennemy.getTextureRect().width-150,(ennemy.getPosition().y+ennemy.getTextureRect().height/4)-100);
 
-        barreVieLanceurBord.setPosition(barreVieLanceur.getPosition().x-2,barreVieLanceur.getPosition().y-2);
-        barreVieEnnemiBord.setPosition(barreVieEnnemi.getPosition().x-2,barreVieEnnemi.getPosition().y-2);
+        hpUserBar_side.setPosition(hpUserBar.getPosition().x-2,hpUserBar.getPosition().y-2);
+        hpEnnemyBar_side.setPosition(hpEnnemyBar.getPosition().x-2,hpEnnemyBar.getPosition().y-2);
 
-        barreVieLanceurBord.setOutlineColor(Color::Black);
-        barreVieEnnemiBord.setOutlineColor(Color::Black);
+        hpUserBar_side.setOutlineColor(Color::Black);
+        hpEnnemyBar_side.setOutlineColor(Color::Black);
 
 
-        nomLanceur.setString(J1.getName());
-        nomLanceur.setFont(police);
-        nomLanceur.setColor(Color::Red);
-        nomLanceur.setPosition(lanceur.getPosition().x+lanceur.getTextureRect().width,lanceur.getPosition().y-100);
+        nameUser.setString(J1.getName());
+        nameUser.setFont(police);
+        nameUser.setColor(Color::Red);
+        nameUser.setPosition(user.getPosition().x+user.getTextureRect().width,user.getPosition().y-100);
 
-        nomEnnemi.setString(J2.getName());
-        nomEnnemi.setFont(police);
-        nomEnnemi.setColor(Color::Blue);
-        nomEnnemi.setPosition(barreVieEnnemi.getPosition().x,barreVieEnnemi.getPosition().y-42);
+        nameEnnemy.setString(J2.getName());
+        nameEnnemy.setFont(police);
+        nameEnnemy.setColor(Color::Blue);
+        nameEnnemy.setPosition(hpEnnemyBar.getPosition().x,hpEnnemyBar.getPosition().y-42);
 
-        nomAttaque1.setString(J1.getAttack()[0].getName());
-        nomAttaque1.setFont(police);
-        nomAttaque1.setPosition(attaque1.getPosition());
-        nomAttaque1.setScale(0.75, 0.75);
+        nameAttack1.setString(J1.getAttack()[0].getName());
+        nameAttack1.setFont(police);
+        nameAttack1.setPosition(attack1.getPosition());
+        nameAttack1.setScale(0.75, 0.75);
         mana1.setFont(police);
         mana1.setString(" Mana: "+Character::toString(J1.getAttack()[0].getMana())+"/"+Character::toString(J1.getAttack()[0].getManaFix()));
-        mana1.setPosition(nomAttaque1.getPosition().x, nomAttaque1.getPosition().y+30);
+        mana1.setPosition(nameAttack1.getPosition().x, nameAttack1.getPosition().y+30);
         mana1.setScale(0.5, 0.5);
 
-        nomAttaque2.setString(J1.getAttack()[1].getName());
-        nomAttaque2.setFont(police);
-        nomAttaque2.setPosition(attaque2.getPosition());
-        nomAttaque2.setScale(0.75, 0.75);
+        nameAttack2.setString(J1.getAttack()[1].getName());
+        nameAttack2.setFont(police);
+        nameAttack2.setPosition(attack2.getPosition());
+        nameAttack2.setScale(0.75, 0.75);
         mana2.setFont(police);
         mana2.setString(" Mana: "+Character::toString(J1.getAttack()[1].getMana())+"/"+Character::toString(J1.getAttack()[1].getManaFix()));
-        mana2.setPosition(nomAttaque2.getPosition().x, nomAttaque2.getPosition().y+30);
+        mana2.setPosition(nameAttack2.getPosition().x, nameAttack2.getPosition().y+30);
         mana2.setScale(0.5, 0.5);
 
-        nomAttaque3.setString(J1.getAttack()[2].getName());
-        nomAttaque3.setFont(police);
-        nomAttaque3.setPosition(attaque3.getPosition());
-        nomAttaque3.setScale(0.75, 0.75);
+        nameAttack3.setString(J1.getAttack()[2].getName());
+        nameAttack3.setFont(police);
+        nameAttack3.setPosition(attack3.getPosition());
+        nameAttack3.setScale(0.75, 0.75);
         mana3.setFont(police);
         mana3.setString(" Mana: "+Character::toString(J1.getAttack()[2].getMana())+"/"+Character::toString(J1.getAttack()[2].getManaFix()));
-        mana3.setPosition(nomAttaque3.getPosition().x, nomAttaque3.getPosition().y+30);
+        mana3.setPosition(nameAttack3.getPosition().x, nameAttack3.getPosition().y+30);
         mana3.setScale(0.5, 0.5);
 
-        nomAttaque4.setString((J1.getAttack()[3]).getName());
-        nomAttaque4.setFont(police);
-        nomAttaque4.setPosition(attaque4.getPosition());
-        nomAttaque4.setScale(0.75, 0.75);
+        nameAttack4.setString((J1.getAttack()[3]).getName());
+        nameAttack4.setFont(police);
+        nameAttack4.setPosition(attack4.getPosition());
+        nameAttack4.setScale(0.75, 0.75);
         mana4.setFont(police);
         mana4.setString(" Mana: "+Character::toString(J1.getAttack()[3].getMana())+"/"+Character::toString(J1.getAttack()[3].getManaFix()));
-        mana4.setPosition(nomAttaque4.getPosition().x, nomAttaque4.getPosition().y+30);
+        mana4.setPosition(nameAttack4.getPosition().x, nameAttack4.getPosition().y+30);
         mana4.setScale(0.5, 0.5);
 
         //point de vie en fonction des degats
 
         if((100*J1.getLifePoint()/J1.getLifePointMax()) >=50)
         {
-            barreVieLanceur.setFillColor(Color::Green);
+            hpUserBar.setFillColor(Color::Green);
 
 
         }else if((100*J1.getLifePoint()/J1.getLifePointMax()) >=20){
-            barreVieLanceur.setFillColor(Color::Yellow);
+            hpUserBar.setFillColor(Color::Yellow);
 
         }else{
-            barreVieLanceur.setFillColor(Color::Red);
+            hpUserBar.setFillColor(Color::Red);
         }
 
 
         if((100*J2.getLifePoint()/J2.getLifePointMax()) >=50)
         {
-            barreVieEnnemi.setFillColor(Color::Green);
+            hpEnnemyBar.setFillColor(Color::Green);
 
         }else if((100*J2.getLifePoint()/J2.getLifePointMax()) >=20){
-            barreVieEnnemi.setFillColor(Color::Yellow);
+            hpEnnemyBar.setFillColor(Color::Yellow);
 
         }else{
-            barreVieEnnemi.setFillColor(Color::Red);
+            hpEnnemyBar.setFillColor(Color::Red);
         }
 
         text.setString(script);
-        tour.setString("Tour : "+Character::toString(nbTour)+"\nPersonnages restants: "+Character::toString((int)team2->getListCharacter().size()));
+        round.setString("Tour : "+Character::toString(nbRound)+"\nPersonnages restants: "+Character::toString((int)team2->getListCharacter().size()));
 
-        barreVieLanceur.setSize(Vector2f((J1.getLifePoint()*200)/J1.getLifePointMax(),20));
-        barreVieEnnemi.setSize(Vector2f((J2.getLifePoint()*200)/J2.getLifePointMax(),20));
+        hpUserBar.setSize(Vector2f((J1.getLifePoint()*200)/J1.getLifePointMax(),20));
+        hpEnnemyBar.setSize(Vector2f((J2.getLifePoint()*200)/J2.getLifePointMax(),20));
 
-        pvLanceur.setFont(police);
-        pvLanceur.setString(Character::toString(100*J1.getLifePoint()/J1.getLifePointMax())+"%");
-        pvLanceur.setPosition(barreVieLanceur.getPosition().x+barreVieLanceur.getSize().x-pvLanceur.getGlobalBounds().width,barreVieLanceur.getPosition().y);
-        pvLanceur.setCharacterSize(18);
-        pvLanceur.setColor(Color::Black);
+        hpUser.setFont(police);
+        hpUser.setString(Character::toString(100*J1.getLifePoint()/J1.getLifePointMax())+"%");
+        hpUser.setPosition(hpUserBar.getPosition().x+hpUserBar.getSize().x-hpUser.getGlobalBounds().width,hpUserBar.getPosition().y);
+        hpUser.setCharacterSize(18);
+        hpUser.setColor(Color::Black);
 
 
-        pvEnnemi.setFont(police);
-        pvEnnemi.setString(Character::toString(100*J2.getLifePoint()/J2.getLifePointMax())+"%");
-        pvEnnemi.setPosition(barreVieEnnemi.getPosition().x+barreVieEnnemi.getSize().x-pvEnnemi.getGlobalBounds().width,barreVieEnnemi.getPosition().y);
-        pvEnnemi.setCharacterSize(18);
-        pvEnnemi.setColor(Color::Black);
+        hpEnnemy.setFont(police);
+        hpEnnemy.setString(Character::toString(100*J2.getLifePoint()/J2.getLifePointMax())+"%");
+        hpEnnemy.setPosition(hpEnnemyBar.getPosition().x+hpEnnemyBar.getSize().x-hpEnnemy.getGlobalBounds().width,hpEnnemyBar.getPosition().y);
+        hpEnnemy.setCharacterSize(18);
+        hpEnnemy.setColor(Color::Black);
 
 
       //  sf::Time t1 = 5000;
@@ -598,28 +590,28 @@ int Game::play(Team* team1, Team* team2)
 
         clear(Color::White);
 
-        draw(fond_ecran);
+        draw(wallpaper);
 
-        draw(lanceur);
-        draw(ennemi);
+        draw(user);
+        draw(ennemy);
 
-        draw(afficheText);
+        draw(showText);
 
-        draw(barreVieLanceurBord);
-        draw(barreVieEnnemiBord);
+        draw(hpUserBar_side);
+        draw(hpEnnemyBar_side);
 
-        draw(barreVieLanceur);
-        draw(barreVieEnnemi);
+        draw(hpUserBar);
+        draw(hpEnnemyBar);
 
-        draw(attaque1);
-        draw(attaque2);
-        draw(attaque3);
-        draw(attaque4);
+        draw(attack1);
+        draw(attack2);
+        draw(attack3);
+        draw(attack4);
 
-        draw(nomAttaque1);
-        draw(nomAttaque2);
-        draw(nomAttaque3);
-        draw(nomAttaque4);
+        draw(nameAttack1);
+        draw(nameAttack2);
+        draw(nameAttack3);
+        draw(nameAttack4);
 
         draw(mana1);
         draw(mana2);
@@ -629,16 +621,16 @@ int Game::play(Team* team1, Team* team2)
 
         for(unsigned int k=0;k<team1->getListCharacter().size();k++)
         {
-            draw(PersonnageSwitch[k]);
+            draw(CharacterSwitch[k]);
             draw(iPers[k]);
             draw(nomIcone[k]);
 
         }
 
         draw(text);
-        draw(tour);
-        draw(pvLanceur);
-        draw(pvEnnemi);
+        draw(round);
+        draw(hpUser);
+        draw(hpEnnemy);
 
         display();
 
