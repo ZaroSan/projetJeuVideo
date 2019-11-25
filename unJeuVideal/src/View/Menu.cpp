@@ -277,10 +277,10 @@ vector<Character> Menu::initialisation()
     Attack Full_Counter("Full Counter", 75, 10, 100);
     Attack Outrage("Outrage", 60, 15, 80);
 
-    Attack Perfect_Shot("Perfect Shot", 85, 5, 120);
-    Attack Multiple_Shots("Multiple Shots", 65, 15, 100);
-    Attack Sharp_Dagger("Sharp Dagger", 70, 15, 100);
-    Attack Fire_Arrow("Fire Arrow", 100, 5, 120);
+    Attack Perfect_Shot("Perfect Shot", 85, 5, 70);
+    Attack Multiple_Shots("Multiple Shots", 65, 15, 50);
+    Attack Sharp_Dagger("Sharp Dagger", 70, 15, 50);
+    Attack Fire_Arrow("Fire Arrow", 100, 5, 70);
 
     Attack Group_Care("Group Care", 55, 10, 60);
     Attack Flower_Power("Flower Power", 65, 10, 60);
@@ -321,13 +321,13 @@ vector<Character> Menu::initialisation()
 
     //creation personnage
     //string name, int lifePoint, int strength, int power, int physicalArmor, int magicalArmor,int speed, Attack* attack
-    Character brawler("Brawler", 350, 100, 15, 80, 75,55,attackBrawl);
-    Character ranger("Ranger",278,95,15,50,50,100,attackRanger);
-    Character healer("Healer",150,50,90,30,30,45,attackHealer);
-    Character wizard("Wizard",275,45,100,30,30,75,attackWizard);
-    Character skeleton("Skeleton", 300,60,60,30,30,60,attackSkeleton);
-    Character orc("Orc",325,100,30,65,65,50,attackOrc);
-    Character elf("Elf",275,50,100,50,50,60,attackElf);
+    Character brawler("Brawler", 3500, 100, 15, 80, 75,55,attackBrawl);
+    Character ranger("Ranger",2780,95,15,50,50,100,attackRanger);
+    Character healer("Healer",1500,50,90,30,30,45,attackHealer);
+    Character wizard("Wizard",2750,45,100,30,30,75,attackWizard);
+    Character skeleton("Skeleton", 3000,60,60,30,30,60,attackSkeleton);
+    Character orc("Orc",3250,100,30,65,65,50,attackOrc);
+    Character elf("Elf",2750,50,100,50,50,60,attackElf);
 
   //  cout<<"je suis un  tetst = "<<brawler.getAttack()->getName()<<endl;
 
