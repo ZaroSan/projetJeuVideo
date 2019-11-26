@@ -287,30 +287,30 @@ vector<Character> Menu::initialisation()
     Attack Sharp_Dagger("Sharp Dagger", 70, 15, 80);
     Attack Fire_Arrow("Fire Arrow", 100, 5, 70);
 
-    Attack Group_Care("Group Care", 55, 10, 80);
-    Attack Flower_Power("Flower Power", 65, 10, 80);
-    Attack Soul_Power("Soul Power", 65, 10, 70);
-    Attack Panacea("Panacea", 100, 10, 60);
+    Attack Group_Care("Group Care", 75, 10, 90);
+    Attack Flower_Power("Flower Power", 65, 15, 80);
+    Attack Soul_Power("Soul Power", 65, 10, 75);
+    Attack Panacea("Panacea", 100, 10, 70);
 
-    Attack Blizzard("Blizzard", 100, 10, 100);
-    Attack Lightning_Impact("Lightning Impact", 100, 15, 90);
-    Attack Heat_Wave("Heat Wave", 55, 50, 70);
-    Attack Explosion("Explosion", 120, 1, 50);
+    Attack Blizzard("Blizzard", 100, 10, 90);
+    Attack Lightning_Impact("Lightning Impact", 100, 8, 95);
+    Attack Heat_Wave("Heat Wave", 75, 50, 70);
+    Attack Explosion("Explosion", 120, 5, 50);
 
-    Attack Masse_Os("Masse Os", 100, 15, 100);
+    Attack Masse_Os("Masse Os", 100, 8, 90);
     Attack Coup_De_Crane("Coup de crane", 75, 10, 75);
     Attack Tibia_Long("Tibia long", 55, 15, 65);
-    Attack Phalange("Phalange", 30, 15, 25);
+    Attack Phalange("Phalange",60, 20, 80);
 
     Attack Coup_De_Kanabo("Coup de Kanabo", 85, 15, 95);
-    Attack poing_Geant("Poing geant", 100, 15, 100);
+    Attack poing_Geant("Poing geant", 100, 8, 100);
     Attack Grande_frappe("Grande frappe", 60, 15, 75);
     Attack Behemoth_Bullet("Behemoth Bullet", 85, 15, 55);
 
-    Attack True_Dark("True Dark", 100, 15, 100);
+    Attack True_Dark("True Dark", 100, 8, 100);
     Attack Beautiful_Snow("Beautiful Snow", 65, 15, 66);
     Attack Bubble_Push("Bubble Push", 55, 15, 55);
-    Attack Terror_Thrust("Terror Thrust", 100, 15, 100);
+    Attack Terror_Thrust("Terror Thrust", 90, 10, 90);
 
 
 
